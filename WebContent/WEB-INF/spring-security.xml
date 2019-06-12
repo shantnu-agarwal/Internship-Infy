@@ -7,19 +7,24 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
- 
+
+	
 	<http use-expressions="true">
-		<intercept-url pattern="/admindash*" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/logOutServlet*" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/admindash*"
+			access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/logOutServlet*"
+			access="hasRole('ROLE_ADMIN')" />
 		<!-- <intercept-url pattern="/**" access="isAuthenticated()" /> -->
 
 		<form-login login-page='/welcome'
 			default-target-url="/admindash"
-			authentication-failure-url="/login?error=true" />
-		
-		<csrf disabled="true"/>
-	</http>
+			authentication-success-handler-ref="SuccessHandler"
+			authentication-failure-url="/login?error=111" />
 
+		<csrf disabled="true" />
+	</http>
+	<beans:bean id="SuccessHandler"
+		class="com.TheOnlineShop.SuccessHandler" />
 
 	<authentication-manager>
 		<authentication-provider>
@@ -30,3 +35,4 @@
 		</authentication-provider>
 	</authentication-manager>
 </beans:beans>
+

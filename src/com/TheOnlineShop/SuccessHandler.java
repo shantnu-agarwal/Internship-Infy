@@ -12,8 +12,7 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-public class SuccessHandler 
-implements AuthenticationSuccessHandler{
+public class SuccessHandler implements AuthenticationSuccessHandler{
 
 //  protected Log logger = LogFactory.getLog(this.getClass());
 
@@ -50,7 +49,7 @@ implements AuthenticationSuccessHandler{
        = authentication.getAuthorities();
       for (GrantedAuthority grantedAuthority : authorities) {
           if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
-              	return "http://localhost:8080/Internship-Infy/Welcome?login=true";
+              	return "http://localhost:8080/Internship-Infy/?login=true";
           } else if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
               	return "http://localhost:8080/Internship-Infy/admindash";
           }	else
