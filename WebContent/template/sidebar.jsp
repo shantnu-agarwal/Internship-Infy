@@ -1,5 +1,4 @@
 <link href="template/css/sidebar.css">
-<link rel="stylesheet" href="../css/bootstrap.min.css">
 
 
 <!-- Sidebar -->

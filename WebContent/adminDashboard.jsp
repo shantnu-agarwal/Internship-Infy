@@ -138,7 +138,7 @@
 					</div>
 				</div>
 			</div>
-			lol <br> <br> <br> <br> <br> <br> <br>
+			lol <br> more coming soon <br> <br> <br> <br> <br> <br>
 			<br> <br> <br> <br> <br> <br> <br>
 			<br> <br> <br> <br> <br> <br> <br>
 			<br> <br> <br> <br> <br> <br> <br>
@@ -164,34 +164,7 @@
 
 	<footer class="page-footer font-small blue -bottom fixed-bottom"
 		id="myFooter" style="background-color: lightcyan">
-		<div class="container text-center text-sm-left">
-			<div class="row">
-				<div class="col-sm-12 mx-auto text-center">
-					<h4 style="margin-top: 1rem; margin-bottom: 1rem;">The Online
-						Shop works with the help of the following technologies.</h4>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-3 mx-auto">
-					<ul class="list-unstyled">
-						<li>HTML/CSS</li>
-						<li>Bootstrap</li>
-					</ul>
-				</div>
-				<div class="col-sm-3 mx-auto">
-					<ul class="list-unstyled">
-						<li>Tomcat</li>
-						<li>Servlet</li>
-					</ul>
-				</div>
-				<div class="col-sm-3 mx-auto">
-					<ul class="list-unstyled">
-						<li>QRST</li>
-						<li>UVWX</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		
 		<div class="footer-copyright text-center py-3"
 			style="background-color: lightblue">
 			© <a href="/Internship-Infy/"> The Online Shop</a>

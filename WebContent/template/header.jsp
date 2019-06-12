@@ -1,6 +1,6 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="top:0;">
 			<a href="/Internship-Infy/">
-				<img src="img/logo.jpg" height="75px"></img>
+				<img src="img/logo.jpg" height="75px">
 			</a>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			  	<ul class="navbar-nav mr-auto">
@@ -21,15 +21,30 @@
 				
 					
 				
-				<button type="button" class="btn btn-primary"> <a href="login.jsp" class="text-white">Login</a>
+				<button type="button" class="btn btn-primary text-white" onclick="javascript:window.location.href='login.jsp'">Login
 				</button>
 				<!-- 
 				
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
 					  Login
 				</button>
+				-->
 				
-				<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				
+				<!--------------------------- REGISTER HERE 
+									---------------------------------->
+									
+				<button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#registerModal" style="margin-left: 10px">Register</button>
+				
+				
+				
+				  
+			</div>
+		</nav>
+		<!------------------------------------------------- 
+								MODAL FOR LOG IN
+						------------------------------------------->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
     					<div class="modal-content">
       						<div class="modal-header">
@@ -50,14 +65,11 @@
     					</div>
   					</div>
 				</div>
-				 -->
-				<!--------------------------- REGISTER HERE 
-									---------------------------------->
-									
-				<button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#registerModal" style="margin-left: 10px">Register</button>
 				
-				
-				<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<!------------------------------------------------- 
+								MODAL FOR REGISTRATION
+						------------------------------------------->
+		<div class="modal fade" id="registerModal" tabindex="-1" role="dialog">
 					<div class="modal-dialog" role="document">
     					<div class="modal-content">
       						<div class="modal-header">
@@ -67,7 +79,7 @@
         						</button>
       						</div>
       						<div class="modal-body">
-	        					<div class="container" style=" margin:auto"">
+	        					<div class="container" style="margin:auto">
 	        						<p style="margin-bottom:0px;">Name:</p><input type="text" placeholder="John Doe"></input>
 	        						<p style="margin-bottom:0px; margin-top:10px">Email:</p><input type="text" placeholder="email@exmaple.com"></input>
 	        						<p style="margin-bottom:0px; margin-top:10px">Phone Number:</p><input type="text" placeholder="9876543210"></input>
@@ -82,13 +94,7 @@
     					</div>
   					</div>
 				</div>
-				  
-			</div>
-		</nav>
 		
 		
 				<!-------------------------
  							SCRIPTS HERE ------------------>
-
-</body>
-</html>
