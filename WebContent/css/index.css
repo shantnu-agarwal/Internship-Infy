@@ -1,25 +1,25 @@
 body {
-    font-family: 'Ubuntu';
+    font-family: sans-serif;
 	background: #fafafa;
 	color: black;
 }
 
 #sidelist{
 	background: lightcyan;
-	font-family: 'Ubuntu';
+	font-family: sans-serif;
 }
 
 #myFooter{
-	background-color: lightcyan;
+	background-color: lightblue;
 	width: auto;
-	font-family: Ubuntu;
+	font-family: sans-serif;
 
 }
 
 .wrapper {
     display: flex;
     width: 100%;
-    font-family: Ubuntu;
+    font-family: sans-serif;
 }
 
 #sidebar {

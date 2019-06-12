@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="ISO-8859-1">
-	<title>Header Template</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	
-</head>
-<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="top:0;">
 			<a href="/Internship-Infy/">
 				<img src="img/logo.jpg" height="75px"></img>
@@ -96,17 +87,8 @@
 		</nav>
 		
 		
-
-
-
 				<!-------------------------
  							SCRIPTS HERE ------------------>
 
-
-
-
-<!--	<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.min.js"></script>
-		--> 
 </body>
 </html>

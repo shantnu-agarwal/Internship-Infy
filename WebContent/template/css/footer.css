@@ -1,43 +1,6 @@
-/*@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";*/
-body {
-    font-family: 'Poppins', sans-serif;
-	background: #fafafa;
-	color: black;
-}
-
-#sidelist{
-	background: lightcyan;
-}
-
 #myFooter{
-	background-color: lightcyan;
+	background-color: red;
 	width: auto;
+	font-family: sans-serif;
 
-}
-
-.wrapper {
-    display: flex;
-    width: 100%;
-}
-
-#sidebar {
-    width: 250px;
-    position: fixed;
-    top: 90;
-    left: 0;
-    height: 100vh;
-    z-index: 999;
-    background: lightcyan;
-    color: #fff;
-    transition: all 0.3s;
-}
-
-#content {
-    width: calc(100% - 250px);
-    padding: 40px;
-    min-height: 100vh;
-    transition: all 0.3s;
-    position: absolute;
-    top: 90;
-    right: 0;
 }
