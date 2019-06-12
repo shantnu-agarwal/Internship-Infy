@@ -1,0 +1,220 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin | The Online Shop</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="template/css/sidebar.css">
+<link rel="stylesheet" href="css/adminDashboard.css">
+
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+</head>
+<body>
+
+	<!--------------------------------------------------- 
+										HEADER HERE
+				-------------------------------------------------->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top"
+		style="top: 0;">
+		<a href="/Internship-Infy/"> <img src="img/logo.jpg" height="75px"></img>
+		</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link"
+					href="/Internship-Infy/">The Online Shop</a></li>
+				<li class="nav-item">
+					<h6 class="nav-link"
+						style="font-style: italic; color: red; padding-top: 10px">Welcome
+						Administrator!</h6>
+				</li>
+			</ul>
+			<form action="logOutServlet" method="post" id="logOutButton" hidden>
+				<button type="submit" value="Logout">
+				</button>
+			</form>
+			<button type="button" class="btn btn-primary right" onclick="javascript:document.getElementById('logOutButton').submit();"> 
+					Log Out
+			
+			</button>
+		</div>
+	</nav>
+
+	<!--------------------------------------------------- 
+										SIDE PANEL HERE
+				-------------------------------------------------->
+
+
+
+	<div class="wrapper">
+		<nav id="sidebar" style="background-color: #FFD54F;">
+			<div class="sidebar-header">
+				<h3
+					style="color: #6a5acd; margin-left: 30px; margin-bottom: 20px; margin-top: 30px;">
+					<strong>Admin Controls</strong>
+				</h3>
+			</div>
+			<ul class="list-unstyled components">
+				<li class="active"
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 0px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px">
+					<a href="#!" style="color: white; font-family: sans-serif;">Manage
+						Users</a>
+				</li>
+				<li
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px">
+					<a href="#!" style="color: white; font-family: sans-serif;">Manage
+						Sellers</a>
+				</li>
+				<li
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px">
+					<a href="#!" style="color: white; font-family: sans-serif;">View
+						Inventory</a>
+				</li>
+				<li
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px">
+					<a href="#!" style="color: white; font-family: sans-serif;">Account
+						Settings</a>
+				</li>
+				<li
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px">
+					<a href="#!" style="color: white; font-family: sans-serif;"
+					class="center-text">Other Tasks</a>
+				</li>
+			</ul>
+		</nav>
+
+
+
+		<div id="content">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid" style="margin-left: 100px;">
+					<!-- INTENTIONALLY BLANK-->
+				</div>
+			</nav>
+		</div>
+
+		<!-------------------------------------------- 
+    					MAIN BODY HERE 
+    				------------------------------------>
+		<div class="container">
+			<div class="row">
+
+				<div class="col text-center"
+					style="margin-top: 20px; margin-bottom: 20px">
+					<h2>Administrator Dashboard</h2>
+					<h5>Company Statistics</h5>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col">
+					<div class="counter">
+						<i class="fa fa-code fa-2x"></i>
+						<h2 class="timer count-title count-number" data-to="235"
+							data-speed="1200"></h2>
+						<p class="count-text ">Total Users</p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="counter">
+						<i class="fa fa-coffee fa-2x"></i>
+						<h2 class="timer count-title count-number" data-to="27"
+							data-speed="1500"></h2>
+						<p class="count-text ">Registered Sellers</p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="counter">
+						<i class="fa fa-lightbulb-o fa-2x"></i>
+						<h2 class="timer count-title count-number" data-to="999"
+							data-speed="1500"></h2>
+						<p class="count-text ">Inventory Size</p>
+					</div>
+				</div>
+			</div>
+			lol <br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+			<br> <br> <br> <br> <br> <br> <br>
+		</div>
+
+
+
+
+	</div>
+
+
+
+
+
+
+	<!--------------------------------------------------- 
+										FOOTER HERE
+				-------------------------------------------------->
+
+	<footer class="page-footer font-small blue -bottom fixed-bottom"
+		id="myFooter" style="background-color: lightcyan">
+		<div class="container text-center text-sm-left">
+			<div class="row">
+				<div class="col-sm-12 mx-auto text-center">
+					<h4 style="margin-top: 1rem; margin-bottom: 1rem;">The Online
+						Shop works with the help of the following technologies.</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3 mx-auto">
+					<ul class="list-unstyled">
+						<li>HTML/CSS</li>
+						<li>Bootstrap</li>
+					</ul>
+				</div>
+				<div class="col-sm-3 mx-auto">
+					<ul class="list-unstyled">
+						<li>Tomcat</li>
+						<li>Servlet</li>
+					</ul>
+				</div>
+				<div class="col-sm-3 mx-auto">
+					<ul class="list-unstyled">
+						<li>QRST</li>
+						<li>UVWX</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright text-center py-3"
+			style="background-color: lightblue">
+			© <a href="/Internship-Infy/"> The Online Shop</a>
+		</div>
+	</footer>
+
+	<!--------------------------------------------------- 
+											SCRIPTS HERE
+				-------------------------------------------------->
+
+
+
+
+
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/adminDashboard.js"></script>
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<script> </script>
+
+</body>
+</html>
