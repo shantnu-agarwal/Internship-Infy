@@ -34,13 +34,11 @@
 				</li>
 			</ul>
 			<form action="logOutServlet" method="post" id="logOutButton" hidden>
-				<button type="submit" value="Logout">
-				</button>
+				<button type="submit" value="Logout"></button>
 			</form>
-			<button type="button" class="btn btn-primary right" onclick="javascript:document.getElementById('logOutButton').submit();"> 
-					Log Out
-			
-			</button>
+			<button type="button" class="btn btn-primary right"
+				onclick="javascript:document.getElementById('logOutButton').submit();">
+				Log Out</button>
 		</div>
 	</nav>
 
@@ -60,26 +58,27 @@
 			</div>
 			<ul class="list-unstyled components">
 				<li class="btn"
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width:12rem;">
-					<a href="admin/manage-users.jsp" style="color: white; font-family: sans-serif;">Manage Users</a>
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
+					<a href="admin/manage-users.jsp"
+					style="color: white; font-family: sans-serif;">Manage Users</a>
 				</li>
-				<li
-					class="btn" style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px;width:12rem;">
-					<a href="#!" style="color: white; font-family: sans-serif;">Manage
-						Sellers</a>
+				<li class="btn"
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
+					<a href="admin/manage-sellers.jsp"
+					style="color: white; font-family: sans-serif;">Manage Sellers</a>
 				</li>
-				<li
-					class="btn" style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px;width:12rem;">
+				<li class="btn"
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="#!" style="color: white; font-family: sans-serif;">View
 						Inventory</a>
 				</li>
-				<li
-					class="btn" style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px;width:12rem;">
+				<li class="btn"
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="#!" style="color: white; font-family: sans-serif;">Account
 						Settings</a>
 				</li>
-				<li
-					class="btn" style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px;width:12rem;">
+				<li class="btn"
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="#!" style="color: white; font-family: sans-serif;"
 					class="center-text">Other Tasks</a>
 				</li>
@@ -134,14 +133,8 @@
 					</div>
 				</div>
 			</div>
-			lol <br> more coming soon <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br>
-			<br> <br> <br> <br> <br> <br> <br>
+			lol <br> more coming soon 
+			
 		</div>
 
 
@@ -160,7 +153,7 @@
 
 	<footer class="page-footer font-small blue -bottom fixed-bottom"
 		id="myFooter" style="background-color: lightcyan">
-		
+
 		<div class="footer-copyright text-center py-3"
 			style="background-color: lightblue">
 			© <a href="/Internship-Infy/"> The Online Shop</a>
@@ -181,7 +174,9 @@
 
 
 
-	<script> </script>
+	<script>
+		
+	</script>
 
 </body>
 </html>

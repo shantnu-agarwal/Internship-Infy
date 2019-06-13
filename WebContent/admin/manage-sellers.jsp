@@ -60,14 +60,14 @@
 				</h3>
 			</div>
 			<ul class="list-unstyled components">
-				<li class="btn disabled"
+				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
-					<a href="admin/manage-users.jsp"
+					<a href="manage-users.jsp"
 					style="color: white; font-family: sans-serif;">Manage Users</a>
 				</li>
-				<li class="btn"
+				<li class="btn disabled"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="manage-sellers.jsp" style="color: white; font-family: sans-serif;">Manage
+					<a href="#!" style="color: white; font-family: sans-serif;">Manage
 						Sellers</a>
 				</li>
 				<li class="btn"
@@ -112,7 +112,7 @@
 			<div class="row">
 				<div class="col text-center"
 					style="margin-top: 20px; margin-bottom: 20px">
-					<h2>Manage Users</h2>
+					<h2>Manage Sellers</h2>
 				</div>
 			</div>
 
@@ -122,7 +122,7 @@
 					<thead class="thead-dark">
 						<tr>
 							<th scope="col">#</th>
-							<th scope="col">User's Name</th>
+							<th scope="col">Seller Names</th>
 							<th scope="col">Email</th>
 							<th scope="col">Actions</th>
 						</tr>
@@ -130,24 +130,24 @@
 					<tbody>
 						<tr>
 							<th scope="row">1</th>
-							<td>MS Dhoni</td>
-							<td>dhoni@intern.com</td>
+							<td>Seller ABC</td>
+							<td>ABC@intern.com</td>
 							<td><img alt="Remove User" src="remove.png"><img
 								alt="Promote to Seller" src="promote-to-seller.png"><img
 								alt="Promote to Admin" src="promote-to-admin.png"></td>
 						</tr>
 						<tr>
 							<th scope="row">2</th>
-							<td>Virat Kohli</td>
-							<td>virat@intern.com</td>
+							<td>Seller DEF</td>
+							<td>DEF@intern.com</td>
 							<td><img alt="Remove User" src="remove.png"><img
 								alt="Promote to Seller" src="promote-to-seller.png"><img
 								alt="Promote to Admin" src="promote-to-admin.png"></td>
 						</tr>
 						<tr>
 							<th scope="row">3</th>
-							<td>Rohit Sharma</td>
-							<td>rohit@intern.com</td>
+							<td>Seller GHI</td>
+							<td>GHI@intern.com</td>
 							<td><a class="btn btn-primary" href="#!"><img
 									alt="Remove User" src="remove.png"></a><a class="btn"
 								href="#!"><img alt="Promote to Seller"
@@ -157,6 +157,17 @@
 					</tbody>
 				</table>
 			</div>
+
+			<div class="row">
+				<div class="col-md-4 mx-auto text-white">
+					<a class="btn btn-primary">Add a New Seller</a>
+				</div>
+				<div class="col-md-4 mx-auto text-white">
+					<a class="btn btn-primary">Add a New Admin</a>
+				</div>
+			</div>
+
+
 		</div>
 
 
