@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
 	style="top: 0;">
-	<a href="/Internship-Infy/"> <img src="img/logo.jpg" height="75px">
+	<a href="http://localhost:8080/Internship-Infy/"> <img src="http://localhost:8080/Internship-Infy/img/logo.jpg" height="75px">
 	</a>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
@@ -15,7 +15,7 @@
 
 
 
-
+		<%= request.getParameter("login") %>
 
 		<!--<button type="button" class="btn btn-primary text-white"
 			onclick="javascript:window.location.href='login.jsp'">Login
@@ -34,7 +34,7 @@
 			data-toggle="modal" data-target="#registerModal"
 			style="margin-left: 10px">Register</button>
 
-
+	
 
 
 	</div>

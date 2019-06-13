@@ -12,9 +12,6 @@
 <link rel="stylesheet" href="css/adminDashboard.css">
 
 
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
 </head>
 <body>
 
@@ -62,28 +59,27 @@
 				</h3>
 			</div>
 			<ul class="list-unstyled components">
-				<li class="active"
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 0px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px">
-					<a href="#!" style="color: white; font-family: sans-serif;">Manage
-						Users</a>
+				<li class="btn"
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width:12rem;">
+					<a href="admin/manage-users.jsp" style="color: white; font-family: sans-serif;">Manage Users</a>
 				</li>
 				<li
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px">
+					class="btn" style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px;width:12rem;">
 					<a href="#!" style="color: white; font-family: sans-serif;">Manage
 						Sellers</a>
 				</li>
 				<li
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px">
+					class="btn" style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px;width:12rem;">
 					<a href="#!" style="color: white; font-family: sans-serif;">View
 						Inventory</a>
 				</li>
 				<li
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px">
+					class="btn" style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px;width:12rem;">
 					<a href="#!" style="color: white; font-family: sans-serif;">Account
 						Settings</a>
 				</li>
 				<li
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px">
+					class="btn" style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px;width:12rem;">
 					<a href="#!" style="color: white; font-family: sans-serif;"
 					class="center-text">Other Tasks</a>
 				</li>
@@ -184,8 +180,6 @@
 	<script src="js/adminDashboard.js"></script>
 
 
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
 	<script> </script>
 

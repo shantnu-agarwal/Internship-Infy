@@ -49,8 +49,10 @@ public class SuccessHandler implements AuthenticationSuccessHandler{
        = authentication.getAuthorities();
       for (GrantedAuthority grantedAuthority : authorities) {
           if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
+        	  	System.out.println("User Login Detected.");
               	return "http://localhost:8080/Internship-Infy/?login=true";
           } else if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
+        	  	System.out.println("Admin Login Detected.");
               	return "http://localhost:8080/Internship-Infy/admindash";
           }	else
         	  throw new IllegalStateException();
