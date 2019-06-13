@@ -19,7 +19,7 @@
 		<form-login login-page='/welcome'
 			default-target-url="/admindash"
 			authentication-success-handler-ref="SuccessHandler"
-			authentication-failure-url="/login?error=111" />
+			authentication-failure-url="/login?error=true" />
 
 		<csrf disabled="true" />
 	</http>

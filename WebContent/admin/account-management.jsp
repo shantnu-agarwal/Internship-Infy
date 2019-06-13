@@ -36,7 +36,7 @@
 						Administrator!</h6>
 				</li>
 			</ul>
-			<form action="logOutServlet" method="post" id="logOutButton" hidden>
+			<form action="../logOutServlet" method="post" id="logOutButton" hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -67,13 +67,13 @@
 				</li>
 				<li class="btn disabled"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="#!" style="color: white; font-family: sans-serif;">Manage
-						Sellers</a>
+					<a href="#!" style="color: white; font-family: sans-serif;">Account
+						Management</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="view-inventory.jsp" style="color: white; font-family: sans-serif;">View
-						Inventory</a>
+					<a href="view-inventory.jsp"
+					style="color: white; font-family: sans-serif;">View Inventory</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
@@ -112,9 +112,16 @@
 			<div class="row">
 				<div class="col text-center"
 					style="margin-top: 20px; margin-bottom: 20px">
-					<h2>Manage Sellers</h2>
+					<h2>Account Management</h2>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col text-left"
+					style="margin-top: 20px; margin-bottom: 20px">
+					<h2>List of Sellers</h2>
+				</div>
+			</div>
+
 
 
 			<div class="table-responsive">
@@ -132,32 +139,75 @@
 							<th scope="row">1</th>
 							<td>Seller ABC</td>
 							<td>ABC@intern.com</td>
-							<td><img alt="Remove User" src="remove.png"><img
-								alt="Promote to Seller" src="promote-to-seller.png"><img
-								alt="Promote to Admin" src="promote-to-admin.png"></td>
+							<td><img alt="Remove Seller" src="remove.png"><img
+								alt="Promote to Admin" src="promote-to-admin.png"
+								style="margin-left: 2rem;"></td>
 						</tr>
 						<tr>
 							<th scope="row">2</th>
 							<td>Seller DEF</td>
 							<td>DEF@intern.com</td>
-							<td><img alt="Remove User" src="remove.png"><img
-								alt="Promote to Seller" src="promote-to-seller.png"><img
-								alt="Promote to Admin" src="promote-to-admin.png"></td>
+							<td><img alt="Remove Seller" src="remove.png"><img
+								alt="Promote to Admin" src="promote-to-admin.png"
+								style="margin-left: 2rem;"></td>
 						</tr>
 						<tr>
 							<th scope="row">3</th>
 							<td>Seller GHI</td>
 							<td>GHI@intern.com</td>
-							<td><a class="btn btn-primary" href="#!"><img
-									alt="Remove User" src="remove.png"></a><a class="btn"
-								href="#!"><img alt="Promote to Seller"
-									src="promote-to-seller.png"></a><a class="btn" href="#!"><img
-									alt="Promote to Admin" src="promote-to-admin.png"></a></td>
+							<td><img alt="Remove Seller" src="remove.png"><img
+								style="margin-left: 2rem;" Promote to
+								Admin" src="promote-to-admin.png"></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-
+			<div class="row">
+				<div class="col text-left"
+					style="margin-top: 20px; margin-bottom: 20px">
+					<h2>List of Administrators</h2>
+				</div>
+			</div>
+			
+			
+			
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Administrator Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Seller ABC</td>
+							<td>ABC@intern.com</td>
+							<td><img alt="Remove Admin" src="remove.png">
+				</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Seller DEF</td>
+							<td>DEF@intern.com</td>
+							<td><img alt="Remove Admin" src="remove.png"></td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Seller GHI</td>
+							<td>GHI@intern.com</td>
+							<td><img alt="Remove Admin" src="remove.png"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			
+			
+			
 			<div class="row">
 				<div class="col-md-4 mx-auto text-white">
 					<a class="btn btn-primary">Add a New Seller</a>

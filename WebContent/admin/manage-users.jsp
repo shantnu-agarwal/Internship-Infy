@@ -36,7 +36,7 @@
 						Administrator!</h6>
 				</li>
 			</ul>
-			<form action="logOutServlet" method="post" id="logOutButton" hidden>
+			<form action="../logOutServlet" method="post" id="logOutButton" hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -67,13 +67,13 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="manage-sellers.jsp" style="color: white; font-family: sans-serif;">Manage
-						Sellers</a>
+					<a href="account-management.jsp"
+					style="color: white; font-family: sans-serif;">Account Management</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="view-inventory.jsp" style="color: white; font-family: sans-serif;">View
-						Inventory</a>
+					<a href="view-inventory.jsp"
+					style="color: white; font-family: sans-serif;">View Inventory</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
@@ -123,8 +123,8 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">User's Name</th>
-							<th scope="col">Email</th>
-							<th scope="col">Actions</th>
+							<th scope="col">Email Address</th>
+							<th scope="col">Allowed Actions</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -132,27 +132,19 @@
 							<th scope="row">1</th>
 							<td>MS Dhoni</td>
 							<td>dhoni@intern.com</td>
-							<td><img alt="Remove User" src="remove.png"><img
-								alt="Promote to Seller" src="promote-to-seller.png"><img
-								alt="Promote to Admin" src="promote-to-admin.png"></td>
+							<td><img alt="Remove User" src="remove.png"></td>
 						</tr>
 						<tr>
 							<th scope="row">2</th>
 							<td>Virat Kohli</td>
 							<td>virat@intern.com</td>
-							<td><img alt="Remove User" src="remove.png"><img
-								alt="Promote to Seller" src="promote-to-seller.png"><img
-								alt="Promote to Admin" src="promote-to-admin.png"></td>
+							<td><img alt="Remove User" src="remove.png"></td>
 						</tr>
 						<tr>
 							<th scope="row">3</th>
 							<td>Rohit Sharma</td>
 							<td>rohit@intern.com</td>
-							<td><a class="btn btn-primary" href="#!"><img
-									alt="Remove User" src="remove.png"></a><a class="btn"
-								href="#!"><img alt="Promote to Seller"
-									src="promote-to-seller.png"></a><a class="btn" href="#!"><img
-									alt="Promote to Admin" src="promote-to-admin.png"></a></td>
+							<td><img alt="Remove User" src="remove.png"></td>
 						</tr>
 					</tbody>
 				</table>

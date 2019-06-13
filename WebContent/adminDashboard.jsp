@@ -64,8 +64,8 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="admin/manage-sellers.jsp"
-					style="color: white; font-family: sans-serif;">Manage Sellers</a>
+					<a href="admin/account-management.jsp"
+					style="color: white; font-family: sans-serif;">Account Management</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
