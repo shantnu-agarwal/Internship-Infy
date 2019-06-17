@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+<%@page import="java.sql.*,java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -36,7 +37,8 @@
 						Administrator!</h6>
 				</li>
 			</ul>
-			<form action="../logOutServlet" method="post" id="logOutButton" hidden>
+			<form action="../logOutServlet" method="post" id="logOutButton"
+				hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -68,7 +70,8 @@
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="account-management.jsp"
-					style="color: white; font-family: sans-serif;">Account Management</a>
+					style="color: white; font-family: sans-serif;">Account
+						Management</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
@@ -109,6 +112,9 @@
     				------------------------------------>
 		<div class="container">
 
+
+
+
 			<div class="row">
 				<div class="col text-center"
 					style="margin-top: 20px; margin-bottom: 20px">
@@ -124,32 +130,42 @@
 							<th scope="col">#</th>
 							<th scope="col">User's Name</th>
 							<th scope="col">Email Address</th>
+							<th>Mobile Number</th>
 							<th scope="col">Allowed Actions</th>
 						</tr>
 					</thead>
 					<tbody>
+						<%
+							try {
+								Class.forName("com.mysql.jdbc.Driver");
+								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
+								Statement st = conn.createStatement();
+								int cnt = 0;
+								ResultSet us = st.executeQuery("SELECT * from users;");
+								while (us.next()) {
+									cnt++;
+						%>
 						<tr>
-							<th scope="row">1</th>
-							<td>MS Dhoni</td>
-							<td>dhoni@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove User" src="remove.png"></a></td>
+							<th scope="row"><%=cnt%></th>
+							<td><%=us.getString("username")%></td>
+							<td><%=us.getString("email")%></td>
+							<td><%=us.getString("phone_number")%></td>
+							<td><a class="btn" href="#!"><img alt="Remove User"
+									src="remove.png"></a></td>
 						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>Virat Kohli</td>
-							<td>virat@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove User" src="remove.png"></a></td>
-						</tr>
-						<tr>
-							<th scope="row">3</th>
-							<td>Rohit Sharma</td>
-							<td>rohit@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove User" src="remove.png"></a></td>
-						</tr>
+						<%
+							}
+								conn.close();
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						%>
+
 					</tbody>
 				</table>
 			</div>
 		</div>
+
 
 
 
