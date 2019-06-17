@@ -8,30 +8,29 @@
 	http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
 
-	
+
 	<http use-expressions="true">
 		<intercept-url pattern="/admindash*"
 			access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/logOutServlet*"
 			access="hasRole('ROLE_ADMIN')" />
-		<!-- <intercept-url pattern="/**" access="isAuthenticated()" /> -->
 
 		<form-login login-page='/welcome'
 			default-target-url="/admindash"
-			authentication-success-handler-ref="SuccessHandler"
-			authentication-failure-url="/login?error=true" />
+			
+			authentication-failure-url="/login?error=true" 
+			username-parameter="username"
+			password-parameter="password"/>
 
 		<csrf disabled="true" />
 	</http>
-	<beans:bean id="SuccessHandler"
-		class="com.TheOnlineShop.SuccessHandler" />
+	
 
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="admin" password="admin" authorities="ROLE_ADMIN" />
-				<user name="user" password="user" authorities="ROLE_USER" />
-			</user-service>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="select username,password, enabled from users where username=?"
+				authorities-by-username-query="select username, role from user_roles where username=?  " />
 		</authentication-provider>
 	</authentication-manager>
 </beans:beans>

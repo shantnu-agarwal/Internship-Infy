@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class JDBCMySQLConnection {
 	private static JDBCMySQLConnection instance = new JDBCMySQLConnection();
 	public static final String URL = "jdbc:mysql://localhost/jdbcdb";
-	public static final String USER = "welcome";
+	public static final String USER = "root";
 	public static final String PASSWORD = "welcome";
 	public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
 	
