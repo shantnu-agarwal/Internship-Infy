@@ -17,9 +17,6 @@
 											----------------------------------------->
 
 
-
-		
-
 		<button type="button" class="btn btn-primary" data-toggle="modal"
 			data-target="#loginModal">Login</button>
 
@@ -31,9 +28,7 @@
 			data-toggle="modal" data-target="#registerModal"
 			style="margin-left: 10px">Register</button>
 
-
-
-
+		
 	</div>
 </nav>
 <!------------------------------------------------- 

@@ -33,13 +33,6 @@ public class SuccessHandler implements AuthenticationSuccessHandler{
 
       String targetUrl = determineTargetUrl(authentication);
 
-//      if (response.isCommitted()) {
-//          logger.debug(
-//            "Response has already been committed. Unable to redirect to "
-//            + targetUrl);
-//          return;
-//      }
-
       redirectStrategy.sendRedirect(request, response, targetUrl);
   }
 
@@ -50,12 +43,15 @@ public class SuccessHandler implements AuthenticationSuccessHandler{
       for (GrantedAuthority grantedAuthority : authorities) {
           if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
         	  	System.out.println("User Login Detected.");
-              	return "http://localhost:8080/Internship-Infy/?login=true";
+              	return "http://localhost:8080/Internship-Infy/welcome?login=true";
           } else if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
         	  	System.out.println("Admin Login Detected.");
               	return "http://localhost:8080/Internship-Infy/admindash";
-          }	else
+          }	else {
+        	  System.out.println("Could not identify user");
         	  throw new IllegalStateException();
+        	  
+          }
       }
 	return null;
   }
