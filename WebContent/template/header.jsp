@@ -2,13 +2,15 @@
 <%@page import="org.w3c.dom.html.HTMLDocument"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
 	style="top: 0;">
-	<a href="http://localhost:8080/Internship-Infy/"> <img src="http://localhost:8080/Internship-Infy/img/logo.jpg" height="75px">
+	<a href="http://localhost:8080/Internship-Infy/"> <img
+		src="http://localhost:8080/Internship-Infy/img/logo.jpg" height="75px">
 	</a>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
 				href="/Internship-Infy/">The Online Shop</a></li>
-			<li class="nav-item"><a class="nav-link" href="http://localhost:8080/Internship-Infy/cart.jsp">My Cart</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="http://localhost:8080/Internship-Infy/cart.jsp">My Cart</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Support</a></li>
 		</ul>
 		<!---------------------------------- LOGIN HERE
@@ -16,18 +18,11 @@
 
 
 
-		<!-- <%= request.getParameter("login") %> -->
 		
 
-		<!--<button type="button" class="btn btn-primary text-white"
-			onclick="javascript:window.location.href='login.jsp'">Login
-		</button>
-		-->
-				
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-					  Login
-				</button>
-			
+		<button type="button" class="btn btn-primary" data-toggle="modal"
+			data-target="#loginModal">Login</button>
+
 
 		<!--------------------------- REGISTER HERE 
 									---------------------------------->
@@ -36,7 +31,7 @@
 			data-toggle="modal" data-target="#registerModal"
 			style="margin-left: 10px">Register</button>
 
-	
+
 
 
 	</div>
@@ -63,21 +58,24 @@
 					<table>
 						<tr>
 							<td>Email:</td>
-							<td><input type='text' name='username' value='' placeholder="email@example.com"></td>
+							<td><input type='text' name='username'
+								placeholder="email@example.com" autofocus></td>
 						</tr>
 						<tr>
 							<td>Password:</td>
-							<td><input type='password' name='password' placeholder="********"/></td>
+							<td><input type='password' name='password'
+								placeholder="********" /></td>
 						</tr>
 						<tr>
-							<td class="modal-footer"><input name="submit" type="submit" value="Login!" class="btn btn-primary" ></td>
+							<td class="modal-footer"><input name="submit" type="submit"
+								value="Login!" class="btn btn-primary"></td>
 
 
 							<!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
 						</tr>
 					</table>
 				</form>
-				
+
 			</div>
 		</div>
 	</div>
@@ -99,24 +97,44 @@
 			</div>
 			<div class="modal-body">
 				<div class="container" style="margin: auto">
-					<p style="margin-bottom: 0px;">Name:</p>
-					<input type="text" placeholder="John Doe"></input>
-					<p style="margin-bottom: 0px; margin-top: 10px">Email:</p>
-					<input type="text" placeholder="email@exmaple.com"></input>
-					<p style="margin-bottom: 0px; margin-top: 10px">Phone Number:</p>
-					<input type="text" placeholder="9876543210"></input>
-					<p style="margin-bottom: 0px; margin-top: 10px">Choose a strong
-						password:</p>
-					<input type="password" placeholder="********"></input>
-					<p style="margin-bottom:0px; margin-top:10px">Confirm Password:</p>
-					<input type="password" placeholder="********"></input>
+					<form name='f' action="sql/insert.jsp" method='POST'>
+						<table>
+							<tr>
+								<td>Name:</td>
+								<td><input type='text' name='username'
+									placeholder="Jon Doe" autofocus></td>
+							</tr>
+							<tr>
+								<td>Email:</td>
+								<td><input type="email" name="email"
+									placeholder="email@exmaple.com"></td>
+							</tr>
+							<tr>
+								<td>Mobile Number</td>
+								<td><input type='text' name='phonenumber'
+									placeholder="9876543210" /></td>
+							</tr>
+							<tr>
+								<td>Password:</td>
+								<td><input type='password' name='password'
+									placeholder="********" /></td>
+							</tr>
+							<tr>
+								<td>Confirm Password:</td>
+								<td><input type='password' name='confirmpassword'
+									placeholder="********" /></td>
+							</tr>
+							<tr>
+								<td class="modal-footer"><input name="submit" type="submit"
+									value="Register!" class="btn btn-primary"></td>
 
+
+							</tr>
+						</table>
+					</form>
 				</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Register</button>
-			</div>
+
 		</div>
 	</div>
 </div>
@@ -124,3 +142,10 @@
 
 <!-------------------------
  							SCRIPTS HERE ------------------>
+
+
+<script>
+	$('.modal-body').on('shown.bs.modal', function() {
+		$(this).find('[autofocus]').focus();
+	});
+</script>

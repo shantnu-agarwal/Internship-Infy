@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,java.util.*"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -65,12 +66,13 @@
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="admin/account-management.jsp"
-					style="color: white; font-family: sans-serif;">Account Management</a>
+					style="color: white; font-family: sans-serif;">Account
+						Management</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="admin/view-inventory.jsp" style="color: white; font-family: sans-serif;">View
-						Inventory</a>
+					<a href="admin/view-inventory.jsp"
+					style="color: white; font-family: sans-serif;">View Inventory</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
@@ -98,6 +100,25 @@
 		<!-------------------------------------------- 
     					MAIN BODY HERE 
     				------------------------------------>
+
+		<%
+			int cnt = 0;
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
+				Statement st = conn.createStatement();
+				ResultSet us = st.executeQuery("SELECT * from user_roles;");
+
+				while (us.next()) {
+					cnt++;
+				}
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		%>
+
+
 		<div class="container">
 			<div class="row">
 
@@ -111,9 +132,10 @@
 				<div class="col">
 					<div class="counter">
 						<i class="fa fa-code fa-2x"></i>
-						<h2 class="timer count-title count-number" data-to="235"
+						<h2 class="timer count-title count-number" data-to="<%=cnt%>"
 							data-speed="1200"></h2>
 						<p class="count-text ">Total Users</p>
+
 					</div>
 				</div>
 				<div class="col">
@@ -133,8 +155,8 @@
 					</div>
 				</div>
 			</div>
-			lol <br> more coming soon 
-			
+			lol <br> more coming soon
+
 		</div>
 
 

@@ -40,9 +40,7 @@
 					
 					
 					
-				<div class="container text-center" style="margin-top:2rem">
-					<a class="btn btn-primary" href="adminDashboard.jsp"><h4>Jump directly to administrator dashboard</h4></a>
-				</div>
+				
 					
 					 
 

@@ -19,16 +19,13 @@
 		<form-login login-page='/welcome'
 			default-target-url="/admindash"
 
-			authentication-failure-url="/login?error=true"
+			authentication-failure-url="/welcome?error=true"
 			authentication-success-handler-ref="myAuthenticationSuccessHandler"
 
 			username-parameter="username" password-parameter="password" />
 
 		<csrf disabled="true" />
 	</http>
-
-
-
 
 
 	<beans:bean id="myAuthenticationSuccessHandler"
@@ -44,4 +41,3 @@
 		</authentication-provider>
 	</authentication-manager>
 </beans:beans>
-
