@@ -1,20 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin | The Online Shop</title>
+<title>Insert title here</title>
+
 <!-- <link rel="stylesheet" href="../css/index.css"> -->
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../template/css/sidebar.css">
 <link rel="stylesheet" href="../css/adminDashboard.css">
-
-
 </head>
 <body>
+
 
 	<!--------------------------------------------------- 
 										HEADER HERE
@@ -36,7 +35,8 @@
 						Administrator!</h6>
 				</li>
 			</ul>
-			<form action="../logOutServlet" method="post" id="logOutButton" hidden>
+			<form action="../logOutServlet" method="post" id="logOutButton"
+				hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -60,7 +60,7 @@
 				</h3>
 			</div>
 			<ul class="list-unstyled components">
-				<li class="btn disabled"
+				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
 					<a href="manage-users.jsp"
 					style="color: white; font-family: sans-serif;">Manage Users</a>
@@ -68,9 +68,10 @@
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="account-management.jsp"
-					style="color: white; font-family: sans-serif;">Account Management</a>
+					style="color: white; font-family: sans-serif;">Account
+						Management</a>
 				</li>
-				<li class="btn"
+				<li class="btn disabled"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="view-inventory.jsp"
 					style="color: white; font-family: sans-serif;">View Inventory</a>
@@ -104,60 +105,121 @@
 			</nav>
 		</div>
 
-		<!-------------------------------------------- 
-    					MAIN BODY HERE 
-    				------------------------------------>
-		<div class="container">
 
+		<div class="container">
 			<div class="row">
 				<div class="col text-center"
 					style="margin-top: 20px; margin-bottom: 20px">
-					<h2>Manage Users</h2>
+					<h2>Product Inventory Details</h2>
 				</div>
 			</div>
-
 
 			<div class="table-responsive">
 				<table class="table table-bordered table-striped">
 					<thead class="thead-dark">
 						<tr>
-							<th scope="col">#</th>
-							<th scope="col">User's Name</th>
-							<th scope="col">Email Address</th>
-							<th scope="col">Allowed Actions</th>
+							<th scope="col">Item ID</th>
+							<th scope="col">Product Name</th>
+							<th scope="col">Seller ID</th>
+							<th scope="col">Quantity</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<th scope="row">1</th>
-							<td>MS Dhoni</td>
-							<td>dhoni@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove User" src="remove.png"></a></td>
+							<th scope="row">94121</th>
+							<td>Samsung Fridge</td>
+							<td>Seller ABC</td>
+							<td>43</td>
 						</tr>
 						<tr>
-							<th scope="row">2</th>
-							<td>Virat Kohli</td>
-							<td>virat@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove User" src="remove.png"></a></td>
+							<th scope="row">75472</th>
+							<td>Whirlpool Fridge</td>
+							<td>Seller DEF</td>
+							<td>23</td>
 						</tr>
 						<tr>
-							<th scope="row">3</th>
-							<td>Rohit Sharma</td>
-							<td>rohit@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove User" src="remove.png"></a></td>
+							<th scope="row">42343</th>
+							<td>Apple iPhone XR</td>
+							<td>Seller GHI</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<th scope="row">94121</th>
+							<td>Samsung Fridge</td>
+							<td>Seller ABC</td>
+							<td>43</td>
+						</tr>
+						<tr>
+							<th scope="row">75472</th>
+							<td>Whirlpool Fridge</td>
+							<td>Seller DEF</td>
+							<td>23</td>
+						</tr>
+						<tr>
+							<th scope="row">42343</th>
+							<td>Apple iPhone XR</td>
+							<td>Seller GHI</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<th scope="row">94121</th>
+							<td>Samsung Fridge</td>
+							<td>Seller ABC</td>
+							<td>43</td>
+						</tr>
+						<tr>
+							<th scope="row">75472</th>
+							<td>Whirlpool Fridge</td>
+							<td>Seller DEF</td>
+							<td>23</td>
+						</tr>
+						<tr>
+							<th scope="row">42343</th>
+							<td>Apple iPhone XR</td>
+							<td>Seller GHI</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<th scope="row">94121</th>
+							<td>Samsung Fridge</td>
+							<td>Seller ABC</td>
+							<td>43</td>
+						</tr>
+						<tr>
+							<th scope="row">75472</th>
+							<td>Whirlpool Fridge</td>
+							<td>Seller DEF</td>
+							<td>23</td>
+						</tr>
+						<tr>
+							<th scope="row">42343</th>
+							<td>Apple iPhone XR</td>
+							<td>Seller GHI</td>
+							<td>11</td>
+						</tr>
+						<tr>
+							<th scope="row">94121</th>
+							<td>Samsung Fridge</td>
+							<td>Seller AfweC</td>
+							<td>213</td>
+						</tr>
+						<tr>
+							<th scope="row">75472</th>
+							<td>Whirlpool Fridge</td>
+							<td>Seller gjwF</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<th scope="row">42343</th>
+							<td>Apple iPhone XR</td>
+							<td>Seller GHI</td>
+							<td>11</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
-
-
-
-
 	</div>
-
-
-
 
 
 
@@ -185,12 +247,5 @@
 	<script type="javascript" src="../js/bootstrap.min.js"></script>
 	<script type="javascript" src="../js/jquery.min.js"></script>
 	<script type="javascript" src="../js/adminDashboard.js"></script>
-
-
-
-	<script>
-		
-	</script>
-
 </body>
 </html>

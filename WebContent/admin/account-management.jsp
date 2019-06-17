@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin | The Online Shop</title>
-<link rel="stylesheet" href="../css/index.css">
+<!--<link rel="stylesheet" href="../css/index.css"> -->
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../template/css/sidebar.css">
 <link rel="stylesheet" href="../css/adminDashboard.css">
@@ -36,7 +36,8 @@
 						Administrator!</h6>
 				</li>
 			</ul>
-			<form action="../logOutServlet" method="post" id="logOutButton" hidden>
+			<form action="../logOutServlet" method="post" id="logOutButton"
+				hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -67,7 +68,8 @@
 				</li>
 				<li class="btn disabled"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="#!" style="color: white; font-family: sans-serif;">Account
+					<a href="account-management.jsp"
+					style="color: white; font-family: sans-serif;">Account
 						Management</a>
 				</li>
 				<li class="btn"
@@ -139,25 +141,25 @@
 							<th scope="row">1</th>
 							<td>Seller ABC</td>
 							<td>ABC@intern.com</td>
-							<td><img alt="Remove Seller" src="remove.png"><img
-								alt="Promote to Admin" src="promote-to-admin.png"
-								style="margin-left: 2rem;"></td>
+							<td><a class="btn" href="#!"><img alt="Remove Seller" src="remove.png"><img
+									alt="Promote to Admin" src="promote-to-admin.png"
+									style="margin-left: 2rem;"></a></td>
 						</tr>
 						<tr>
 							<th scope="row">2</th>
 							<td>Seller DEF</td>
 							<td>DEF@intern.com</td>
-							<td><img alt="Remove Seller" src="remove.png"><img
-								alt="Promote to Admin" src="promote-to-admin.png"
-								style="margin-left: 2rem;"></td>
+							<td><a class="btn" href="#!"><img alt="Remove Seller" src="remove.png"><img
+									alt="Promote to Admin" src="promote-to-admin.png"
+									style="margin-left: 2rem;"></a></td>
 						</tr>
 						<tr>
 							<th scope="row">3</th>
 							<td>Seller GHI</td>
 							<td>GHI@intern.com</td>
-							<td><img alt="Remove Seller" src="remove.png"><img
-								style="margin-left: 2rem;" Promote to
-								Admin" src="promote-to-admin.png"></td>
+							<td><a class="btn" href="#!"><img alt="Remove Seller" src="remove.png"><img
+									alt="Promote to Admin" src="promote-to-admin.png"
+									style="margin-left: 2rem;"></a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -168,9 +170,9 @@
 					<h2>List of Administrators</h2>
 				</div>
 			</div>
-			
-			
-			
+
+
+
 			<div class="table-responsive">
 				<table class="table table-bordered table-striped">
 					<thead class="thead-dark">
@@ -186,28 +188,30 @@
 							<th scope="row">1</th>
 							<td>Seller ABC</td>
 							<td>ABC@intern.com</td>
-							<td><img alt="Remove Admin" src="remove.png">
-				</td>
+							<td><a class="btn" href="#!"><img alt="Remove Admin"
+									src="remove.png"></a></td>
 						</tr>
 						<tr>
 							<th scope="row">2</th>
 							<td>Seller DEF</td>
 							<td>DEF@intern.com</td>
-							<td><img alt="Remove Admin" src="remove.png"></td>
+							<td><a class="btn" href="#!"><img alt="Remove Admin"
+									src="remove.png"></a></td>
 						</tr>
 						<tr>
 							<th scope="row">3</th>
 							<td>Seller GHI</td>
 							<td>GHI@intern.com</td>
-							<td><img alt="Remove Admin" src="remove.png"></td>
+							<td><a class="btn" href="#!"><img alt="Remove Admin"
+									src="remove.png"></a></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			
-			
-			
-			
+
+
+
+
 			<div class="row">
 				<div class="col-md-4 mx-auto text-white">
 					<a class="btn btn-primary">Add a New Seller</a>

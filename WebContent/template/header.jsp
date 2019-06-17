@@ -1,4 +1,5 @@
 
+<%@page import="org.w3c.dom.html.HTMLDocument"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
 	style="top: 0;">
 	<a href="http://localhost:8080/Internship-Infy/"> <img src="http://localhost:8080/Internship-Infy/img/logo.jpg" height="75px">
@@ -7,7 +8,7 @@
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
 				href="/Internship-Infy/">The Online Shop</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">My Cart</a></li>
+			<li class="nav-item"><a class="nav-link" href="http://localhost:8080/Internship-Infy/cart.jsp">My Cart</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Support</a></li>
 		</ul>
 		<!---------------------------------- LOGIN HERE
@@ -15,7 +16,8 @@
 
 
 
-		<%= request.getParameter("login") %>
+		<!-- <%= request.getParameter("login") %> -->
+		
 
 		<!--<button type="button" class="btn btn-primary text-white"
 			onclick="javascript:window.location.href='login.jsp'">Login
@@ -105,7 +107,9 @@
 					<input type="text" placeholder="9876543210"></input>
 					<p style="margin-bottom: 0px; margin-top: 10px">Choose a strong
 						password:</p>
-					<input type="text" placeholder="********"></input>
+					<input type="password" placeholder="********"></input>
+					<p style="margin-bottom:0px; margin-top:10px">Confirm Password:</p>
+					<input type="password" placeholder="********"></input>
 
 				</div>
 			</div>
