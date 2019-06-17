@@ -10,6 +10,7 @@
 
 
 	<http use-expressions="true">
+		<access-denied-handler error-page="/403.jsp" />
 		<intercept-url pattern="/admindash*"
 			access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/logOutServlet*"
@@ -17,16 +18,25 @@
 
 		<form-login login-page='/welcome'
 			default-target-url="/admindash"
-			
-			authentication-failure-url="/login?error=true" 
-			username-parameter="username"
-			password-parameter="password"/>
+
+			authentication-failure-url="/login?error=true"
+			authentication-success-handler-ref="myAuthenticationSuccessHandler"
+
+			username-parameter="username" password-parameter="password" />
 
 		<csrf disabled="true" />
 	</http>
-	
 
-	<authentication-manager>
+
+
+
+
+	<beans:bean id="myAuthenticationSuccessHandler"
+		class="com.TheOnlineShop.SuccessHandler" />
+
+
+	<authentication-manager
+		id="authenticationManager">
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource"
 				users-by-username-query="select username,password, enabled from users where username=?"
