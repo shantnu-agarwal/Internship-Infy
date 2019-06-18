@@ -43,11 +43,15 @@ public class SuccessHandler implements AuthenticationSuccessHandler{
       for (GrantedAuthority grantedAuthority : authorities) {
           if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
         	  	System.out.println("User Login Detected.");
-              	return "http://localhost:8080/Internship-Infy/welcome?login=true";
+              	return "http://localhost:8080/Internship-Infy/welcome?login=true&type=user";
           } else if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
         	  	System.out.println("Admin Login Detected.");
               	return "http://localhost:8080/Internship-Infy/admindash";
-          }	else {
+          }	else if (grantedAuthority.getAuthority().equals("ROLE_SELLER")) {
+        	  	System.out.println("Seller Login Detected.");
+        	  	return "http://localhost:8080/Internship-Infy/welcome?login=true&type=seller";
+          }
+        		  else {
         	  System.out.println("Could not identify user");
         	  throw new IllegalStateException();
         	  

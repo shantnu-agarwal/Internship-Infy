@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
+<%@page import="java.sql.*,java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -10,7 +11,6 @@
 <!--<link rel="stylesheet" href="../css/index.css"> -->
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../template/css/sidebar.css">
-<link rel="stylesheet" href="../css/adminDashboard.css">
 
 
 </head>
@@ -124,7 +124,9 @@
 				</div>
 			</div>
 
-
+			<!-------------------------------------------- 
+    															seller table here	 
+    																------------------------------------>
 
 			<div class="table-responsive">
 				<table class="table table-bordered table-striped">
@@ -132,35 +134,45 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Seller Names</th>
+							<th scope="col">Phone Number</th>
 							<th scope="col">Email</th>
 							<th scope="col">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
+						<%
+							int cnt = 0;
+							try {
+								Class.forName("com.mysql.jdbc.Driver");
+								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
+								Statement st = conn.createStatement();
+
+								ResultSet us = st.executeQuery("SELECT * from sellers;");
+								while (us.next()) {
+									cnt++;
+						%>
 						<tr>
-							<th scope="row">1</th>
-							<td>Seller ABC</td>
-							<td>ABC@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove Seller" src="remove.png"><img
-									alt="Promote to Admin" src="promote-to-admin.png"
-									style="margin-left: 2rem;"></a></td>
+							<th scope="row"><%=cnt%></th>
+							<td><%=us.getString("sellername")%></td>
+							<td><%=us.getString("email")%></td>
+							<td><%=us.getString("phone_number")%></td>
+							<td><a class="btn" href="#!"><img alt="Remove User"
+									src="remove.png"></a></td>
 						</tr>
+						<%
+							}
+								conn.close();
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							if (cnt == 0) {
+						%>
 						<tr>
-							<th scope="row">2</th>
-							<td>Seller DEF</td>
-							<td>DEF@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove Seller" src="remove.png"><img
-									alt="Promote to Admin" src="promote-to-admin.png"
-									style="margin-left: 2rem;"></a></td>
+							<td>There are no registered sellers</td>
 						</tr>
-						<tr>
-							<th scope="row">3</th>
-							<td>Seller GHI</td>
-							<td>GHI@intern.com</td>
-							<td><a class="btn" href="#!"><img alt="Remove Seller" src="remove.png"><img
-									alt="Promote to Admin" src="promote-to-admin.png"
-									style="margin-left: 2rem;"></a></td>
-						</tr>
+						<%
+							}
+						%>
 					</tbody>
 				</table>
 			</div>
@@ -171,6 +183,9 @@
 				</div>
 			</div>
 
+			<!-------------------------------------------- 
+    												admin table here	 
+    								----------------------------------------------------------->
 
 
 			<div class="table-responsive">
@@ -186,21 +201,21 @@
 					<tbody>
 						<tr>
 							<th scope="row">1</th>
-							<td>Seller ABC</td>
+							<td>Admin ABC</td>
 							<td>ABC@intern.com</td>
 							<td><a class="btn" href="#!"><img alt="Remove Admin"
 									src="remove.png"></a></td>
 						</tr>
 						<tr>
 							<th scope="row">2</th>
-							<td>Seller DEF</td>
+							<td>Admin DEF</td>
 							<td>DEF@intern.com</td>
 							<td><a class="btn" href="#!"><img alt="Remove Admin"
 									src="remove.png"></a></td>
 						</tr>
 						<tr>
 							<th scope="row">3</th>
-							<td>Seller GHI</td>
+							<td>Admin GHI</td>
 							<td>GHI@intern.com</td>
 							<td><a class="btn" href="#!"><img alt="Remove Admin"
 									src="remove.png"></a></td>
@@ -210,24 +225,102 @@
 			</div>
 
 
+			<!--  DATA ENTRY MODALS HERE-->
+
+			<form name="b" action="../sql/new-seller.jsp" method="POST">
+				<table>
+					<tr>
+						<td>Seller Name</td>
+						<td><input type='text' name='sellername'
+							placeholder="Jon Doe" autofocus></td>
+					</tr>
+					<tr>
+						<td>Login Username</td>
+						<td><input type='text' name='username'
+							placeholder="Jon Doe" autofocus></td>
+					</tr>
+					<tr>
+						<td>Mobile Number</td>
+						<td><input type='text' name='phonenumber'
+							placeholder="9876543210" /></td>
+					</tr>
+					<tr>
+						<td>Email Address:</td>
+						<td><input type='text' name='email'
+							placeholder="email@example.com" autofocus></td>
+					</tr>
+					<tr>
+						<td>Choose a Password:</td>
+						<td><input type='password' name='password'
+							placeholder="********" /></td>
+					</tr>
+					<tr>
+						<td class="modal-footer"><input name="submit" type="submit"
+							value="Login!" class="btn btn-primary"></td>
 
 
-			<div class="row">
-				<div class="col-md-4 mx-auto text-white">
-					<a class="btn btn-primary">Add a New Seller</a>
-				</div>
-				<div class="col-md-4 mx-auto text-white">
-					<a class="btn btn-primary">Add a New Admin</a>
+						<!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
+					</tr>
+				</table>
+			</form>
+
+
+			<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+				data-target="#sellerModal">Add a New Seller</button>
+
+			<div class="modal fade" id="sellerModal" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Enter your
+								credentials</h5>
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+						<div class="modal-body">
+							<form name='a' action="login" method='POST'>
+								<table>
+									<tr>
+										<td>Email:</td>
+										<td><input type='text' name='username'
+											placeholder="email@example.com" autofocus></td>
+									</tr>
+									<tr>
+										<td>Password:</td>
+										<td><input type='password' name='password'
+											placeholder="********" /></td>
+									</tr>
+									<tr>
+										<td class="modal-footer"><input name="submit"
+											type="submit" value="Login!" class="btn btn-primary"></td>
+
+
+										<!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
+									</tr>
+								</table>
+							</form>
+
+						</div>
+					</div>
 				</div>
 			</div>
+
+
 
 
 		</div>
 
 
 
-
 	</div>
+
+
+
+
+
 
 
 
@@ -255,15 +348,26 @@
 
 
 
-	<script type="javascript" src="../js/bootstrap.min.js"></script>
-	<script type="javascript" src="../js/jquery.min.js"></script>
-	<script type="javascript" src="../js/adminDashboard.js"></script>
+	<script src="http://localhost:8080/Internship-Infy/js/bootstrap.min.js"></script>
+	<script src="http://localhost:8080/Internship-infy/js/jquery.min.js"></script>
+	<script
+		src="http://localhost:8080/Internship-infy/js/adminDashboard.js"></script>
 
 
 
 	<script>
 		
 	</script>
+
+
+	<!--------------------------------------------------- 
+											MODALS HERE
+				-------------------------------------------------->
+
+
+
+
+
 
 </body>
 </html>

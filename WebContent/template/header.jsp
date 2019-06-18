@@ -1,4 +1,3 @@
-
 <%@page import="org.w3c.dom.html.HTMLDocument"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
 	style="top: 0;">
