@@ -8,7 +8,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin | The Online Shop</title>
-<!--<link rel="stylesheet" href="../css/index.css"> -->
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../template/css/sidebar.css">
 
@@ -52,7 +51,7 @@
 
 
 
-	<div class="wrapper">
+	<div class="wrapper" style="margin-bottom:90px">
 		<nav id="sidebar" style="background-color: #FFD54F;">
 			<div class="sidebar-header">
 				<h3
@@ -259,7 +258,7 @@
 							value="Login!" class="btn btn-primary"></td>
 
 
-						<!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
+						<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 					</tr>
 				</table>
 			</form>
@@ -332,7 +331,7 @@
 				-------------------------------------------------->
 
 	<footer class="page-footer font-small blue -bottom fixed-bottom"
-		id="myFooter" style="background-color: lightcyan">
+		id="myFooter" style="background-color: lightcyan" >
 
 		<div class="footer-copyright text-center py-3"
 			style="background-color: lightblue">
@@ -348,10 +347,9 @@
 
 
 
-	<script src="http://localhost:8080/Internship-Infy/js/bootstrap.min.js"></script>
-	<script src="http://localhost:8080/Internship-infy/js/jquery.min.js"></script>
-	<script
-		src="http://localhost:8080/Internship-infy/js/adminDashboard.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+
 
 
 

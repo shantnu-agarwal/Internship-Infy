@@ -2,10 +2,6 @@ select * from user_roles;
 
 select * from users;
 
-select * from sellers;
-
-
-
 insert into user_roles(username,role) VALUes("user","ROLE_USER");
 
 create table sellers(
