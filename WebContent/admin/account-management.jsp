@@ -146,13 +146,13 @@
 								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
 								Statement st = conn.createStatement();
 
-								ResultSet us = st.executeQuery("SELECT * from sellers;");
+								ResultSet us = st.executeQuery("SELECT * from users,user_roles where user_roles.role='ROLE_SELLER';");
 								while (us.next()) {
 									cnt++;
 						%>
 						<tr>
 							<th scope="row"><%=cnt%></th>
-							<td><%=us.getString("sellername")%></td>
+							<td><%=us.getString("username")%></td>
 							<td><%=us.getString("email")%></td>
 							<td><%=us.getString("phone_number")%></td>
 							<td><a class="btn" href="#!"><img alt="Remove User"
