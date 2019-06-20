@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
 <%@page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -21,8 +20,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top"
 		style="top: 0;">
-		<a href="http://localhost:8080/Internship-Infy/"> <img
-			src="http://localhost:8080/Internship-Infy/img/logo.jpg"
+		<a href="/Internship-Infy/"> <img src="../img/logo.jpg"
 			height="75px"></img>
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,8 +33,7 @@
 						Administrator!</h6>
 				</li>
 			</ul>
-			<form action="../logOutServlet" method="post" id="logOutButton"
-				hidden>
+			<form action="logOutServlet" method="post" id="logOutButton" hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -60,12 +57,11 @@
 				</h3>
 			</div>
 			<ul class="list-unstyled components">
-				<li class="btn disabled"
+				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
 					<a href="manage-users.jsp"
 					style="color: white; font-family: sans-serif;">Manage Users</a>
 				</li>
-
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="view-inventory.jsp"
@@ -73,8 +69,8 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="account-settings.jsp"
-					style="color: white; font-family: sans-serif;">Account Settings</a>
+					<a href="account-settings.jsp" style="color: white; font-family: sans-serif;">Account
+						Settings</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px; width: 11rem;">
@@ -98,81 +94,69 @@
 		<!-------------------------------------------- 
     					MAIN BODY HERE 
     				------------------------------------>
+
+
+
+
 		<div class="container">
 
+			<h1 class="text-center"
+				style="margin-top: 3rem; margin-bottom: 2rem;">Add New Account</h1>
 
 
-
-			<div class="row">
-				<div class="col text-center"
-					style="margin-top: 3rem; margin-bottom: 3rem;">
-					<h1>Manage Users</h1>
-				</div>
-			</div>
 
 
 			<form style="margin-bottom: 5rem;" action="../sql/add-to-db.jsp"
 				method="POST">
 				<div class="form-group">
-					<label>Choose account type to view</label> <select class="form-control"
-						name="InputUserType"  id="abc">
-						<option onclick="document.location.reload(true)" value="all">ALL</option>
-						<option onclick="foo()" value="ROLE_USER">User Accounts</option>
-						<option onclick="foo()" value="ROLE_SELLER">Seller Accounts</option>
-						<option onclick="foo()" value="ROLE_ADMIN">Administrator Accounts</option>
+					<label>Full Name</label> <input class="form-control"
+						name="InputName" placeholder="Jon Doe">
+				</div>
+				<div class="form-group">
+					<label>Email address</label> <input type="email"
+						class="form-control" name="InputEmail"
+						aria-describedby="emailHelp" placeholder="Enter email address">
+				</div>
+				<div class="form-group">
+					<label>Mobile Number</label> <input type="text"
+						class="form-control" name="InputMobileNumber"
+						placeholder="9876543210">
+				</div>
+				<div class="form-group">
+					<label>Choose a username</label> <input class="form-control"
+						name="InputUsername" placeholder="username"> <small
+						class="form-text text-muted">This will be used for login
+						and it must be unique.</small>
+				</div>
+				<div class="form-group">
+					<label>Password</label> <input type="password" class="form-control"
+						name="InputPassword1" placeholder="Password"><small
+						class="form-text text-muted">Choose a strong password.</small>
+				</div>
+				<div class="form-group">
+					<label>Confirm Password</label> <input type="password"
+						class="form-control" name="InputPassword2" placeholder="Password"><small
+						class="form-text text-muted">Type the same password again</small>
+				</div>
+				<div class="form-group">
+					<label>Choose Account Type</label> <select class="form-control"
+						name="InputUserType">
+						<option value="ROLE_USER">User</option>
+						<option value="ROLE_SELLER">Seller</option>
+						<option value="ROLE_ADMIN">Administrator</option>
 					</select>
 				</div>
+
+				<button type="submit" class="btn btn-primary">Confirm and
+					add new account</button>
 			</form>
 
 
-			<div class="table-responsive">
-				<table class="table table-bordered table-striped" id="TableList">
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Username</th>
-							<th scope="col">Email Address</th>
-							<th>Mobile Number</th>
-							<th>Account Role</th>
-							<th scope="col">Allowed Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<%
-							try {
-								Class.forName("com.mysql.jdbc.Driver");
-								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
-								Statement st = conn.createStatement();
-								int cnt = 0;
-								ResultSet us = st.executeQuery(
-										"SELECT * from users,user_roles where users.username=user_roles.username	ORDER BY user_roles.role;");
-								while (us.next()) {
-									cnt++;
-						%>
-						<tr>
-							<th scope="row"><%=cnt%></th>
-							<td><%=us.getString("username")%></td>
-							<td><%=us.getString("email")%></td>
-							<td><%=us.getString("phone_number")%></td>
-							<td><%=us.getString("role")%></td>
-							<td><a class="btn" href=""><img alt="Remove User"
-									src="remove.png"></a></td>
-						</tr>
-						<%
-							}
 
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						%>
 
-					</tbody>
-				</table>
-			</div>
-			<p style="margin-bottom: 5rem;">
-				<a class="btn btn-primary" href="newaccount.jsp"> Add new
-					account</a>
-			</p>
+
+
+
 
 
 		</div>
@@ -208,9 +192,24 @@
 
 
 
+
+
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script> -->
+	<!-- <script src="../js/bootstrap.min.js"></script> -->
+
+
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.min.js"></script>
-	<script src="update-table.js"></script>
 
 
 

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin | The Online Shop</title>
+<title>Admin Settings | The Online Shop</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../template/css/sidebar.css">
 
@@ -60,7 +60,7 @@
 				</h3>
 			</div>
 			<ul class="list-unstyled components">
-				<li class="btn disabled"
+				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
 					<a href="manage-users.jsp"
 					style="color: white; font-family: sans-serif;">Manage Users</a>
@@ -71,10 +71,10 @@
 					<a href="view-inventory.jsp"
 					style="color: white; font-family: sans-serif;">View Inventory</a>
 				</li>
-				<li class="btn"
+				<li class="btn disabled"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="account-settings.jsp"
-					style="color: white; font-family: sans-serif;">Account Settings</a>
+					<a href="account-settings.jsp" style="color: white; font-family: sans-serif;">Account
+						Settings</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px; width: 11rem;">
@@ -105,75 +105,10 @@
 
 			<div class="row">
 				<div class="col text-center"
-					style="margin-top: 3rem; margin-bottom: 3rem;">
-					<h1>Manage Users</h1>
+					style="margin-top: 20px; margin-bottom: 20px">
+					<h1>THIS PAGE IS UNDER CONSTRUCTION</h1>
 				</div>
 			</div>
-
-
-			<form style="margin-bottom: 5rem;" action="../sql/add-to-db.jsp"
-				method="POST">
-				<div class="form-group">
-					<label>Choose account type to view</label> <select class="form-control"
-						name="InputUserType"  id="abc">
-						<option onclick="document.location.reload(true)" value="all">ALL</option>
-						<option onclick="foo()" value="ROLE_USER">User Accounts</option>
-						<option onclick="foo()" value="ROLE_SELLER">Seller Accounts</option>
-						<option onclick="foo()" value="ROLE_ADMIN">Administrator Accounts</option>
-					</select>
-				</div>
-			</form>
-
-
-			<div class="table-responsive">
-				<table class="table table-bordered table-striped" id="TableList">
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Username</th>
-							<th scope="col">Email Address</th>
-							<th>Mobile Number</th>
-							<th>Account Role</th>
-							<th scope="col">Allowed Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<%
-							try {
-								Class.forName("com.mysql.jdbc.Driver");
-								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
-								Statement st = conn.createStatement();
-								int cnt = 0;
-								ResultSet us = st.executeQuery(
-										"SELECT * from users,user_roles where users.username=user_roles.username	ORDER BY user_roles.role;");
-								while (us.next()) {
-									cnt++;
-						%>
-						<tr>
-							<th scope="row"><%=cnt%></th>
-							<td><%=us.getString("username")%></td>
-							<td><%=us.getString("email")%></td>
-							<td><%=us.getString("phone_number")%></td>
-							<td><%=us.getString("role")%></td>
-							<td><a class="btn" href=""><img alt="Remove User"
-									src="remove.png"></a></td>
-						</tr>
-						<%
-							}
-
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						%>
-
-					</tbody>
-				</table>
-			</div>
-			<p style="margin-bottom: 5rem;">
-				<a class="btn btn-primary" href="newaccount.jsp"> Add new
-					account</a>
-			</p>
-
 
 		</div>
 
@@ -210,7 +145,6 @@
 
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.min.js"></script>
-	<script src="update-table.js"></script>
 
 
 

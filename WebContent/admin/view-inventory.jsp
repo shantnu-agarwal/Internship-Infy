@@ -65,12 +65,6 @@
 					<a href="manage-users.jsp"
 					style="color: white; font-family: sans-serif;">Manage Users</a>
 				</li>
-				<li class="btn"
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="account-management.jsp"
-					style="color: white; font-family: sans-serif;">Account
-						Management</a>
-				</li>
 				<li class="btn disabled"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
 					<a href="view-inventory.jsp"
@@ -78,13 +72,8 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="#!" style="color: white; font-family: sans-serif;">Account
+					<a href="account-settings.jsp" style="color: white; font-family: sans-serif;">Account
 						Settings</a>
-				</li>
-				<li class="btn"
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="#!" style="color: white; font-family: sans-serif;"
-					class="center-text">Other Tasks</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px; width: 11rem;">

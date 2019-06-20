@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<%@page import="java.sql.*,java.util.*"%>
+<%@page import="java.sql.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -78,14 +78,10 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="#!" style="color: white; font-family: sans-serif;">Account
+					<a href="account-settings.jsp" style="color: white; font-family: sans-serif;">Account
 						Settings</a>
 				</li>
-				<li class="btn"
-					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="#!" style="color: white; font-family: sans-serif;"
-					class="center-text">Other Tasks</a>
-				</li>
+				
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px; width: 11rem;">
 					<a href="../admindash"
@@ -125,7 +121,7 @@
 
 			<!-------------------------------------------- 
     															seller table here	 
-    																------------------------------------>
+    														------------------------------------>
 
 			<div class="table-responsive">
 				<table class="table table-bordered table-striped">
@@ -146,7 +142,7 @@
 								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
 								Statement st = conn.createStatement();
 
-								ResultSet us = st.executeQuery("SELECT * from users,user_roles where user_roles.role='ROLE_SELLER';");
+								ResultSet us = st.executeQuery("SELECT * from users,user_roles where (user_roles.role='ROLE_SELLER') and users.username = user_roles.username;");
 								while (us.next()) {
 									cnt++;
 						%>
@@ -255,7 +251,7 @@
 					</tr>
 					<tr>
 						<td class="modal-footer"><input name="submit" type="submit"
-							value="Login!" class="btn btn-primary"></td>
+							value="Add Seller!" class="btn btn-primary"></td>
 
 
 						<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
@@ -269,7 +265,7 @@
 
 			<div class="modal fade" id="sellerModal" role="dialog">
 				<div class="modal-dialog">
-					<div class="modal-content">
+					<div class	="modal-content">
 
 						<div class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Enter your
