@@ -91,7 +91,7 @@
     				------------------------------------>
 
 		<%
-			int cnt = 0;
+			int cnt = 0,cnt2=0;
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
@@ -100,6 +100,10 @@
 
 				while (us.next()) {
 					cnt++;
+				}
+				us = st.executeQuery("SELECT * from user_roles where role='ROLE_SELLER';");
+				while (us.next()) {
+					cnt2++;
 				}
 				conn.close();
 			} catch (Exception e) {
@@ -123,14 +127,14 @@
 						<i class="fa fa-code fa-2x"></i>
 						<h2 class="timer count-title count-number" data-to="<%=cnt%>"
 							data-speed="1200"></h2>
-						<p class="count-text ">Total Users</p>
+						<p class="count-text ">Total Accounts</p>
 
 					</div>
 				</div>
 				<div class="col">
 					<div class="counter">
 						<i class="fa fa-coffee fa-2x"></i>
-						<h2 class="timer count-title count-number" data-to="27"
+						<h2 class="timer count-title count-number" data-to="<%=cnt2%>"
 							data-speed="1500"></h2>
 						<p class="count-text ">Registered Sellers</p>
 					</div>

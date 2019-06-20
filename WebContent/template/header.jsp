@@ -27,7 +27,7 @@
 			data-toggle="modal" data-target="#registerModal"
 			style="margin-left: 10px">Register</button>
 
-		
+
 	</div>
 </nav>
 <!------------------------------------------------- 
@@ -91,31 +91,37 @@
 			</div>
 			<div class="modal-body">
 				<div class="container" style="margin: auto">
+				
 					<form name='f' action="sql/insert.jsp" method='POST'>
 						<table>
 							<tr>
 								<td>Name:</td>
-								<td><input type='text' name='username'
+								<td><input type='text' name='InputName'
 									placeholder="Jon Doe" autofocus></td>
 							</tr>
 							<tr>
 								<td>Email:</td>
-								<td><input type="email" name="email"
+								<td><input type="email" name="InputEmail"
 									placeholder="email@exmaple.com"></td>
 							</tr>
 							<tr>
 								<td>Mobile Number</td>
-								<td><input type='text' name='phonenumber'
+								<td><input type='text' name='InputMobileNumber'
 									placeholder="9876543210" /></td>
 							</tr>
 							<tr>
+								<td>Username:</td>
+								<td><input type='text' name='InputUsername'
+									placeholder="Jon Doe" autofocus></td>
+							</tr>
+							<tr>
 								<td>Password:</td>
-								<td><input type='password' name='password'
+								<td><input type='password' name='InputPassword1'
 									placeholder="********" /></td>
 							</tr>
 							<tr>
 								<td>Confirm Password:</td>
-								<td><input type='password' name='confirmpassword'
+								<td><input type='password' name='InputPassword2'
 									placeholder="********" /></td>
 							</tr>
 							<tr>
@@ -126,6 +132,7 @@
 							</tr>
 						</table>
 					</form>
+					<h2>You are registering as a user. To register as a seller or administrator, please contact the admin.</h2>
 				</div>
 			</div>
 
