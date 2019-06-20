@@ -2,7 +2,7 @@ select * from user_roles;
 
 select * from users;
 
---  ALTER TABLE users add status varchar(10);
+-- ALTER TABLE users add added_by varchar(10);
 
 insert into user_roles(username,role) values('admin','ROLE_ADMIN');
 
