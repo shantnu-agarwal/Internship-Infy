@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,101 +110,39 @@
 						<tr>
 							<th scope="col">Item ID</th>
 							<th scope="col">Product Name</th>
-							<th scope="col">Seller ID</th>
+							<th scope="col">Price</th>
+							<th scope="col">Category</th>
+							<th scope="col">Seller Name</th>
 							<th scope="col">Quantity</th>
 						</tr>
 					</thead>
 					<tbody>
+					<%
+							try {
+								Class.forName("com.mysql.jdbc.Driver");
+								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
+								Statement st = conn.createStatement();
+								int cnt = 0;
+								ResultSet us = st.executeQuery(
+										"SELECT * from inventory");
+								while (us.next()) {
+									cnt++;
+						%>
 						<tr>
-							<th scope="row">94121</th>
-							<td>Samsung Fridge</td>
-							<td>Seller ABC</td>
-							<td>43</td>
+							<td><%=us.getString("item_ID") %></td>
+							<td><%=us.getString("item_name") %></td>
+							<td><%=us.getString("item_price") %></td>
+							<td><%=us.getString("category") %></td>
+							<td><%=us.getString("seller_username")%></td>
+							<td><%=us.getString("item_quantity") %></td>
 						</tr>
-						<tr>
-							<th scope="row">75472</th>
-							<td>Whirlpool Fridge</td>
-							<td>Seller DEF</td>
-							<td>23</td>
-						</tr>
-						<tr>
-							<th scope="row">42343</th>
-							<td>Apple iPhone XR</td>
-							<td>Seller GHI</td>
-							<td>11</td>
-						</tr>
-						<tr>
-							<th scope="row">94121</th>
-							<td>Samsung Fridge</td>
-							<td>Seller ABC</td>
-							<td>43</td>
-						</tr>
-						<tr>
-							<th scope="row">75472</th>
-							<td>Whirlpool Fridge</td>
-							<td>Seller DEF</td>
-							<td>23</td>
-						</tr>
-						<tr>
-							<th scope="row">42343</th>
-							<td>Apple iPhone XR</td>
-							<td>Seller GHI</td>
-							<td>11</td>
-						</tr>
-						<tr>
-							<th scope="row">94121</th>
-							<td>Samsung Fridge</td>
-							<td>Seller ABC</td>
-							<td>43</td>
-						</tr>
-						<tr>
-							<th scope="row">75472</th>
-							<td>Whirlpool Fridge</td>
-							<td>Seller DEF</td>
-							<td>23</td>
-						</tr>
-						<tr>
-							<th scope="row">42343</th>
-							<td>Apple iPhone XR</td>
-							<td>Seller GHI</td>
-							<td>11</td>
-						</tr>
-						<tr>
-							<th scope="row">94121</th>
-							<td>Samsung Fridge</td>
-							<td>Seller ABC</td>
-							<td>43</td>
-						</tr>
-						<tr>
-							<th scope="row">75472</th>
-							<td>Whirlpool Fridge</td>
-							<td>Seller DEF</td>
-							<td>23</td>
-						</tr>
-						<tr>
-							<th scope="row">42343</th>
-							<td>Apple iPhone XR</td>
-							<td>Seller GHI</td>
-							<td>11</td>
-						</tr>
-						<tr>
-							<th scope="row">94121</th>
-							<td>Samsung Fridge</td>
-							<td>Seller AfweC</td>
-							<td>213</td>
-						</tr>
-						<tr>
-							<th scope="row">75472</th>
-							<td>Whirlpool Fridge</td>
-							<td>Seller gjwF</td>
-							<td>0</td>
-						</tr>
-						<tr>
-							<th scope="row">42343</th>
-							<td>Apple iPhone XR</td>
-							<td>Seller GHI</td>
-							<td>11</td>
-						</tr>
+						<%
+							}
+
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						%>
 					</tbody>
 				</table>
 			</div>
