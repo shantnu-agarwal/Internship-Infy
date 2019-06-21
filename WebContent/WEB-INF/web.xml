@@ -61,6 +61,34 @@
 		<servlet-name>admindash</servlet-name>
 		<url-pattern>/admindash</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>manageusers</servlet-name>
+		<jsp-file>/admin/manage-users.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>manageusers</servlet-name>
+		<url-pattern>/admin/manageUsers</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>viewinventory</servlet-name>
+		<jsp-file>/admin/view-inventory.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewinventory</servlet-name>
+		<url-pattern>/admin/viewInventory</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>adminsettings</servlet-name>
+		<jsp-file>/admin/account-settings.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminsettings</servlet-name>
+		<url-pattern>/admin/Settings</url-pattern>
+	</servlet-mapping>
+	
+	
 
 	<servlet>
 		<servlet-name>logoutServlet</servlet-name>

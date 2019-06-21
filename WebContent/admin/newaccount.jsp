@@ -59,17 +59,17 @@
 			<ul class="list-unstyled components">
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
-					<a href="manage-users.jsp"
+					<a href="manageUsers"
 					style="color: white; font-family: sans-serif;">Manage Users</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="view-inventory.jsp"
+					<a href="viewInventory"
 					style="color: white; font-family: sans-serif;">View Inventory</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="account-settings.jsp" style="color: white; font-family: sans-serif;">Account
+					<a href="Settings" style="color: white; font-family: sans-serif;">Account
 						Settings</a>
 				</li>
 				<li class="btn"

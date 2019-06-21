@@ -62,19 +62,19 @@
 			<ul class="list-unstyled components">
 				<li class="btn disabled"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
-					<a href="manage-users.jsp"
+					<a href="manageUsers"
 					style="color: white; font-family: sans-serif;">Manage Users</a>
 				</li>
 
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="view-inventory.jsp"
+					<a href="viewInventory"
 					style="color: white; font-family: sans-serif;">View Inventory</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="account-settings.jsp"
-					style="color: white; font-family: sans-serif;">Account Settings</a>
+					<a href="Settings" style="color: white; font-family: sans-serif;">Account
+						Settings</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px; width: 11rem;">
@@ -114,12 +114,14 @@
 			<form style="margin-bottom: 5rem;" action="../sql/add-to-db.jsp"
 				method="POST">
 				<div class="form-group">
-					<label>Choose account type to view</label> <select class="form-control"
-						name="InputUserType"  id="abc">
+					<label>Choose account type to view</label> <select
+						class="form-control" name="InputUserType" id="abc">
 						<option onclick="document.location.reload(true)" value="all">ALL</option>
 						<option onclick="foo()" value="ROLE_USER">User Accounts</option>
-						<option onclick="foo()" value="ROLE_SELLER">Seller Accounts</option>
-						<option onclick="foo()" value="ROLE_ADMIN">Administrator Accounts</option>
+						<option onclick="foo()" value="ROLE_SELLER">Seller
+							Accounts</option>
+						<option onclick="foo()" value="ROLE_ADMIN">Administrator
+							Accounts</option>
 					</select>
 				</div>
 			</form>
@@ -205,14 +207,9 @@
 				-------------------------------------------------->
 
 
-
-
-
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.min.js"></script>
 	<script src="update-table.js"></script>
-
-
 
 
 	<script>
