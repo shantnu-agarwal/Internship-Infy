@@ -8,10 +8,11 @@
 	http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
 
-
 	<http use-expressions="true">
 		<access-denied-handler error-page="/403.jsp" />
 		<intercept-url pattern="/admindash*"
+			access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/*"
 			access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/logOutServlet*"
 			access="hasRole('ROLE_ADMIN')" />
