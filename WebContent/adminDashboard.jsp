@@ -52,8 +52,8 @@
 	<div class="wrapper">
 		<nav id="sidebar" style="background-color: #FFD54F;">
 			<div class="sidebar-header">
-				<h3
-					style="color: #6a5acd; margin-left: 30px; margin-bottom: 20px; margin-top: 30px;">
+				<h3 class="text-center"
+					style="color: #6a5acd; margin-bottom: 20px; margin-top: 30px;">
 					<strong>Admin Controls</strong>
 				</h3>
 			</div>
@@ -70,8 +70,8 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="admin/Settings" style="color: white; font-family: sans-serif;">Account
-						Settings</a>
+					<a href="admin/Settings"
+					style="color: white; font-family: sans-serif;">Account Settings</a>
 				</li>
 			</ul>
 		</nav>
@@ -91,7 +91,7 @@
     				------------------------------------>
 
 		<%
-			int cnt = 0,cnt2=0;
+			int cnt = 0, cnt2 = 0;
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
@@ -166,15 +166,7 @@
 										FOOTER HERE
 				-------------------------------------------------->
 
-	<footer class="page-footer font-small blue -bottom fixed-bottom"
-		id="myFooter" style="background-color: lightcyan">
-
-		<div class="footer-copyright text-center py-3"
-			style="background-color: lightblue">
-			© <a href="/Internship-Infy/"> The Online Shop</a>
-		</div>
-	</footer>
-
+	<%@ include file="/template/footer.jsp"%>
 	<!--------------------------------------------------- 
 											SCRIPTS HERE
 				-------------------------------------------------->

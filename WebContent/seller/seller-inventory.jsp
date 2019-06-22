@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Seller Home | The Online Shop</title>
-<link rel="stylesheet" href="../template/css/sidebar.css">
+<title>My Inventory| The Online Shop</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../template/css/sidebar.css">
 
 </head>
 <body>
@@ -65,6 +65,11 @@
 					<a href="#!" style="color: white; font-family: sans-serif;">Change
 						My Details</a>
 				</li>
+				<li class="btn"
+					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
+					<a href="home.jsp" style="color: white; font-family: sans-serif;"><strong>Back
+							to Dashboard</strong></a>
+				</li>
 			</ul>
 		</nav>
 
@@ -73,25 +78,18 @@
 		<!--------------------------------------------------------------------------------------------------------------
 																			MAIN PAGE CONTENT 
 			------------------------------------------------------------------------------------------------------------->
-
-		<div id="content"></div>
-		<div class="container" style="margin-top: 2rem;">
-			<div class="jumbotron" style="box-shadow: 1px 2px 0px">
-				<h1 class="display-4">Welcome back!</h1>
-				<p class="lead">This is your dashboard. On the left, you have
-					the menu and below, you can see some metrics about your listings on
-					our platform!</p>
-				<hr class="my-4">
-				<p>It uses utility classes for typography and spacing to space
-					content out within the larger container.</p>
-				<a class="btn btn-primary btn-lg" href="#" role="button">Learn
-					more</a>
-			</div>
+		<div id="content" style="margin-top: 2rem;"></div>
+		<div class="container">
+			LMAO
+			
 		</div>
 
 
 
 	</div>
+
+
+
 
 
 
@@ -110,5 +108,7 @@
 
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
+
+
 </body>
 </html>

@@ -24,7 +24,7 @@ public class LogOutServlet extends HttpServlet {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		
 		response.sendRedirect("http://localhost:8080/Internship-Infy/");
-		System.out.println("Log out complete");
+		System.out.println("LogOutServlet: Log out complete");
 	}
 
 }
