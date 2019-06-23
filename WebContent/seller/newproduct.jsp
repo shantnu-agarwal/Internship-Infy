@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Inventory| The Online Shop</title>
+<title>Add New Product | The Online Shop</title>
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../template/css/sidebar.css">
 
@@ -81,58 +81,60 @@
 			------------------------------------------------------------------------------------------------------------->
 		<div id="content" style="margin-top: 2rem;"></div>
 		<div class="container">
-			<div class="row">
-				<div class="col text-center"
-					style="margin-top: 3rem; margin-bottom: 3rem;">
-					<h1>My Inventory</h1>
+			<h1 class="text-center"
+				style="margin-top: 3rem; margin-bottom: 2rem;">Add New Product</h1>
+
+
+
+
+			<form style="margin-bottom: 5rem;"
+				action="PROVIDE AN ACTION HERE FOR FORM SUBMISSION" method="POST">
+				<div class="form-group">
+					<label>Full Product Name</label> <input class="form-control"
+						name="InputName" placeholder="Samsung Fridge" />
 				</div>
-			</div>
-			<div class="table-responsive">
-				<table class="table table-bordered table-striped" id="TableList">
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Item ID</th>
-							<th scope="col">Product Name</th>
-							<th>Price</th>
-							<th>Quantity</th>
-							<th scope="col">Category</th>
-						</tr>
-					</thead>
-					<tbody>
-						<%
-							try {
-								Class.forName("com.mysql.jdbc.Driver");
-								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
-								Statement st = conn.createStatement();
-								int cnt = 0;
-								ResultSet us = st.executeQuery("SELECT * from inventory");
-								while (us.next()) {
-									cnt++;
-						%>
-						<tr>
-							<th scope="row"><%=cnt%></th>
-							<td><%=us.getString("item_ID")%></td>
-							<td><%=us.getString("item_name")%></td>
-							<td><%=us.getString("item_price")%></td>
-							<td><%=us.getString("item_quantity")%></td>
-							<td><%=us.getString("category")%></td>
-						</tr>
-						<%
-							}
+				<div class="form-group">
+					<label>Product Category</label> <select class="form-control"
+						name="InputCategory">
+						<option value="Electronics">Electronics</option>
+						<option value="Furniture">Furniture</option>
+						<option value="Books">Books</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Price for one item</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text">Rs.</div>
+						</div>
+						<input class="form-control" type="number" name="InputPrice"
+							placeholder="Rs. 23,999">
+						<div class="input-group-append">
+							<span class="input-group-text">/item</span>
+						</div>
+					</div>
 
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						%>
+				</div>
+				<div class="form-group">
+					<label>Add a detailed description of the product</label> <input
+						class="form-control" type="text" name="InputInfo"
+						placeholder="List some features, uses and other product information">
+				</div>
+				<div class="form-group">
+					<label>Total Quantity</label> <input class="form-control"
+						name="InputQuantity" placeholder="Eg. 500"> <small
+						class="form-text text-muted">This is the total stock of
+						the product that you have.</small>
+				</div>
+				<div class="form-group">
+					<label>Product Image</label> <input type="file" name="InputImage"
+						class="form-control" accept="image/*"><small
+						class="form-text text-muted">Try to upload a clear image</small>
+				</div>
 
-					</tbody>
-				</table>
-			</div>
-			<p style="margin-bottom: 5rem;">
-				<a class="btn btn-primary" href="newproduct.jsp">Add New Product
-					to Inventory</a>
-			</p>
+				<button type="submit" class="btn btn-primary">Confirm and
+					add product listing.</button>
+			</form>
 
 		</div>
 
