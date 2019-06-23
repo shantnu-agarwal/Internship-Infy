@@ -122,7 +122,7 @@
 				</div>
 				<div class="form-group">
 					<label>Total Quantity</label> <input class="form-control"
-						name="InputQuantity" placeholder="Eg. 500"> <small
+						name="InputQuantity" type="number" placeholder="Eg. 500"> <small
 						class="form-text text-muted">This is the total stock of
 						the product that you have.</small>
 				</div>
