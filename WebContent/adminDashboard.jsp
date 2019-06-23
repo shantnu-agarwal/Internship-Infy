@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*,java.util.*"%>
+<%@page
+	import="java.sql.*,java.util.*"%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -30,8 +32,8 @@
 					href="/Internship-Infy/">The Online Shop</a></li>
 				<li class="nav-item">
 					<h6 class="nav-link"
-						style="font-style: italic; color: red; padding-top: 10px">Welcome
-						Administrator!</h6>
+						style="font-style: italic; color: red; padding-top: 10px">
+						Welcome Administrator!</h6>
 				</li>
 			</ul>
 			<form action="logOutServlet" method="post" id="logOutButton" hidden>
@@ -91,7 +93,7 @@
     				------------------------------------>
 
 		<%
-			int cnt = 0, cnt2 = 0;
+			int cnt = 0, cnt2 = 0, cnt3 = 0;
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
@@ -104,6 +106,10 @@
 				us = st.executeQuery("SELECT * from user_roles where role='ROLE_SELLER';");
 				while (us.next()) {
 					cnt2++;
+				}
+				us = st.executeQuery("SELECT item_quantity from inventory");
+				while (us.next()) {
+					cnt3 += us.getInt("item_quantity");
 				}
 				conn.close();
 			} catch (Exception e) {
@@ -142,14 +148,12 @@
 				<div class="col">
 					<div class="counter">
 						<i class="fa fa-lightbulb-o fa-2x"></i>
-						<h2 class="timer count-title count-number" data-to="999"
+						<h2 class="timer count-title count-number" data-to="<%=cnt3%>"
 							data-speed="1500"></h2>
 						<p class="count-text ">Inventory Size</p>
 					</div>
 				</div>
 			</div>
-			lol <br> more coming soon
-
 		</div>
 
 
