@@ -27,7 +27,8 @@
 		</c:if>
 		<c:if test="${not empty pageContext.request.userPrincipal.name }">
 			<form hidden action="logOutServlet" method="POST" id="logOutButton"></form>
-			<h5 class="right" style="margin-right:1rem">Logged in as: ${pageContext.request.userPrincipal.name }</h5>
+			<h5 class="right" style="margin-right: 1rem">Logged in as:
+				${pageContext.request.userPrincipal.name }</h5>
 			<button type="button" class="btn btn-primary"
 				onclick="javascript:document.getElementById('logOutButton').submit();">
 				Logout</button>
@@ -96,48 +97,44 @@
 			<div class="modal-body">
 				<div class="container" style="margin: auto">
 
-					<form name='f' action="InsertIntoDBFromSelf" method='POST'>
-						<table>
-							<tr>
-								<td>Name:</td>
-								<td><input type='text' name='InputName'
-									placeholder="Jon Doe" autofocus></td>
-							</tr>
-							<tr>
-								<td>Email:</td>
-								<td><input type="email" name="InputEmail"
-									placeholder="email@exmaple.com"></td>
-							</tr>
-							<tr>
-								<td>Mobile Number</td>
-								<td><input type='text' name='InputMobileNumber'
-									placeholder="9876543210" /></td>
-							</tr>
-							<tr>
-								<td>Username:</td>
-								<td><input type='text' name='InputUsername'
-									placeholder="Jon Doe" autofocus></td>
-							</tr>
-							<tr>
-								<td>Password:</td>
-								<td><input type='password' name='InputPassword1'
-									placeholder="********" /></td>
-							</tr>
-							<tr>
-								<td>Confirm Password:</td>
-								<td><input type='password' name='InputPassword2'
-									placeholder="********" /></td>
-							</tr>
-							<tr>
-								<td class="modal-footer"><input name="submit" type="submit"
-									value="Register!" class="btn btn-primary"></td>
+					<form name='f' action="InsertIntoDBFromSelf" method='POST' class="needs-validation" novalidate="">
+						<div class="form-group">
+							<label for="validationName">Name:</label><input type="text" name="InputName"
+								placeholder="Jon Doe" class="form-control" id="validationName">
+						</div>
+						<div class="form-group">
+							<label for="validationEmail">Email:</label><input type="email" name="InputEmail"
+								placeholder="email@exmaple.com" class="form-control" id="validationEmail">
+						</div>
+						<div class="form-group">
+							<label for="validationMobileNumber">Mobile Number</label> <input type='text'
+								name='InputMobileNumber' placeholder="9876543210"
+								class="form-control" id="validationMobileNumber"/>
+						</div>
+						<div class="form-group">
+							<label for="validationUsername">Username</label> <input type='text' name='InputUsername'
+								placeholder="username" class="form-control" id="validationUsername">
+						</div>
+						<div class="form-group">
+							<label for="validationPassword">Password</label> <input type='password'
+								name='InputPassword1' placeholder="********"
+								class="form-control" id="validationPassword"/>
+						</div>
+						<div class="form-group">
+							<label for="validationConfirmPassword">Confirm Password</label> <input type='password'
+								name='InputPassword2' placeholder="********"
+								class="form-control" id="validationConfirmPassword"/>
+						</div>
 
-
-							</tr>
-						</table>
+						<div class="modal-footer" hidden>
+							<input name="submit" type="submit" id="register">
+						</div>
 					</form>
-					<h2>You are registering as a user. To register as a seller or
-						administrator, please contact the admin.</h2>
+					<button type="button" class="btn btn-primary right"
+						onclick="javascript:document.getElementById('register').submit();">
+						Register</button>
+					<h6>You are registering as a user. To register as a seller or
+						administrator, please contact the admin.</h6>
 				</div>
 			</div>
 

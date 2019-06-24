@@ -43,7 +43,7 @@ public class SuccessHandler implements AuthenticationSuccessHandler{
       for (GrantedAuthority grantedAuthority : authorities) {
           if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
         	  	System.out.println("Success Handler: User Login Detected.");
-              	return "http://localhost:8080/Internship-Infy/welcome?login=true&type=user";
+              	return "/";
           } else if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
         	  	System.out.println("Success Handler: Admin Login Detected.");
               	return "http://localhost:8080/Internship-Infy/admindash";
