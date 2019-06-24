@@ -67,6 +67,9 @@
 	
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-validate.js"></script>
+		<script src="template/validate.js"></script>
+		
 		
 		
 	</body>

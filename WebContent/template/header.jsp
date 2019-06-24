@@ -98,42 +98,39 @@
 				<div class="container" style="margin: auto">
 
 					<form name='f' action="InsertIntoDBFromSelf" method="POST"
-						id="register" class="needs-validation">
+						id="register">
 						<div class="form-group">
-							<label for="validationName">Name:</label><input type="text"
-								name="InputName" placeholder="Jon Doe" class="form-control"
-								id="validationName" required>
+							<label>Name:</label><input type="text" name="InputName"
+								placeholder="Jon Doe" class="form-control" id="validationName"
+								required>
 						</div>
 						<div class="form-group">
-							<label for="validationEmail">Email:</label><input type="email"
-								name="InputEmail" placeholder="email@exmaple.com"
-								class="form-control" id="validationEmail" required>
+							<label>Email:</label><input type="email" name="InputEmail"
+								placeholder="email@exmaple.com" class="form-control"
+								id="validationEmail" required>
 						</div>
 						<div class="form-group">
-							<label for="validationMobileNumber">Mobile Number</label> <input
-								type='text' name='InputMobileNumber' placeholder="9876543210"
-								class="form-control" id="validationMobileNumber" required/>
+							<label>Mobile Number</label> <input type='text'
+								name='InputMobileNumber' placeholder="9876543210"
+								class="form-control" id="validationMobileNumber" required />
 						</div>
 						<div class="form-group">
-							<label for="validationUsername">Username</label> <input
-								type='text' name='InputUsername' placeholder="username"
-								class="form-control" id="validationUsername" required>
+							<label>Username</label> <input type='text' name='InputUsername'
+								placeholder="username" class="form-control"
+								id="validationUsername" required>
 						</div>
 						<div class="form-group">
-							<label for="validationPassword">Password</label> <input
-								type='password' name='InputPassword1' placeholder="********"
-								class="form-control" id="validationPassword" required/>
+							<label>Password</label> <input type='password'
+								name='InputPassword1' placeholder="********"
+								class="form-control" id="validationPassword" required />
 						</div>
 						<div class="form-group">
-							<label for="validationConfirmPassword">Confirm Password</label> <input
-								type='password' name='InputPassword2' placeholder="********"
-								class="form-control" id="validationConfirmPassword" required/>
+							<label>Confirm Password</label> <input type='password'
+								name='InputPassword2' placeholder="********"
+								class="form-control" id="validationConfirmPassword" required />
 						</div>
-
 						<button name="submit" type="submit" class="btn btn-primary">Register</button>
-
 					</form>
-
 				</div>
 			</div>
 
@@ -141,13 +138,3 @@
 	</div>
 </div>
 
-
-<!-------------------------
- 							SCRIPTS HERE ------------------>
-
-
-<script>
-	$('.modal-body').on('shown.bs.modal', function() {
-		$(this).find('[autofocus]').focus();
-	});
-</script>
