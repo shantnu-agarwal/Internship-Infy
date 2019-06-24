@@ -97,44 +97,43 @@
 			<div class="modal-body">
 				<div class="container" style="margin: auto">
 
-					<form name='f' action="InsertIntoDBFromSelf" method='POST' class="needs-validation" novalidate="">
+					<form name='f' action="InsertIntoDBFromSelf" method="POST"
+						id="register" class="needs-validation">
 						<div class="form-group">
-							<label for="validationName">Name:</label><input type="text" name="InputName"
-								placeholder="Jon Doe" class="form-control" id="validationName">
+							<label for="validationName">Name:</label><input type="text"
+								name="InputName" placeholder="Jon Doe" class="form-control"
+								id="validationName" required>
 						</div>
 						<div class="form-group">
-							<label for="validationEmail">Email:</label><input type="email" name="InputEmail"
-								placeholder="email@exmaple.com" class="form-control" id="validationEmail">
+							<label for="validationEmail">Email:</label><input type="email"
+								name="InputEmail" placeholder="email@exmaple.com"
+								class="form-control" id="validationEmail" required>
 						</div>
 						<div class="form-group">
-							<label for="validationMobileNumber">Mobile Number</label> <input type='text'
-								name='InputMobileNumber' placeholder="9876543210"
-								class="form-control" id="validationMobileNumber"/>
+							<label for="validationMobileNumber">Mobile Number</label> <input
+								type='text' name='InputMobileNumber' placeholder="9876543210"
+								class="form-control" id="validationMobileNumber" required/>
 						</div>
 						<div class="form-group">
-							<label for="validationUsername">Username</label> <input type='text' name='InputUsername'
-								placeholder="username" class="form-control" id="validationUsername">
+							<label for="validationUsername">Username</label> <input
+								type='text' name='InputUsername' placeholder="username"
+								class="form-control" id="validationUsername" required>
 						</div>
 						<div class="form-group">
-							<label for="validationPassword">Password</label> <input type='password'
-								name='InputPassword1' placeholder="********"
-								class="form-control" id="validationPassword"/>
+							<label for="validationPassword">Password</label> <input
+								type='password' name='InputPassword1' placeholder="********"
+								class="form-control" id="validationPassword" required/>
 						</div>
 						<div class="form-group">
-							<label for="validationConfirmPassword">Confirm Password</label> <input type='password'
-								name='InputPassword2' placeholder="********"
-								class="form-control" id="validationConfirmPassword"/>
+							<label for="validationConfirmPassword">Confirm Password</label> <input
+								type='password' name='InputPassword2' placeholder="********"
+								class="form-control" id="validationConfirmPassword" required/>
 						</div>
 
-						<div class="modal-footer" hidden>
-							<input name="submit" type="submit" id="register">
-						</div>
+						<button name="submit" type="submit" class="btn btn-primary">Register</button>
+
 					</form>
-					<button type="button" class="btn btn-primary right"
-						onclick="javascript:document.getElementById('register').submit();">
-						Register</button>
-					<h6>You are registering as a user. To register as a seller or
-						administrator, please contact the admin.</h6>
+
 				</div>
 			</div>
 
