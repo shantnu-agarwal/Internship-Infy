@@ -24,18 +24,19 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top"
 		style="top: 0;">
-		<a href="/Internship-Infy/"> <img src="img/logo.jpg" height="75px"></img>
+		<a href="/Internship-Infy/admindash"> <img src="img/logo.jpg" height="75px"></img>
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
-					href="/Internship-Infy/">The Online Shop</a></li>
+					href="/Internship-Infy/admindash">The Online Shop</a></li>
 				<li class="nav-item">
 					<h6 class="nav-link"
 						style="font-style: italic; color: red; padding-top: 10px">
-						Welcome Administrator!</h6>
+						Welcome ${pageContext.request.userPrincipal.name }</h6>
 				</li>
 			</ul>
+			<h5 class="right" style="margin-right:1rem">Logged in as: ${pageContext.request.userPrincipal.name }</h5>
 			<form action="logOutServlet" method="post" id="logOutButton" hidden>
 				<button type="submit" value="Logout"></button>
 			</form>

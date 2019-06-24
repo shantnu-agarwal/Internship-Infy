@@ -31,7 +31,7 @@
 	</filter-mapping>
 
 
-
+	<!-- REGULAR SERVLETS -->
 	<servlet>
 		<servlet-name>login</servlet-name>
 		<jsp-file>/login.jsp</jsp-file>
@@ -61,7 +61,7 @@
 		<servlet-name>admindash</servlet-name>
 		<url-pattern>/admindash</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>manageusers</servlet-name>
 		<jsp-file>/admin/manage-users.jsp</jsp-file>
@@ -70,7 +70,7 @@
 		<servlet-name>manageusers</servlet-name>
 		<url-pattern>/admin/manageUsers</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>viewinventory</servlet-name>
 		<jsp-file>/admin/view-inventory.jsp</jsp-file>
@@ -87,8 +87,8 @@
 		<servlet-name>adminsettings</servlet-name>
 		<url-pattern>/admin/Settings</url-pattern>
 	</servlet-mapping>
-	
-	
+
+	<!-- CLASS SERVLETS -->
 
 	<servlet>
 		<servlet-name>logoutServlet</servlet-name>
@@ -98,7 +98,7 @@
 		<servlet-name>logoutServlet</servlet-name>
 		<url-pattern>/logOutServlet</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>newAccountServlet</servlet-name>
 		<servlet-class>com.TheOnlineShop.InsertIntoDBFromAdmin</servlet-class>

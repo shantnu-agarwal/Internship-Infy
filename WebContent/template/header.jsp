@@ -1,4 +1,6 @@
 <%@page import="org.w3c.dom.html.HTMLDocument"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
 	style="top: 0;">
 	<a href="http://localhost:8080/Internship-Infy/"> <img
@@ -15,18 +17,24 @@
 		<!---------------------------------- LOGIN HERE
 											----------------------------------------->
 
+		<c:if test="${empty pageContext.request.userPrincipal.name }">
 
-		<button type="button" class="btn btn-primary" data-toggle="modal"
-			data-target="#loginModal">Login</button>
-
+			<button type="button" class="btn btn-primary" data-toggle="modal"
+				data-target="#loginModal">Login</button>
+			<button class="btn btn-outline-success my-2 my-sm-0"
+				data-toggle="modal" data-target="#registerModal"
+				style="margin-left: 10px">Register</button>
+		</c:if>
+		<c:if test="${not empty pageContext.request.userPrincipal.name }">
+			<form hidden action="logOutServlet" method="POST" id="logOutButton"></form>
+			<h5 class="right" style="margin-right:1rem">Logged in as: ${pageContext.request.userPrincipal.name }</h5>
+			<button type="button" class="btn btn-primary"
+				onclick="javascript:document.getElementById('logOutButton').submit();">
+				Logout</button>
+		</c:if>
 
 		<!--------------------------- REGISTER HERE 
 									---------------------------------->
-
-		<button class="btn btn-outline-success my-2 my-sm-0"
-			data-toggle="modal" data-target="#registerModal"
-			style="margin-left: 10px">Register</button>
-
 
 	</div>
 </nav>
@@ -47,27 +55,23 @@
 			</div>
 			<div class="modal-body">
 
+				<form name="f" action="login" method="POST">
+					<div class="form-group">
+						<label>Username</label> <input class="form-control"
+							name="username" placeholder="Jon Doe">
+					</div>
+					<div class="form-group">
+						<label>Email address</label> <input type="password"
+							class="form-control" name="password" placeholder="********">
+					</div>
+					<div>
+						<div class="modal-footer">
+							<input name="submit" type="submit" value="Login!"
+								class="btn btn-primary">
+						</div>
 
-				<form name='f' action="login" method='POST'>
-					<table>
-						<tr>
-							<td>Email:</td>
-							<td><input type='text' name='username'
-								placeholder="email@example.com" autofocus></td>
-						</tr>
-						<tr>
-							<td>Password:</td>
-							<td><input type='password' name='password'
-								placeholder="********" /></td>
-						</tr>
-						<tr>
-							<td class="modal-footer"><input name="submit" type="submit"
-								value="Login!" class="btn btn-primary"></td>
-
-
-							<!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
-						</tr>
-					</table>
+					</div>
+					<!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
 				</form>
 
 			</div>
@@ -91,8 +95,8 @@
 			</div>
 			<div class="modal-body">
 				<div class="container" style="margin: auto">
-				
-					<form name='f' action="sql/insert.jsp" method='POST'>
+
+					<form name='f' action="InsertIntoDBFromSelf" method='POST'>
 						<table>
 							<tr>
 								<td>Name:</td>
@@ -132,7 +136,8 @@
 							</tr>
 						</table>
 					</form>
-					<h2>You are registering as a user. To register as a seller or administrator, please contact the admin.</h2>
+					<h2>You are registering as a user. To register as a seller or
+						administrator, please contact the admin.</h2>
 				</div>
 			</div>
 

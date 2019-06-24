@@ -21,22 +21,23 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top"
 		style="top: 0;">
-		<a href="http://localhost:8080/Internship-Infy/"> <img
+		<a href="/Internship-Infy/admindash"> <img
 			src="http://localhost:8080/Internship-Infy/img/logo.jpg"
-			height="75px"></img>
+			height="75px">
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
-					href="/Internship-Infy/">The Online Shop</a></li>
+					href="/Internship-Infy/admindash">The Online Shop</a></li>
 				<li class="nav-item">
 					<h6 class="nav-link"
-						style="font-style: italic; color: red; padding-top: 10px">Welcome
-						Administrator!</h6>
+						style="font-style: italic; color: red; padding-top: 10px">
+						Welcome ${pageContext.request.userPrincipal.name }</h6>
 				</li>
 			</ul>
-			<form action="../logOutServlet" method="post" id="logOutButton"
-				hidden>
+			<h5 class="right" style="margin-right: 1rem">Logged in as:
+				${pageContext.request.userPrincipal.name }</h5>
+			<form action="../logOutServlet" method="post" id="logOutButton" hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -51,7 +52,7 @@
 
 
 
-	<div class="wrapper" style="margin-bottom:90px">
+	<div class="wrapper" style="margin-bottom: 90px">
 		<nav id="sidebar" style="background-color: #FFD54F;">
 			<div class="sidebar-header">
 				<h3
@@ -78,10 +79,10 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="account-settings.jsp" style="color: white; font-family: sans-serif;">Account
-						Settings</a>
+					<a href="account-settings.jsp"
+					style="color: white; font-family: sans-serif;">Account Settings</a>
 				</li>
-				
+
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px; width: 11rem;">
 					<a href="../admindash"
@@ -142,7 +143,8 @@
 								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
 								Statement st = conn.createStatement();
 
-								ResultSet us = st.executeQuery("SELECT * from users,user_roles where (user_roles.role='ROLE_SELLER') and users.username = user_roles.username;");
+								ResultSet us = st.executeQuery(
+										"SELECT * from users,user_roles where (user_roles.role='ROLE_SELLER') and users.username = user_roles.username;");
 								while (us.next()) {
 									cnt++;
 						%>
@@ -231,8 +233,8 @@
 					</tr>
 					<tr>
 						<td>Login Username</td>
-						<td><input type='text' name='username'
-							placeholder="Jon Doe" autofocus></td>
+						<td><input type='text' name='username' placeholder="Jon Doe"
+							autofocus></td>
 					</tr>
 					<tr>
 						<td>Mobile Number</td>
@@ -265,7 +267,7 @@
 
 			<div class="modal fade" id="sellerModal" role="dialog">
 				<div class="modal-dialog">
-					<div class	="modal-content">
+					<div class="modal-content">
 
 						<div class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Enter your
@@ -327,7 +329,7 @@
 				-------------------------------------------------->
 
 	<footer class="page-footer font-small blue -bottom fixed-bottom"
-		id="myFooter" style="background-color: lightcyan" >
+		id="myFooter" style="background-color: lightcyan">
 
 		<div class="footer-copyright text-center py-3"
 			style="background-color: lightblue">
