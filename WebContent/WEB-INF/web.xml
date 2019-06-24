@@ -98,6 +98,15 @@
 		<servlet-name>logoutServlet</servlet-name>
 		<url-pattern>/logOutServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>newAccountServlet</servlet-name>
+		<servlet-class>com.TheOnlineShop.InsertIntoDBFromAdmin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>newAccountServlet</servlet-name>
+		<url-pattern>/admin/NewAccountFromAdmin</url-pattern>
+	</servlet-mapping>
 
 
 

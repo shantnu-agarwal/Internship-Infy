@@ -106,7 +106,7 @@
 
 
 
-			<form style="margin-bottom: 5rem;" action="../sql/add-to-db.jsp"
+			<form style="margin-bottom: 5rem;" action="NewAccountFromAdmin"
 				method="POST">
 				<div class="form-group">
 					<label>Full Name</label> <input class="form-control"
