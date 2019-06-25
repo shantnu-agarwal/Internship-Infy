@@ -10,10 +10,15 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServlet;
 
-@WebServlet("/addProductIntoDB")
-public class addProductIntoDB {
+public class addProductIntoDB extends HttpServlet{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2L;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("InputName");
@@ -32,11 +37,11 @@ public class addProductIntoDB {
 			Statement st = conn.createStatement();
 
 			int a = st.executeUpdate(
-					"insert into users(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username) values('"
-							+ name + "','" + email + "','" + mobilenumber + "','" + username + "','" + password + "','"
-							+ timestamp + "', '" + by + "')");
+					"insert into inventory(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username) values('"
+							+ name + "','" + price + "','" + quantity + "','" + info + "','" + category + "','"
+							+ timestamp + "','" + timestamp + "','" + seller+ "')");
 
-			System.out.println("New User Added (self): " + username);
+			System.out.println("New Product added by " + seller + ". Product quantity: " + quantity);
 
 			String text = "OK";
 

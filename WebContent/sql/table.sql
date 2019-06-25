@@ -31,6 +31,7 @@ CREATE TABLE user_roles (
   UNIQUE KEY uni_username_role (role,username),
   KEY fk_username_idx (username));
   
+  
   create table inventory(
 	item_name VARCHAR(20) NOT NULL,
     item_price INT,
@@ -41,7 +42,8 @@ CREATE TABLE user_roles (
     category varchar(30),
     time_added DATETIME,
     seller_username VARCHAR(25),
-    PRIMARY KEY (item_id)
+    PRIMARY KEY (item_id),
+    UNIQUE KEY(item_name)
     
     
 );

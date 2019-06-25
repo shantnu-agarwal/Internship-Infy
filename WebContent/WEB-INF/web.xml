@@ -115,6 +115,16 @@
 		<servlet-name>newAccountServlet</servlet-name>
 		<url-pattern>/admin/NewAccountFromAdmin</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>submitNewProduct</servlet-name>
+		<servlet-class>com.TheOnlineShop.addProductIntoDB</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>submitNewProduct</servlet-name>
+		<url-pattern>/seller/addProductIntoDB</url-pattern>
+	</servlet-mapping>
+	
 
 
 

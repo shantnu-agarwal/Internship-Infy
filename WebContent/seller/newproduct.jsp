@@ -95,9 +95,10 @@
 			<h1 class="text-center"
 				style="margin-top: 3rem; margin-bottom: 2rem;">Add New Product</h1>
 
-
-			<form style="margin-bottom: 5rem;"
-				action="PROVIDE AN ACTION HERE FOR FORM SUBMISSION" method="POST">
+			<h5 id="response"
+				style="color: red; margin-bottom: 2rem; visibility: hidden"></h5>
+			<form style="margin-bottom: 5rem;" id="productForm"
+				action="addProductIntoDB" method="get">
 				<div class="form-group">
 					<label>Full Product Name</label> <input class="form-control"
 						name="InputName" placeholder="Samsung Fridge" id="validationName"
@@ -144,11 +145,13 @@
 						class="form-control" accept="image/*"><small
 						class="form-text text-muted">Try to upload a clear image</small>
 				</div>
-				<input name="seller_username" hidden value="${pageContext.request.userPrincipal.name}">
+				<input name="InputSeller" hidden
+					value="${pageContext.request.userPrincipal.name}">
 
-				<button type="submit" class="btn btn-primary">Confirm and
-					add product listing.</button>
+				<button name="submit" type="submit" class="btn btn-primary">Confirm
+					and add product listing.</button>
 			</form>
+
 
 		</div>
 

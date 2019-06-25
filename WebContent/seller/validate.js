@@ -2,7 +2,6 @@ console.log("Running Validation Service");
 
 bootstrapValidate('#validationName',
 		'max:20:Name cannot be longer than 20 characters!');
-bootstrapValidate('#validationName','alphanum:Product Name has to be alpha numeric only!');
 
 
 bootstrapValidate('#validationPrice',
@@ -20,7 +19,7 @@ bootstrapValidate(
 		'#validationQuantity',
 		'max:2:You cannot have more than 99 items of the same type in stock at the same time.');
 
-var form = $('#register');
+var form = $('#productForm');
 form.submit(function() {
 
 	$.ajax({
@@ -30,11 +29,14 @@ form.submit(function() {
 		success : function (data) {
 			var result=data;
 			if(result=="OK"){
-				$('#response').text("You have been registered successfully. Please proceed to login!");
-				document.getElementById("postRegButton").style.visibility = 'visible';
+				console.log("Received SUCCESS from Server");
+				$('#response').text("Your product has been added successfully. You can continue to add more products now.");
+				document.getElementById("response").style.visibility = 'visible';
 			}
 			else{
-				$('#response').text("There was a problem with your registration, please try again");
+				console.log("Received FAILURE from Server");
+				$('#response').text("There was a problem with your request, please check your inputs and try again");
+				document.getElementById("response").style.visibility = 'visible';
 			}
 		}
 
