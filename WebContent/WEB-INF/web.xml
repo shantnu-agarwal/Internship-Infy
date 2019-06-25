@@ -87,6 +87,14 @@
 		<servlet-name>adminsettings</servlet-name>
 		<url-pattern>/admin/Settings</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>addproduct</servlet-name>
+		<jsp-file>/seller/newproduct.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addproduct</servlet-name>
+		<url-pattern>/seller/addProduct</url-pattern>
+	</servlet-mapping>
 
 	<!-- CLASS SERVLETS -->
 

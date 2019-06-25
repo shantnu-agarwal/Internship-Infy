@@ -8,28 +8,22 @@ import java.sql.Timestamp;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/InsertIntoDBFromSelf")
-public class InsertIntoDBFromSelf extends HttpServlet {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
+@WebServlet("/addProductIntoDB")
+public class addProductIntoDB {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("InputName");
-		String email = request.getParameter("InputEmail");
-		String mobilenumber = request.getParameter("InputMobileNumber");
-		String username = request.getParameter("InputUsername");
-		String password = request.getParameter("InputPassword1");
-		String role = "ROLE_USER";
+		String category = request.getParameter("InputCategory");
+		String price= request.getParameter("InputPrice");
+		String info = request.getParameter("InputInfo");
+		String quantity = request.getParameter("InputQuantity");
+		
 		String timestamp = new Timestamp(System.currentTimeMillis()).toString();
-		String by = "self";
-		System.out.println(mobilenumber);
+		String seller = request.getParameter("InputSeller");
 
 		System.out.println("Adding to MySQL DB");
 		try {
@@ -38,10 +32,10 @@ public class InsertIntoDBFromSelf extends HttpServlet {
 			Statement st = conn.createStatement();
 
 			int a = st.executeUpdate(
-					"insert into users(full_name,email,phone_number,username,password,time_created,added_by) values('"
+					"insert into users(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username) values('"
 							+ name + "','" + email + "','" + mobilenumber + "','" + username + "','" + password + "','"
 							+ timestamp + "', '" + by + "')");
-			a = st.executeUpdate("insert into user_roles(username,role)values('" + username + "', '" + role + "')");
+
 			System.out.println("New User Added (self): " + username);
 
 			String text = "OK";
@@ -63,4 +57,5 @@ public class InsertIntoDBFromSelf extends HttpServlet {
 
 		}
 	}
+
 }

@@ -130,7 +130,7 @@
 				</table>
 			</div>
 			<p style="margin-bottom: 5rem;">
-				<a class="btn btn-primary" href="newproduct.jsp">Add New Product
+				<a class="btn btn-primary" href="addProduct">Add New Product
 					to Inventory</a>
 			</p>
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -31,16 +33,25 @@
 						Seller!</h6>
 				</li>
 			</ul>
-			<form action="../logOutServlet" method="post" id="logOutButton"
-				hidden>
-				<button type="submit" value="Logout"></button>
-			</form>
-			<button type="button" class="btn btn-primary right"
-				onclick="javascript:document.getElementById('logOutButton').submit();">
-				Log Out</button>
+			<c:if test="${empty pageContext.request.userPrincipal.name }">
+
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#loginModal">Login</button>
+				<button class="btn btn-outline-success my-2 my-sm-0"
+					data-toggle="modal" data-target="#registerModal"
+					style="margin-left: 10px">Register</button>
+			</c:if>
+			<c:if test="${not empty pageContext.request.userPrincipal.name }">
+				<form hidden action="../logOutServlet" method="POST"
+					id="logOutButton"></form>
+				<h5 class="right" style="margin-right: 1rem">Logged in as:
+					${pageContext.request.userPrincipal.name }</h5>
+				<button type="button" class="btn btn-primary"
+					onclick="javascript:document.getElementById('logOutButton').submit();">
+					Logout</button>
+			</c:if>
 		</div>
 	</nav>
-
 
 
 	<!--------------------------------------------------------------------------------------------------------------
@@ -85,17 +96,17 @@
 				style="margin-top: 3rem; margin-bottom: 2rem;">Add New Product</h1>
 
 
-
-
 			<form style="margin-bottom: 5rem;"
 				action="PROVIDE AN ACTION HERE FOR FORM SUBMISSION" method="POST">
 				<div class="form-group">
 					<label>Full Product Name</label> <input class="form-control"
-						name="InputName" placeholder="Samsung Fridge" />
+						name="InputName" placeholder="Samsung Fridge" id="validationName"
+						required />
 				</div>
 				<div class="form-group">
 					<label>Product Category</label> <select class="form-control"
-						name="InputCategory">
+						name="InputCategory" required id="validationCategory">
+						<option value="" selected disabled hidden>Choose here</option>
 						<option value="Electronics">Electronics</option>
 						<option value="Furniture">Furniture</option>
 						<option value="Books">Books</option>
@@ -108,7 +119,7 @@
 							<div class="input-group-text">Rs.</div>
 						</div>
 						<input class="form-control" type="number" name="InputPrice"
-							placeholder="Rs. 23,999">
+							placeholder="23999" id="validationPrice" required>
 						<div class="input-group-append">
 							<span class="input-group-text">/item</span>
 						</div>
@@ -118,11 +129,13 @@
 				<div class="form-group">
 					<label>Add a detailed description of the product</label> <input
 						class="form-control" type="text" name="InputInfo"
-						placeholder="List some features, uses and other product information">
+						placeholder="List some features, uses and other product information"
+						id="validationDescription" required>
 				</div>
 				<div class="form-group">
 					<label>Total Quantity</label> <input class="form-control"
-						name="InputQuantity" type="number" placeholder="Eg. 500"> <small
+						name="InputQuantity" type="number" placeholder="Eg. 500"
+						id="validationQuantity" required> <small
 						class="form-text text-muted">This is the total stock of
 						the product that you have.</small>
 				</div>
@@ -131,6 +144,7 @@
 						class="form-control" accept="image/*"><small
 						class="form-text text-muted">Try to upload a clear image</small>
 				</div>
+				<input name="seller_username" hidden value="${pageContext.request.userPrincipal.name}">
 
 				<button type="submit" class="btn btn-primary">Confirm and
 					add product listing.</button>
@@ -139,12 +153,7 @@
 		</div>
 
 
-
 	</div>
-
-
-
-
 
 
 
@@ -162,6 +171,8 @@
 
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-validate.js"></script>
+	<script src="validate.js"></script>
 
 
 </body>

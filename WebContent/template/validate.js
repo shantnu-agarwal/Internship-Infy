@@ -22,11 +22,6 @@ bootstrapValidate(
 		'#validationConfirmPassword',
 		'matches:#validationPassword:Please check that your password matches in both the fields');
 
-// $(document).on("click", "#register_btn", function() {
-// $.get("InsertIntoDBFromSelf", function(responseText) {
-// $("#response").text(responseText);
-// });
-// });
 
 var form = $('#register');
 form.submit(function() {
@@ -51,22 +46,3 @@ form.submit(function() {
 
 	return false;
 });
-
-/*
- * 
- * 
- * $(document).on('submit', '#register', function() {
- * $.post('InsertIntoDBFromSelf', $('#register').serialize()); return false; });
- *  /* $("#f").submit(function(event){ event.preventDefault(); //prevent default
- * action var post_url = $(this).attr("action"); //get form action url var
- * form_data = $(this).serialize(); //Encode form elements for submission
- * 
- * $.post( post_url, form_data, function( response ) { $("#response").html(
- * response ); }); });
- * 
- * 
- * 
- * $.post('InsertIntoDBFromSelf', $('#register').serialize(), function(result) {
- * console.log(result); if(result==1) { console.log("DONE"); } else {
- * console.log("NOT DONE"); } });
- */

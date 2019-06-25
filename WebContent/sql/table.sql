@@ -11,9 +11,7 @@ insert into user_roles(username,role) values('admin','ROLE_ADMIN');
 
 SELECT * from users,user_roles where (user_roles.role='ROLE_SELLER') and users.username = user_roles.username;
 
-
 insert into user_roles(username,role) VALUes("user","ROLE_USER");
-
 
 show DATABASES;
 
@@ -21,11 +19,9 @@ update users SET enabled=1 where username= 'shan';
 
 insert into user_roles(username,role) values("shantnu","ROLE_USER");
 
-alter table users modify phone_number bigint;
+alter table inventory add time_updated DATETIME;
 
 SELECT COUNT(user_role_id) from user_roles;
-
-
 
 CREATE TABLE user_roles (
   user_role_id int(11) NOT NULL AUTO_INCREMENT,
