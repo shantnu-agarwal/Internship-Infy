@@ -21,8 +21,7 @@
 						style="color: white; font-family: sans-serif; padding-left: 1rem">Televisions</a>
 					</li>
 					<li><a href="#"
-						style="color: white; font-family: sans-serif; padding-left: 1rem">Washing
-							Machines</a></li>
+						style="color: white; font-family: sans-serif; padding-left: 1rem">Refrigerators</a></li>
 					<li><a href="#"
 						style="color: white; font-family: sans-serif; padding-left: 1rem">Air
 							Conditioners</a></li>

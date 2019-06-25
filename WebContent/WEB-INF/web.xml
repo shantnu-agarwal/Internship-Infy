@@ -95,6 +95,24 @@
 		<servlet-name>addproduct</servlet-name>
 		<url-pattern>/seller/addProduct</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>sellerhome</servlet-name>
+		<jsp-file>/seller/home.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sellerhome</servlet-name>
+		<url-pattern>/seller/home</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>sellerinventory</servlet-name>
+		<jsp-file>/seller/seller-inventory.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sellerinventory</servlet-name>
+		<url-pattern>/seller/inventory</url-pattern>
+	</servlet-mapping>
 
 	<!-- CLASS SERVLETS -->
 

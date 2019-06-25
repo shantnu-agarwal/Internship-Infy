@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,13 +31,23 @@
 						Seller!</h6>
 				</li>
 			</ul>
-			<form action="../logOutServlet" method="post" id="logOutButton"
-				hidden>
-				<button type="submit" value="Logout"></button>
-			</form>
-			<button type="button" class="btn btn-primary right"
-				onclick="javascript:document.getElementById('logOutButton').submit();">
-				Log Out</button>
+			<c:if test="${empty pageContext.request.userPrincipal.name }">
+
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#loginModal">Login</button>
+				<button class="btn btn-outline-success my-2 my-sm-0"
+					data-toggle="modal" data-target="#registerModal"
+					style="margin-left: 10px">Register</button>
+			</c:if>
+			<c:if test="${not empty pageContext.request.userPrincipal.name }">
+				<form hidden action="../logOutServlet" method="POST"
+					id="logOutButton"></form>
+				<h5 class="right" style="margin-right: 1rem">Logged in as:
+					${pageContext.request.userPrincipal.name }</h5>
+				<button type="button" class="btn btn-primary"
+					onclick="javascript:document.getElementById('logOutButton').submit();">
+					Logout</button>
+			</c:if>
 		</div>
 	</nav>
 
@@ -56,9 +67,8 @@
 			<ul class="list-unstyled components">
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
-					<a href="seller-inventory.jsp"
-					style="color: white; font-family: sans-serif;">View My
-						Inventory</a>
+					<a href="inventory" style="color: white; font-family: sans-serif;">View
+						My Inventory</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
@@ -82,8 +92,9 @@
 					the menu and below, you can see some metrics about your listings on
 					our platform!</p>
 				<hr class="my-4">
-				<p>add something here....</p>
-				<a class="btn btn-primary btn-lg" href="seller-inventory.jsp" role="button">Jump to Inventory</a>
+				<p>Let's get going!</p>
+				<a class="btn btn-primary btn-lg" href="inventory" role="button">Jump
+					to Inventory</a>
 			</div>
 		</div>
 

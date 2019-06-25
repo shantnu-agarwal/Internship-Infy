@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*"%>
+<%@page import="java.sql.*,org.springframework.security.core.*,org.springframework.security.core.context.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,13 +32,23 @@
 						Seller!</h6>
 				</li>
 			</ul>
-			<form action="../logOutServlet" method="post" id="logOutButton"
-				hidden>
-				<button type="submit" value="Logout"></button>
-			</form>
-			<button type="button" class="btn btn-primary right"
-				onclick="javascript:document.getElementById('logOutButton').submit();">
-				Log Out</button>
+			<c:if test="${empty pageContext.request.userPrincipal.name }">
+
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#loginModal">Login</button>
+				<button class="btn btn-outline-success my-2 my-sm-0"
+					data-toggle="modal" data-target="#registerModal"
+					style="margin-left: 10px">Register</button>
+			</c:if>
+			<c:if test="${not empty pageContext.request.userPrincipal.name }">
+				<form hidden action="../logOutServlet" method="POST"
+					id="logOutButton"></form>
+				<h5 class="right" style="margin-right: 1rem">Logged in as:
+					${pageContext.request.userPrincipal.name }</h5>
+				<button type="button" class="btn btn-primary"
+					onclick="javascript:document.getElementById('logOutButton').submit();">
+					Logout</button>
+			</c:if>
 		</div>
 	</nav>
 
@@ -57,9 +68,8 @@
 			<ul class="list-unstyled components">
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
-					<a href="seller-inventory.jsp"
-					style="color: white; font-family: sans-serif;">View My
-						Inventory</a>
+					<a href="inventory" style="color: white; font-family: sans-serif;">View
+						My Inventory</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
@@ -68,7 +78,7 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="home.jsp" style="color: white; font-family: sans-serif;"><strong>Back
+					<a href="home" style="color: white; font-family: sans-serif;"><strong>Back
 							to Dashboard</strong></a>
 				</li>
 			</ul>
@@ -100,13 +110,16 @@
 						</tr>
 					</thead>
 					<tbody>
+					
 						<%
 							try {
 								Class.forName("com.mysql.jdbc.Driver");
 								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
 								Statement st = conn.createStatement();
 								int cnt = 0;
-								ResultSet us = st.executeQuery("SELECT * from inventory");
+								Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+								ResultSet us = st.executeQuery("SELECT * from inventory where seller_username='" +auth.getName()+ "';");
 								while (us.next()) {
 									cnt++;
 						%>
@@ -130,8 +143,8 @@
 				</table>
 			</div>
 			<p style="margin-bottom: 5rem;">
-				<a class="btn btn-primary" href="addProduct">Add New Product
-					to Inventory</a>
+				<a class="btn btn-primary" href="addProduct">Add New Product to
+					Inventory</a>
 			</p>
 
 		</div>

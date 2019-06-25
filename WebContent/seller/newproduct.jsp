@@ -68,7 +68,7 @@
 			<ul class="list-unstyled components">
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
-					<a href="seller-inventory.jsp"
+					<a href="inventory"
 					style="color: white; font-family: sans-serif;">View My
 						Inventory</a>
 				</li>
@@ -79,7 +79,7 @@
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
-					<a href="home.jsp" style="color: white; font-family: sans-serif;"><strong>Back
+					<a href="home" style="color: white; font-family: sans-serif;"><strong>Back
 							to Dashboard</strong></a>
 				</li>
 			</ul>

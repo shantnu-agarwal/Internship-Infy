@@ -32,6 +32,7 @@ form.submit(function() {
 				console.log("Received SUCCESS from Server");
 				$('#response').text("Your product has been added successfully. You can continue to add more products now.");
 				document.getElementById("response").style.visibility = 'visible';
+				document.getElementById("productForm").reset();
 			}
 			else{
 				console.log("Received FAILURE from Server");

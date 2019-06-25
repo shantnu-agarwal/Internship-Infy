@@ -49,7 +49,7 @@ public class SuccessHandler implements AuthenticationSuccessHandler{
               	return "http://localhost:8080/Internship-Infy/admindash";
           }	else if (grantedAuthority.getAuthority().equals("ROLE_SELLER")) {
         	  	System.out.println("Success Handler: Seller Login Detected.");
-        	  	return "http://localhost:8080/Internship-Infy/seller/home.jsp";
+        	  	return "http://localhost:8080/Internship-Infy/seller/home";
           }
         		  else {
         	  System.out.println("Could not identify user");

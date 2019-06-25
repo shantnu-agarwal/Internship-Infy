@@ -111,7 +111,7 @@
 						<tr>
 							<th scope="col">Item ID</th>
 							<th scope="col">Product Name</th>
-							<th scope="col">Price</th>
+							<th scope="col">Price (in Rs)</th>
 							<th scope="col">Category</th>
 							<th scope="col">Seller Name</th>
 							<th scope="col">Quantity</th>
@@ -160,7 +160,7 @@
 
 		<div class="footer-copyright text-center py-3"
 			style="background-color: lightblue">
-			© <a href="/Internship-Infy/"> The Online Shop</a>
+			Â© <a href="/Internship-Infy/"> The Online Shop</a>
 		</div>
 	</footer>
 

@@ -41,7 +41,7 @@ public class addProductIntoDB extends HttpServlet{
 							+ name + "','" + price + "','" + quantity + "','" + info + "','" + category + "','"
 							+ timestamp + "','" + timestamp + "','" + seller+ "')");
 
-			System.out.println("New Product added by " + seller + ". Product quantity: " + quantity);
+			System.out.println("\nNew Product added by " + seller + ". Product Name: " + name);
 
 			String text = "OK";
 
