@@ -15,7 +15,6 @@ SELECT * from users,user_roles where (user_roles.role='ROLE_SELLER') and users.u
 insert into user_roles(username,role) VALUes("user","ROLE_USER");
 
 
-
 show DATABASES;
 
 update users SET enabled=1 where username= 'shan';

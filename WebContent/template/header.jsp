@@ -97,8 +97,11 @@
 			<div class="modal-body">
 				<div class="container" style="margin: auto">
 
-					<form name='f' action="InsertIntoDBFromSelf" method="POST"
+					<form name='f' action="InsertIntoDBFromSelf" method="get"
 						id="register">
+						<div>
+							<p id="response" style="color:red"></p>	
+						</div>
 						<div class="form-group">
 							<label>Name:</label><input type="text" name="InputName"
 								placeholder="Jon Doe" class="form-control" id="validationName"
@@ -129,8 +132,12 @@
 								name='InputPassword2' placeholder="********"
 								class="form-control" id="validationConfirmPassword" required />
 						</div>
-						<button name="submit" type="submit" class="btn btn-primary">Register</button>
+						<button name="submit" type="submit" class="btn btn-primary"
+							id="register_btn">Register</button>
 					</form>
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+				data-target="#loginModal" data-dismiss="modal" style="margin-top:1rem; visibility: hidden" id="postRegButton">Login</button>
+
 				</div>
 			</div>
 
