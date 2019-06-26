@@ -20,7 +20,7 @@
 		<form-login login-page='/welcome'
 			default-target-url="/admindash"
 
-			authentication-failure-url="/?error=true"
+			authentication-failure-url="/"
 			authentication-success-handler-ref="myAuthenticationSuccessHandler"
 
 			username-parameter="username" password-parameter="password" />

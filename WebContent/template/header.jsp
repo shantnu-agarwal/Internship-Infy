@@ -18,6 +18,12 @@
 											----------------------------------------->
 
 		<c:if test="${empty pageContext.request.userPrincipal.name }">
+			<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+				<p style="color:red; margin-right:1rem;"> Your login attempt was not successful due
+					to <br /> <c:out
+						value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />.
+				</p>
+			</c:if>
 
 			<button type="button" class="btn btn-primary" data-toggle="modal"
 				data-target="#loginModal">Login</button>
@@ -55,12 +61,6 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
-					<font color="red"> Your login attempt was not successful due
-						to <br/>
-					<br /> <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />.
-					</font>
-				</c:if>
 
 				<form name="f" action="login" method="POST">
 					<div class="form-group">
