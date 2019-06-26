@@ -36,7 +36,8 @@
 			</ul>
 			<h5 class="right" style="margin-right: 1rem">Logged in as:
 				${pageContext.request.userPrincipal.name }</h5>
-			<form action="../logOutServlet" method="post" id="logOutButton" hidden>
+			<form action="../logOutServlet" method="post" id="logOutButton"
+				hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -107,43 +108,49 @@
 				style="margin-top: 3rem; margin-bottom: 2rem;">Add New Account</h1>
 
 
-
+			<p id="response"></p>
 
 			<form style="margin-bottom: 5rem;" action="NewAccountFromAdmin"
-				method="POST">
+				method="get" id="accountForm">
 				<div class="form-group">
 					<label>Full Name</label> <input class="form-control"
-						name="InputName" placeholder="Jon Doe">
+						name="InputName" placeholder="Jon Doe" required
+						id="validationName">
 				</div>
 				<div class="form-group">
 					<label>Email address</label> <input type="email"
 						class="form-control" name="InputEmail"
-						aria-describedby="emailHelp" placeholder="Enter email address">
+						aria-describedby="emailHelp" placeholder="Enter email address"
+						required>
 				</div>
 				<div class="form-group">
 					<label>Mobile Number</label> <input type="text"
 						class="form-control" name="InputMobileNumber"
-						placeholder="9876543210">
+						placeholder="9876543210" required id="validationMobileNumber">
 				</div>
 				<div class="form-group">
 					<label>Choose a username</label> <input class="form-control"
-						name="InputUsername" placeholder="username"> <small
+						name="InputUsername" placeholder="username" required
+						id="validationUsername"> <small
 						class="form-text text-muted">This will be used for login
 						and it must be unique.</small>
 				</div>
 				<div class="form-group">
 					<label>Password</label> <input type="password" class="form-control"
-						name="InputPassword1" placeholder="Password"><small
+						name="InputPassword1" placeholder="Password" required
+						id="validationPassword"><small
 						class="form-text text-muted">Choose a strong password.</small>
 				</div>
 				<div class="form-group">
 					<label>Confirm Password</label> <input type="password"
-						class="form-control" name="InputPassword2" placeholder="Password"><small
+						class="form-control" name="InputPassword2" placeholder="Password"
+						required id="validationConfirmPassword"><small
 						class="form-text text-muted">Type the same password again</small>
 				</div>
 				<div class="form-group">
 					<label>Choose Account Type</label> <select class="form-control"
-						name="InputUserType">
+						name="InputUserType" required>
+						<option value="" selected disabled hidden>Choose here</option>
 						<option value="ROLE_USER">User</option>
 						<option value="ROLE_SELLER">Seller</option>
 						<option value="ROLE_ADMIN">Administrator</option>
@@ -153,6 +160,8 @@
 				<button type="submit" class="btn btn-primary">Confirm and
 					add new account</button>
 			</form>
+
+
 
 
 		</div>
@@ -188,22 +197,12 @@
 
 
 
-	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script> -->
-	<!-- <script src="../js/bootstrap.min.js"></script> -->
-
 
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap-validate.js"></script>
+	<script src="validate.js"></script>
+
 
 
 

@@ -10,7 +10,12 @@ import javax.servlet.http.*;
 
 @WebServlet("/NewAccountFromAdmin")
 public class InsertIntoDBFromAdmin extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+
+	private static final long serialVersionUID = 1L;
+
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("InputName");
 		String email = request.getParameter("InputEmail");
@@ -35,12 +40,20 @@ public class InsertIntoDBFromAdmin extends HttpServlet {
 			int j = st.executeUpdate("insert into user_roles(username,role)values('" + username + "', '" + role + "')");
 			System.out.println("Account Created Successfully.");
 			conn.close();
+
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write("Done!");
+			
 		} catch (Exception e) {
 			System.out.print(e);
 			e.printStackTrace();
-		}
-		finally{
-			response.sendRedirect("http://localhost:8080/Internship-Infy/admin/manage-users.jsp");
+
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write("Blah!");
+		} finally {
+			
 		}
 	}
 }

@@ -20,3 +20,31 @@ function foo() {
 	console.log("Entries hidden: " + cnt);
 
 }
+
+
+
+var form = $('form');
+form.submit(function() {
+	if (confirm('Are you sure you want to remove the account?')) {
+		$.ajax({
+			type : "GET",
+			url : "deleteAccount",
+			data : this.serialize(),
+			success : function (data) {
+				var result=data;
+				if(result=="OK"){
+					console.log("job done");
+				}
+				else{
+					console.log("failed");
+				}
+			}
+
+			
+		});
+	} 
+
+	
+
+	return false;
+});

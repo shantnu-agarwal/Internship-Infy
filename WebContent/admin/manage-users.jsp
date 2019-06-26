@@ -37,7 +37,8 @@
 			</ul>
 			<h5 class="right" style="margin-right: 1rem">Logged in as:
 				${pageContext.request.userPrincipal.name }</h5>
-			<form action="../logOutServlet" method="post" id="logOutButton" hidden>
+			<form action="../logOutServlet" method="post" id="logOutButton"
+				hidden>
 				<button type="submit" value="Logout"></button>
 			</form>
 			<button type="button" class="btn btn-primary right"
@@ -126,7 +127,26 @@
 					</select>
 				</div>
 			</form>
-
+			<div>
+				<p>
+					<%
+						String user = "";
+						try {
+							user = request.getParameter("kick");
+					%>
+					<%
+						if (user.equals("done")) {
+								out.print("The account has been removed successfully.");
+							} else if (user == "fail") {
+					%>
+					User deletion failed
+					<%
+						}
+						} catch (Exception e) {
+						}
+					%>
+				</p>
+			</div>
 
 			<div class="table-responsive">
 				<table class="table table-bordered table-striped" id="TableList">
@@ -148,7 +168,7 @@
 								Statement st = conn.createStatement();
 								int cnt = 0;
 								ResultSet us = st.executeQuery(
-										"SELECT * from users,user_roles where users.username=user_roles.username	ORDER BY user_roles.role;");
+										"SELECT * from users,user_roles where users.username=user_roles.username ORDER BY users.time_created DESC;");
 								while (us.next()) {
 									cnt++;
 						%>
@@ -158,8 +178,16 @@
 							<td><%=us.getString("email")%></td>
 							<td><%=us.getString("phone_number")%></td>
 							<td><%=us.getString("role")%></td>
-							<td><a class="btn" href=""><img alt="Remove User"
-									src="remove.png"></a></td>
+							<td>
+								<form id="deleteForm<%=us.getString("username")%>"
+									action="deleteAccount" method="get">
+									<input name="deleteUsername"
+										value="<%=us.getString("username")%>" hidden>
+									<button class="btn" type="submit">
+										<img alt="Remove User" src="remove.png">
+									</button>
+								</form>
+							</td>
 						</tr>
 						<%
 							}
@@ -208,8 +236,9 @@
 				-------------------------------------------------->
 
 
-	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
 	<script src="update-table.js"></script>
 
 
