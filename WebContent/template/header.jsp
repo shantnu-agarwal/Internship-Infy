@@ -55,6 +55,12 @@
 				</button>
 			</div>
 			<div class="modal-body">
+				<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+					<font color="red"> Your login attempt was not successful due
+						to <br/>
+					<br /> <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />.
+					</font>
+				</c:if>
 
 				<form name="f" action="login" method="POST">
 					<div class="form-group">
@@ -100,7 +106,7 @@
 					<form name='f' action="InsertIntoDBFromSelf" method="get"
 						id="register">
 						<div>
-							<p id="response" style="color:red"></p>	
+							<p id="response" style="color: red"></p>
 						</div>
 						<div class="form-group">
 							<label>Name:</label><input type="text" name="InputName"
@@ -136,7 +142,8 @@
 							id="register_btn">Register</button>
 					</form>
 					<button type="button" class="btn btn-primary" data-toggle="modal"
-				data-target="#loginModal" data-dismiss="modal" style="margin-top:1rem; visibility: hidden" id="postRegButton">Login</button>
+						data-target="#loginModal" data-dismiss="modal"
+						style="margin-top: 1rem; visibility: hidden" id="postRegButton">Login</button>
 
 				</div>
 			</div>

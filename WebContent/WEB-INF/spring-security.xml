@@ -16,8 +16,6 @@
 			access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/seller/*"
 			access="hasRole('ROLE_SELLER')" />
-		<!-- <intercept-url pattern="/logOutServlet*" access="hasRole('ROLE_ADMIN')" 
-			/> -->
 
 		<form-login login-page='/welcome'
 			default-target-url="/admindash"
