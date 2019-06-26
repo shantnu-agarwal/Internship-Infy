@@ -13,8 +13,6 @@ public class InsertIntoDBFromAdmin extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("InputName");
@@ -44,7 +42,7 @@ public class InsertIntoDBFromAdmin extends HttpServlet {
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().write("Done!");
-			
+
 		} catch (Exception e) {
 			System.out.print(e);
 			e.printStackTrace();
@@ -53,7 +51,7 @@ public class InsertIntoDBFromAdmin extends HttpServlet {
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().write("Blah!");
 		} finally {
-			
+
 		}
 	}
 }

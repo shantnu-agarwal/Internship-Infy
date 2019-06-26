@@ -21,8 +21,6 @@ function foo() {
 
 }
 
-
-
 var form = $('form');
 form.submit(function() {
 	if (confirm('Are you sure you want to remove the account?')) {
@@ -30,21 +28,17 @@ form.submit(function() {
 			type : "GET",
 			url : "deleteAccount",
 			data : this.serialize(),
-			success : function (data) {
-				var result=data;
-				if(result=="OK"){
+			success : function(data) {
+				var result = data;
+				if (result == "OK") {
 					console.log("job done");
-				}
-				else{
+				} else {
 					console.log("failed");
 				}
 			}
 
-			
 		});
-	} 
-
-	
+	}
 
 	return false;
 });

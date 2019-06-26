@@ -184,7 +184,10 @@
 									<input name="deleteUsername"
 										value="<%=us.getString("username")%>" hidden>
 									<button class="btn" type="submit">
-										<img alt="Remove User" src="remove.png">
+										<img alt="Remove Account" src="remove.png">
+									</button>
+									<button class="btn" type="submit">
+										EDIT
 									</button>
 								</form>
 							</td>
