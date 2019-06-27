@@ -26,6 +26,7 @@ public class addProductIntoDB extends HttpServlet{
 		String price= request.getParameter("InputPrice");
 		String info = request.getParameter("InputInfo");
 		String quantity = request.getParameter("InputQuantity");
+		String subcat = request.getParameter("InputSubCategory");
 		
 		String timestamp = new Timestamp(System.currentTimeMillis()).toString();
 		String seller = request.getParameter("InputSeller");
@@ -37,9 +38,9 @@ public class addProductIntoDB extends HttpServlet{
 			Statement st = conn.createStatement();
 
 			int a = st.executeUpdate(
-					"insert into inventory(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username) values('"
+					"insert into inventory(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username,sub_category) values('"
 							+ name + "','" + price + "','" + quantity + "','" + info + "','" + category + "','"
-							+ timestamp + "','" + timestamp + "','" + seller+ "')");
+							+ timestamp + "','" + timestamp + "','" + seller+ "','"+ subcat + "')");
 
 			System.out.println("\nNew Product added by " + seller + ". Product Name: " + name);
 

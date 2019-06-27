@@ -6,7 +6,7 @@ select * from inventory;
 
 insert into inventory(item_name,item_price,item_quantity,item_info,seller_username) values('Samsung Fridge',99889,5,'this is some info about the fridge','ss');
 
--- ALTER TABLE users add UID INT NOT NULL AUTO_INCREMENT;
+-- ALTER TABLE inventory DROP COLUMN short_info;
 
 insert into user_roles(username,role) values('admin','ROLE_ADMIN');
 

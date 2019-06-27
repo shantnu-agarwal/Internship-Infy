@@ -17,12 +17,12 @@
 				class="dropdown-toggle"
 				style="color: white; font-family: sans-serif;">Home Appliances</a>
 				<ul class="collapse list-unstyled" id="homeSubmenu">
-					<li><a href="#"
+					<li><a href="?category=electronics&sub_category=tv"
 						style="color: white; font-family: sans-serif; padding-left: 1rem">Televisions</a>
 					</li>
-					<li><a href="#"
+					<li><a href="?category=electronics&sub_category=fridge"
 						style="color: white; font-family: sans-serif; padding-left: 1rem">Refrigerators</a></li>
-					<li><a href="#"
+					<li><a href="?category=electronics&sub_category=ac"
 						style="color: white; font-family: sans-serif; padding-left: 1rem">Air
 							Conditioners</a></li>
 				</ul>
@@ -33,20 +33,8 @@
 			</li>
 			<li
 				style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px; color: white; font-family: sans-serif;">
-				<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-				class="dropdown-toggle"
-				style="color: white; font-family: sans-serif;">Books</a>
-				<ul class="collapse list-unstyled" id="pageSubmenu">
-					<li><a href="#"
-						style="color: white; font-family: sans-serif; padding-left: 1rem">Thrillers</a>
-					</li>
-					<li><a href="#"
-						style="color: white; font-family: sans-serif; padding-left: 1rem">Horror</a>
-					</li>
-					<li><a href="#"
-						style="color: white; font-family: sans-serif; padding-left: 1rem">Mystery</a>
-					</li>
-				</ul>
+				<a href="?category=Books" style="color: white; font-family: sans-serif;">Books</a>
+
 			</li>
 			<li
 				style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px; color: white; font-family: sans-serif;">

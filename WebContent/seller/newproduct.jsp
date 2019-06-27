@@ -30,7 +30,7 @@
 				<li class="nav-item">
 					<h6 class="nav-link"
 						style="font-style: italic; color: red; padding-top: 10px">Welcome
-						Seller!</h6>
+						${pageContext.request.userPrincipal.name }!</h6>
 				</li>
 			</ul>
 			<c:if test="${empty pageContext.request.userPrincipal.name }">
@@ -44,8 +44,7 @@
 			<c:if test="${not empty pageContext.request.userPrincipal.name }">
 				<form hidden action="../logOutServlet" method="POST"
 					id="logOutButton"></form>
-				<h5 class="right" style="margin-right: 1rem">Logged in as:
-					${pageContext.request.userPrincipal.name }</h5>
+				
 				<button type="button" class="btn btn-primary"
 					onclick="javascript:document.getElementById('logOutButton').submit();">
 					Logout</button>
@@ -111,6 +110,17 @@
 						<option value="Electronics">Electronics</option>
 						<option value="Furniture">Furniture</option>
 						<option value="Books">Books</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Sub-Category</label> <select class="form-control"
+						name="InputSubCategory" required id="validationSubCategory" onchange="foo(this.value)">
+						<option value="" selected disabled hidden>Choose here</option>
+						<option value="ac">Air Conditioner</option>
+						<option value="tv">Television</option>
+						<option value="fridge">Refrigerator</option>
+						<option value="study">Study Books</option>
+						<option value="novel">Novels</option>
 					</select>
 				</div>
 				<div class="form-group">

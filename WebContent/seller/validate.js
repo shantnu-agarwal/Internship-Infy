@@ -3,7 +3,7 @@ console.log("Running Validation Service");
 bootstrapValidate('#validationName',
 		'max:20:Name cannot be longer than 20 characters!');
 bootstrapValidate('#validationName',
-'regex:^[A-Z,a-z ,.\'-]+$:Your name must consist of letters only!');
+'regex:^[0-9,A-Z,a-z ,.\'-]+$:Your name must consist of letters only!');
 
 bootstrapValidate('#validationPrice',
 		'numeric:You can only enter a numeric value!');
@@ -15,6 +15,22 @@ bootstrapValidate('#validationDescription',
 bootstrapValidate('#validationDescription',
 		'min:10:Please provide a reasonably long description to your product');
 
+function foo(val){
+	var op = document.getElementById("validationCategory");
+	
+	console.log(val + " selected, of Category: " + op.options[op.selectedIndex].value);
+	
+	/*if(op.options[op.selectedIndex].value == "Electronics"){
+		console.log("inside elec if");
+		bootstrapValidate('#validationSubCategory', 'inArray:(Air Conditioner, Television, Refrigerator):Please choose the correct combination of Category and Sub Category');
+	}
+	
+	if(op.options[op.selectedIndex].value == "Books"){
+		bootstrapValidate('#validationSubCategory','inArray:(study,novel):Please choose the correct combination of Category and Sub Category');
+	}*/
+		
+	
+}
 
 bootstrapValidate(
 		'#validationQuantity',

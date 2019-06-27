@@ -186,9 +186,9 @@
 									<button class="btn" type="submit">
 										<img alt="Remove Account" src="remove.png">
 									</button>
-									<button class="btn" type="submit">
+									<!-- <button class="btn" type="submit">
 										EDIT
-									</button>
+									</button> -->
 								</form>
 							</td>
 						</tr>

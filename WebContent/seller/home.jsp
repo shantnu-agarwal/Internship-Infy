@@ -28,7 +28,7 @@
 				<li class="nav-item">
 					<h6 class="nav-link"
 						style="font-style: italic; color: red; padding-top: 10px">Welcome
-						Seller!</h6>
+						${pageContext.request.userPrincipal.name }!</h6>
 				</li>
 			</ul>
 			<c:if test="${empty pageContext.request.userPrincipal.name }">
@@ -42,8 +42,7 @@
 			<c:if test="${not empty pageContext.request.userPrincipal.name }">
 				<form hidden action="../logOutServlet" method="POST"
 					id="logOutButton"></form>
-				<h5 class="right" style="margin-right: 1rem">Logged in as:
-					${pageContext.request.userPrincipal.name }</h5>
+				
 				<button type="button" class="btn btn-primary"
 					onclick="javascript:document.getElementById('logOutButton').submit();">
 					Logout</button>
