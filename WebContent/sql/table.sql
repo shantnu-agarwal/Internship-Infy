@@ -4,15 +4,17 @@ select * from users;
 
 select * from inventory;
 
-insert into inventory(item_name,item_price,item_quantity,item_info,seller_username) values('Samsung Fridge',99889,5,'this is some info about the fridge','ss');
+select * from images;
+
+-- insert into inventory(item_name,item_price,item_quantity,item_info,seller_username) values('Samsung Fridge',99889,5,'this is some info about the fridge','ss');
 
 -- ALTER TABLE inventory DROP COLUMN short_info;
 
-insert into user_roles(username,role) values('admin','ROLE_ADMIN');
+-- insert into user_roles(username,role) values('admin','ROLE_ADMIN');
 
 SELECT * from users,user_roles where (user_roles.role='ROLE_SELLER') and users.username = user_roles.username;
 
-insert into user_roles(username,role) VALUes("user","ROLE_USER");
+-- insert into user_roles(username,role) VALUes("user","ROLE_USER");
 
 show DATABASES;
 
@@ -46,5 +48,10 @@ CREATE TABLE user_roles (
     PRIMARY KEY (item_id),
     UNIQUE KEY(item_name)
     
-    
+);
+
+CREATE TABLE images(
+	item_ID INT,
+    image_url VARCHAR(200),
+    FOREIGN KEY (item_ID) REFERENCES inventory(item_ID)
 );

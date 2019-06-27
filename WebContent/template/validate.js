@@ -20,7 +20,9 @@ bootstrapValidate('#validationUsername',
 bootstrapValidate('#validationUsername',
 		'alphanum:Your username cannot consist of special characters and white spaces');
 
-
+bootstrapValidate(
+		'#validationPassword',
+		'min:5:Try to make a longer password');
 bootstrapValidate(
 		'#validationConfirmPassword',
 		'matches:#validationPassword:Please check that your password matches in both the fields');

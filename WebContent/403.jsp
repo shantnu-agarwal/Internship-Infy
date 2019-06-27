@@ -15,7 +15,7 @@
                     You do not have permission to access this page!</h2>
 		</c:otherwise>
 	</c:choose>
-	<a class="btn btn-primary" href="../welcome">Click here to go back to the home page</a>
+	<a class="btn btn-primary" href="/welcome">Click here to go back to the home page</a>
 
 </body>
 </html>

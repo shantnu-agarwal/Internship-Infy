@@ -28,8 +28,9 @@
 																			MAIN PAGE CONTENT 
 			------------------------------------------------------------------------------------------------------------->
 	<div id="content" style="margin-top: 100px; margin-left: 10rem;">
-		<div class="row" style="margin-bottom:1rem;">
-			<button onclick="window.history.back();" class="btn btn-primary">Back to products list</button>
+		<div class="row" style="margin-bottom: 1rem;">
+			<button onclick="window.history.back();" class="btn btn-primary">Back
+				to products list</button>
 		</div>
 		<div class="card md-10" style="width: auto;">
 			<%
@@ -107,7 +108,9 @@
 																				SCRIPTS HERE
 						------------------------------------------------------------------------------------------------------------->
 
-	<script type="javascript" src="/js/jquery.min.js"></script>
-	<script type="javascript" src="/js/bootstrap.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap-validate.js"></script>
+	<script src="../template/validate.js"></script>
 </body>
 </html>

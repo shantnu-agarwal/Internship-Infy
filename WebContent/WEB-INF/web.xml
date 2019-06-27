@@ -18,8 +18,16 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
             /WEB-INF/spring-security.xml  
-            /WEB-INF/spring-database.xml                          
+            /WEB-INF/spring-database.xml       
+                               
         </param-value>
+	</context-param>
+	<context-param>
+		<description>Location to store uploaded file</description>
+		<param-name>file-upload</param-name>
+		<param-value>
+      		D:\Libraries\intern-infy
+		</param-value>
 	</context-param>
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
@@ -87,7 +95,7 @@
 		<servlet-name>addproduct</servlet-name>
 		<url-pattern>/seller/addProduct</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>sellerhome</servlet-name>
 		<jsp-file>/seller/home.jsp</jsp-file>
@@ -96,7 +104,7 @@
 		<servlet-name>sellerhome</servlet-name>
 		<url-pattern>/seller/home</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>sellerinventory</servlet-name>
 		<jsp-file>/seller/seller-inventory.jsp</jsp-file>
@@ -116,6 +124,11 @@
 		<servlet-name>logoutServlet</servlet-name>
 		<url-pattern>/logOutServlet</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>logoutServlet</servlet-name>
+		<url-pattern>/inventory/logOutServlet</url-pattern>
+	</servlet-mapping>
+
 
 	<servlet>
 		<servlet-name>newAccountServlet</servlet-name>
@@ -125,7 +138,7 @@
 		<servlet-name>newAccountServlet</servlet-name>
 		<url-pattern>/admin/NewAccountFromAdmin</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>submitNewProduct</servlet-name>
 		<servlet-class>com.TheOnlineShop.addProductIntoDB</servlet-class>
@@ -134,9 +147,28 @@
 		<servlet-name>submitNewProduct</servlet-name>
 		<url-pattern>/seller/addProductIntoDB</url-pattern>
 	</servlet-mapping>
-	
 
+	<servlet>
+		<servlet-name>registerUserSelf</servlet-name>
+		<servlet-class>com.TheOnlineShop.InsertIntoDBFromSelf</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>registerUserSelf</servlet-name>
+		<url-pattern>/InsertIntoDBFromSelf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>registerUserSelf</servlet-name>
+		<url-pattern>/inventory/InsertIntoDBFromSelf</url-pattern>
+	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>uploadpic</servlet-name>
+		<servlet-class>com.TheOnlineShop.ImageUpload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>uploadpic</servlet-name>
+		<url-pattern>/seller/upload</url-pattern>
+	</servlet-mapping>
 
 
 </web-app>

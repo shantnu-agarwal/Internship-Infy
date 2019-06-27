@@ -21,7 +21,7 @@
 			}
 			else{
 				us = st.executeQuery("SELECT * FROM inventory ORDER BY time_added DESC;");
-			}
+			}	
 			while (us.next()) {
 				cnt++;
 	%>

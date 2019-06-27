@@ -5,19 +5,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.Timestamp;
-
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/InsertIntoDBFromSelf")
 public class InsertIntoDBFromSelf extends HttpServlet {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -44,6 +42,8 @@ public class InsertIntoDBFromSelf extends HttpServlet {
 			a = st.executeUpdate("insert into user_roles(username,role)values('" + username + "', '" + role + "')");
 			System.out.println("New User Added (self): " + username);
 
+		
+
 			String text = "OK";
 
 			response.setContentType("text/plain");
@@ -56,7 +56,7 @@ public class InsertIntoDBFromSelf extends HttpServlet {
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().write(text);
-			
+
 			System.out.print(e);
 			e.printStackTrace();
 		} finally {

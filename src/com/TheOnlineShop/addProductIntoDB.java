@@ -3,6 +3,7 @@ package com.TheOnlineShop;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
 
@@ -41,10 +42,11 @@ public class addProductIntoDB extends HttpServlet{
 					"insert into inventory(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username,sub_category) values('"
 							+ name + "','" + price + "','" + quantity + "','" + info + "','" + category + "','"
 							+ timestamp + "','" + timestamp + "','" + seller+ "','"+ subcat + "')");
+			ResultSet id = st.executeQuery("select item_ID from inventory where item_name='"+name+"';");
 
 			System.out.println("\nNew Product added by " + seller + ". Product Name: " + name);
 
-			String text = "OK";
+			String text = id.next()+"";
 
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");

@@ -62,7 +62,7 @@
 			</div>
 			<div class="modal-body">
 
-				<form name="f" action="login" method="POST">
+				<form name="f" action="http://localhost:8080/Internship-Infy/login" method="POST">
 					<div class="form-group">
 						<label>Username</label> <input class="form-control"
 							name="username" placeholder="Jon Doe">

@@ -45,16 +45,19 @@ form.submit(function() {
 		data : form.serialize(),
 		success : function (data) {
 			var result=data;
-			if(result=="OK"){
+			if(result=="NOT OK"){
+				console.log("Received FAILURE from Server");
+				$('#response').text("There was a problem with your request, please check your inputs and try again");
+				document.getElementById("response").style.visibility = 'visible';
+				
+			}
+			else{
+				console.log(result);
 				console.log("Received SUCCESS from Server");
 				$('#response').text("Your product has been added successfully. You can continue to add more products now.");
 				document.getElementById("response").style.visibility = 'visible';
 				document.getElementById("productForm").reset();
-			}
-			else{
-				console.log("Received FAILURE from Server");
-				$('#response').text("There was a problem with your request, please check your inputs and try again");
-				document.getElementById("response").style.visibility = 'visible';
+				
 			}
 		}
 

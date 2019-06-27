@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -97,7 +98,7 @@
 			<h5 id="response"
 				style="color: red; margin-bottom: 2rem; visibility: hidden"></h5>
 			<form style="margin-bottom: 5rem;" id="productForm"
-				action="addProductIntoDB" method="get">
+				action="addProductIntoDB" method="get" enctype="multipart/form-data">
 				<div class="form-group">
 					<label>Full Product Name</label> <input class="form-control"
 						name="InputName" placeholder="Samsung Fridge" id="validationName"
@@ -161,6 +162,10 @@
 				<button name="submit" type="submit" class="btn btn-primary">Confirm
 					and add product listing.</button>
 			</form>
+			<form action="upload" method="post" enctype="multipart/form-data" style="margin-bottom:7rem">
+                <input type="file" name="file" />
+                <input type="submit" value="upload" />
+            </form>  
 
 
 		</div>
