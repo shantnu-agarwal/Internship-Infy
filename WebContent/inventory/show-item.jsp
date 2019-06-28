@@ -59,14 +59,28 @@
 						<li class="list-group-item"><h4>
 								Rs. <strong><%=us.getString("item_price")%></strong>
 							</h4></li>
-						<li class="list-group-item"><a class="btn" href="#!"> <img
-								alt="Add to Cart" src="img/carticon.png"
-								style="max-width: 2rem; margin-right: 1rem">Add to Cart
-						</a></li>
-						<li class="list-group-item"><a class="btn" href="#!"> <img
-								alt="Buy Now!" src="img/buynow.png"
-								style="max-width: 2rem; margin-right: 1rem">Buy Now
-						</a></li>
+
+						<!-----------------  ADD TO CART AND BUY OPTIONS 
+											--------------------------------->
+
+						<li class="list-group-item">
+							<form id="add-to-cart-form" method="POST" action="AddToCart">
+								<input name="id" value="<%=request.getParameter("id")%>" hidden>
+								<input name="LoggedIn" value="${pageContext.request.userPrincipal.name}" hidden>
+								<button class="btn" type="submit" id="add-to-cart-button">
+									<img alt="Add to Cart" src="img/carticon.png"
+										style="max-width: 2rem; margin-right: 1rem">Add to Cart
+								</button>
+							</form>
+						</li>
+						<li class="list-group-item">
+							<form method="get" action="BuyNow">
+								<button class="btn" type="submit" id="buy-now-button">
+									<img alt="Buy Now" src="img/buynow.png"
+										style="max-width: 2rem; margin-right: 1rem">Buy Now
+								</button>
+							</form>
+						</li>
 					</ul>
 				</div>
 
@@ -112,5 +126,6 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/bootstrap-validate.js"></script>
 	<script src="../template/validate.js"></script>
+	<!-- <script src="add-to-cart.js"></script> -->
 </body>
 </html>

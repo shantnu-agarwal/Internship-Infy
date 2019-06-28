@@ -6,9 +6,16 @@ select * from inventory;
 
 select * from images;
 
+select * from cart;
+
+
 -- insert into inventory(item_name,item_price,item_quantity,item_info,seller_username) values('Samsung Fridge',99889,5,'this is some info about the fridge','ss');
 
 -- ALTER TABLE inventory DROP COLUMN short_info;
+
+-- ALTER TABLE users ADD cart_items INT DEFAULT 0;
+
+-- ALTER TABLE images add time_added datetime;
 
 -- insert into user_roles(username,role) values('admin','ROLE_ADMIN');
 
@@ -22,7 +29,7 @@ update users SET enabled=1 where username= 'shan';
 
 insert into user_roles(username,role) values("shantnu","ROLE_USER");
 
-alter table inventory add time_updated DATETIME;
+alter table cart add cart_time DATETIME;
 
 SELECT COUNT(user_role_id) from user_roles;
 
@@ -53,5 +60,19 @@ CREATE TABLE user_roles (
 CREATE TABLE images(
 	item_ID INT,
     image_url VARCHAR(200),
+    image_name VARCHAR(30),
+    time_added DATETIME,
+    FOREIGN KEY (item_ID) REFERENCES inventory(item_ID)
+);
+
+CREATE TABLE cart(
+	transaction_ID INT NOT NULL AUTO_INCREMENT,
+    item_ID INT,
+    quantity INT,
+    username varchar(45),
+    address varchar(75),
+    cart_time datetime,
+    transaction_time datetime,
+    PRIMARY KEY (transaction_ID),
     FOREIGN KEY (item_ID) REFERENCES inventory(item_ID)
 );

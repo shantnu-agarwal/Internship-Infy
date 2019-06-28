@@ -170,5 +170,28 @@
 		<url-pattern>/seller/upload</url-pattern>
 	</servlet-mapping>
 
-
+	<servlet>
+		<servlet-name>addToCart</servlet-name>
+		<servlet-class>com.TheOnlineShop.AddToCart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addToCart</servlet-name>
+		<url-pattern>/inventory/AddToCart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>getCartItemsNumber</servlet-name>
+		<servlet-class>com.TheOnlineShop.GetCart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getCartItemsNumber</servlet-name>
+		<url-pattern>/inventory/GetCart</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>getCartItemsNumber</servlet-name>
+		<url-pattern>/GetCart</url-pattern>
+	</servlet-mapping>
+	
+	
+	
 </web-app>

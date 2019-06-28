@@ -10,18 +10,36 @@
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
 				href="/Internship-Infy/">The Online Shop</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="http://localhost:8080/Internship-Infy/cart.jsp">My Cart</a></li>
+			<c:if test="${not empty pageContext.request.userPrincipal.name }">
+				<li class="nav-item"><a class="nav-link"
+					href="http://localhost:8080/Internship-Infy/cart.jsp"
+					></a>
+					<form hidden id="cart-form" method="GET" name="cart-form" action="GetCart">
+						<input name="username"
+							value="${pageContext.request.userPrincipal.name}">
+					</form></li>
+			</c:if>
+			
+			
+			<!--  DO I NEED TO SHOW CART BEFORE LOGIN AS WELL?-->
+			<%-- <c:if test="${empty pageContext.request.userPrincipal.name }">
+				<li class="nav-item"><a class="nav-link"
+					href="http://localhost:8080/Internship-Infy/cart.jsp">My Cart</a></li>
+			</c:if> --%> 
+
+
+
 			<li class="nav-item"><a class="nav-link" href="#">Support</a></li>
-		</ul>
+		</ul><p id="cart-link"></p>
 		<!---------------------------------- LOGIN HERE
 											----------------------------------------->
 
 		<c:if test="${empty pageContext.request.userPrincipal.name }">
 			<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
-				<p style="color:red; margin-right:1rem;"> Your login attempt was not successful due
-					to <br /> <c:out
-						value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />.
+				<p style="color: red; margin-right: 1rem;">
+					Your login attempt was not successful due to <br />
+					<c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
+					.
 				</p>
 			</c:if>
 
@@ -62,13 +80,14 @@
 			</div>
 			<div class="modal-body">
 
-				<form name="f" action="http://localhost:8080/Internship-Infy/login" method="POST">
+				<form name="f" action="http://localhost:8080/Internship-Infy/login"
+					method="POST">
 					<div class="form-group">
 						<label>Username</label> <input class="form-control"
 							name="username" placeholder="Jon Doe">
 					</div>
 					<div class="form-group">
-						<label>Email address</label> <input type="password"
+						<label>Password</label> <input type="password"
 							class="form-control" name="password" placeholder="********">
 					</div>
 					<div>

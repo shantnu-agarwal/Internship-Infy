@@ -20,34 +20,53 @@ bootstrapValidate('#validationUsername',
 bootstrapValidate('#validationUsername',
 		'alphanum:Your username cannot consist of special characters and white spaces');
 
-bootstrapValidate(
-		'#validationPassword',
-		'min:5:Try to make a longer password');
+bootstrapValidate('#validationPassword', 'min:5:Try to make a longer password');
 bootstrapValidate(
 		'#validationConfirmPassword',
 		'matches:#validationPassword:Please check that your password matches in both the fields');
 
-
 var form = $('#register');
 form.submit(function() {
-
 	$.ajax({
-		type : form.attr('method'),
-		url : form.attr('action'),
-		data : form.serialize(),
-		success : function (data) {
-			var result=data;
-			if(result=="OK"){
-				$('#response').text("You have been registered successfully. Please proceed to login!");
-				document.getElementById("postRegButton").style.visibility = 'visible';
+			type : form.attr('method'),
+			url : form.attr('action'),
+			data : form.serialize(),
+			success : function(data) {
+				var result = data;
+				if (result == "OK") {
+					$('#response')
+					.text(
+					"You have been registered successfully. Please proceed to login!");
+					document.getElementById("postRegButton").style.visibility = 'visible';
+				} else {
+					$('#response').text(
+					"There was a problem with your registration, please try again");
+				}
 			}
-			else{
-				$('#response').text("There was a problem with your registration, please try again");
-			}
-		}
 
-		
 	});
 
 	return false;
+});
+
+
+window.addEventListener('load', function() {
+	console.log('All assets are loaded');
+	var cartElement = $('#cart-form');
+	var link = "http://localhost:8080/Internship-Infy/GetCart";
+	console.log("AJAX to " + link );
+	$.ajax({
+	    type: "GET",
+		URL: "http://localhost:8080/Internship-Infy/GetCart",
+		data : cartElement.serialize(),
+		success : function(data){
+			var result = data;
+			console.log("Items present in user cart.");
+			if(result>=0){
+				document.getElementById("cart-link").innerHTML("My Cart (" + result+ ")");
+			}
+			
+		}
+		
+	});
 });
