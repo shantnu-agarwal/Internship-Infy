@@ -12,25 +12,27 @@
 				href="/Internship-Infy/">The Online Shop</a></li>
 			<c:if test="${not empty pageContext.request.userPrincipal.name }">
 				<li class="nav-item"><a class="nav-link"
-					href="http://localhost:8080/Internship-Infy/cart.jsp"
-					></a>
-					<form hidden id="cart-form" method="GET" name="cart-form" action="GetCart">
+					href="http://localhost:8080/Internship-Infy/cart.jsp" id="cart-link"></a>
+					<form hidden id="cart-form" method="GET" name="cart-form"
+						action="http://localhost:8080/Internship-Infy/GetCart">
 						<input name="username"
 							value="${pageContext.request.userPrincipal.name}">
+						
 					</form></li>
 			</c:if>
-			
-			
+
+
 			<!--  DO I NEED TO SHOW CART BEFORE LOGIN AS WELL?-->
 			<%-- <c:if test="${empty pageContext.request.userPrincipal.name }">
 				<li class="nav-item"><a class="nav-link"
 					href="http://localhost:8080/Internship-Infy/cart.jsp">My Cart</a></li>
-			</c:if> --%> 
+			</c:if> --%>
 
 
 
 			<li class="nav-item"><a class="nav-link" href="#">Support</a></li>
-		</ul><p id="cart-link"></p>
+		</ul>
+		
 		<!---------------------------------- LOGIN HERE
 											----------------------------------------->
 

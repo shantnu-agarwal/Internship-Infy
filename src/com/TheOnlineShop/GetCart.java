@@ -15,12 +15,10 @@ public class GetCart extends HttpServlet {
 
 	
 	private static final long serialVersionUID = 1L;
-
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 			
-		
-		System.out.println("reached GetCart");
 			String username = request.getParameter("username");
 		
 			System.out.println("Reading cart items for user " + username);
@@ -30,13 +28,15 @@ public class GetCart extends HttpServlet {
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
 				Statement st = conn.createStatement();
 				
+				
 				ResultSet a = st.executeQuery("SELECT cart_items from users where username='" + username + "';");
 				a.next();
-				System.out.println("read from DB : " + a);
+				Integer in = (Integer) a.getObject(1);
+				String text = in + "";
+				System.out.println("read from DB : " + text);
 				conn.close();
 			
 
-				String text = "OK";
 
 				response.setContentType("text/plain");
 				response.setCharacterEncoding("UTF-8");

@@ -25,6 +25,7 @@ public class AddToCart extends HttpServlet {
 		
 			String item_id = request.getParameter("id");
 			String username = request.getParameter("LoggedIn");
+			String quantity = request.getParameter("Quantity");
 			String timestamp = new Timestamp(System.currentTimeMillis()).toString();
 			System.out.println("Adding item ID: " + item_id + " to cart for user: " + username);
 
@@ -35,18 +36,11 @@ public class AddToCart extends HttpServlet {
 
 				int a = st.executeUpdate(
 						"insert into cart(item_ID, quantity, username, cart_time) values('"
-								+ item_id + "','" + 1 + "','" + username + "','" + timestamp+ "')");
-				
- 
+								+ item_id + "','" + quantity + "','" + username + "','" + timestamp+ "')");
+				a = st.executeUpdate("UPDATE users SET cart_items = cart_items + 1 where username='" + username + "' ;");
 				conn.close();
-			
-
-				String text = "OK";
-
-				response.setContentType("text/plain");
-				response.setCharacterEncoding("UTF-8");
-				response.getWriter().write(text);
 				
+				response.sendRedirect("http://localhost:8080/Internship-Infy/?cart=true");
 			} catch (Exception e) {
 				String text = "NOT OKAY";
 

@@ -1,3 +1,4 @@
+
 select * from user_roles;
 
 select * from users;
@@ -32,6 +33,8 @@ insert into user_roles(username,role) values("shantnu","ROLE_USER");
 alter table cart add cart_time DATETIME;
 
 SELECT COUNT(user_role_id) from user_roles;
+
+SELECT cart_items from users where username='user1';
 
 CREATE TABLE user_roles (
   user_role_id int(11) NOT NULL AUTO_INCREMENT,

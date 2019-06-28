@@ -26,47 +26,50 @@ bootstrapValidate(
 		'matches:#validationPassword:Please check that your password matches in both the fields');
 
 var form = $('#register');
-form.submit(function() {
-	$.ajax({
-			type : form.attr('method'),
-			url : form.attr('action'),
-			data : form.serialize(),
-			success : function(data) {
-				var result = data;
-				if (result == "OK") {
-					$('#response')
-					.text(
-					"You have been registered successfully. Please proceed to login!");
-					document.getElementById("postRegButton").style.visibility = 'visible';
-				} else {
-					$('#response').text(
-					"There was a problem with your registration, please try again");
-				}
-			}
+form
+		.submit(function() {
+			$
+					.ajax({
+						type : form.attr('method'),
+						url : form.attr('action'),
+						data : form.serialize(),
+						success : function(data) {
+							var result = data;
+							if (result == "OK") {
+								$('#response')
+										.text(
+												"You have been registered successfully. Please proceed to login!");
+								document.getElementById("postRegButton").style.visibility = 'visible';
+							} else {
+								$('#response')
+										.text(
+												"There was a problem with your registration, please try again");
+							}
+						}
 
-	});
+					});
 
-	return false;
-});
-
+			return false;
+		});
 
 window.addEventListener('load', function() {
 	console.log('All assets are loaded');
 	var cartElement = $('#cart-form');
-	var link = "http://localhost:8080/Internship-Infy/GetCart";
-	console.log("AJAX to " + link );
+
+	console.log("AJAX to " + cartElement.attr('action'));
 	$.ajax({
-	    type: "GET",
-		URL: "http://localhost:8080/Internship-Infy/GetCart",
+		type : cartElement.attr('method'),
+		url : cartElement.attr('action'),
 		data : cartElement.serialize(),
-		success : function(data){
+		success : function(data) {
 			var result = data;
-			console.log("Items present in user cart.");
-			if(result>=0){
-				document.getElementById("cart-link").innerHTML("My Cart (" + result+ ")");
+			console.log("Items present in user cart: " + data);
+			if (result >= 0) {
+				$("#cart-link").html("My Cart (" + result + ")");
 			}
-			
+
 		}
-		
 	});
+	return false;
+
 });
