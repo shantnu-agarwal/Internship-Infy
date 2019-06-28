@@ -37,7 +37,7 @@ public class AddToCart extends HttpServlet {
 				int a = st.executeUpdate(
 						"insert into cart(item_ID, quantity, username, cart_time) values('"
 								+ item_id + "','" + quantity + "','" + username + "','" + timestamp+ "')");
-				a = st.executeUpdate("UPDATE users SET cart_items = cart_items + 1 where username='" + username + "' ;");
+				a = st.executeUpdate("UPDATE users SET cart_items = cart_items + " + quantity + " where username='" + username + "' ;");
 				conn.close();
 				
 				response.sendRedirect("http://localhost:8080/Internship-Infy/?cart=true");
