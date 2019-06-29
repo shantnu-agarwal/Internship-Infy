@@ -5,17 +5,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 public class ViewCart extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -31,21 +34,35 @@ public class ViewCart extends HttpServlet {
 			Statement st = conn.createStatement();
 
 			ResultSet rs = st.executeQuery("SELECT * FROM cart where username='" + username + "';");
-			while(rs.next()) {
+			
+			
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			String json="";
+			int cnt=1;
+			List<Integer> list = new ArrayList<>();
+		    
+			while (rs.next()) {
+				
 				int ITEM_ID = (Integer) rs.getObject("item_id");
 				int ITEM_QUANTITY = (Integer) rs.getObject("quantity");
-				System.out.println(ITEM_ID); 
+				list.add(ITEM_ID);
+				list.add(ITEM_QUANTITY);
+				cnt++;
+				System.out.println(ITEM_ID);
 				System.out.println(ITEM_QUANTITY);
+				
+				json = new Gson().toJson(list);
+				
 			}
-			
+			response.getWriter().write(json);
 		} catch (Exception e) {
 			System.out.print(e);
 			e.printStackTrace();
 		}
 
-		response.setContentType("text/plain");
-		response.setCharacterEncoding("UTF-8");
-		response.getWriter().write("YIPEE");
+		
+			
 
 	}
 }

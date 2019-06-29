@@ -1,3 +1,5 @@
+var num =1;
+
 window.addEventListener('load', function() {
 	console.log("All assests loaded.");
 	var formElement = $("#viewcartform");
@@ -7,7 +9,17 @@ window.addEventListener('load', function() {
 		url : "ViewCart",
 		data : formElement.serialize(),
 		success : function(data) {
-			var result;
+			let parsed = JSON.parse(data);
+			console.log("Parsed incoming data as " + parsed);
+			var i=0;
+			while(parsed[i]<parsed.length){
+				console.log(parsed[i]);
+				$('#response').text="";
+			}
+				
+			
+			
+			
 				
 		}
 	});
