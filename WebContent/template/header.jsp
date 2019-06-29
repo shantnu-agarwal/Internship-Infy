@@ -22,11 +22,7 @@
 			</c:if>
 
 
-			<!--  DO I NEED TO SHOW CART BEFORE LOGIN AS WELL?-->
-			<%-- <c:if test="${empty pageContext.request.userPrincipal.name }">
-				<li class="nav-item"><a class="nav-link"
-					href="http://localhost:8080/Internship-Infy/cart.jsp">My Cart</a></li>
-			</c:if> --%>
+	
 
 
 

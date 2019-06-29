@@ -7,7 +7,6 @@ select * from inventory;
 
 select * from images;
 
-select * from cart;
 
 
 -- insert into inventory(item_name,item_price,item_quantity,item_info,seller_username) values('Samsung Fridge',99889,5,'this is some info about the fridge','ss');

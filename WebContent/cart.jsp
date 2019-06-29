@@ -34,7 +34,6 @@
 			------------------------------------------------------------------------------------------------------------->
 	<div id="content" style="margin-top: 100px;">
 
-
 		<div class="card mb-3 mx-auto" style="max-width: 80%;">
 			<div class="card-header">ITEM NUMBER : #</div>
 			<div class="row no-gutters">
@@ -71,9 +70,12 @@
 				</div>
 			</div>
 		</div>
-
-	<div>
-	</div>
+		<form method="GET" action="ViewCart" hidden id="viewcartform"
+			name="cart-form">
+			<input name="username"
+				value="${pageContext.request.userPrincipal.name}" type="text">
+		</form>
+		<div></div>
 		<div class="container text-center" style="margin-top: 2rem">
 			<a class="btn btn-primary text-white" href="#!"
 				style="background-color: green"><h4>Checkout</h4></a>
@@ -104,6 +106,7 @@
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/viewCart.js"></script>
 
 
 </body>

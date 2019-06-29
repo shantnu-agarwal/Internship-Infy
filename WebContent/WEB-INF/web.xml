@@ -193,5 +193,13 @@
 	</servlet-mapping>
 	
 	
+	<servlet>
+		<servlet-name>viewcart</servlet-name>
+		<servlet-class>com.TheOnlineShop.ViewCart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewcart</servlet-name>
+		<url-pattern>/ViewCart</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
