@@ -39,7 +39,6 @@ public class addProductIntoDB extends HttpServlet{
 			Statement st = conn.createStatement();
 
 			int a = st.executeUpdate(
-					"insert into inventory(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username,sub_category) values('"
 					"insert into inventory(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username) values('"
 							+ name + "','" + price + "','" + quantity + "','" + info + "','" + category + "','"
 							+ timestamp + "','" + timestamp + "','" + seller+ "')");
