@@ -15,23 +15,6 @@ bootstrapValidate('#validationDescription',
 bootstrapValidate('#validationDescription',
 		'min:10:Please provide a reasonably long description to your product');
 
-function foo(val){
-	var op = document.getElementById("validationCategory");
-	
-	console.log(val + " selected, of Category: " + op.options[op.selectedIndex].value);
-	
-	/*if(op.options[op.selectedIndex].value == "Electronics"){
-		console.log("inside elec if");
-		bootstrapValidate('#validationSubCategory', 'inArray:(Air Conditioner, Television, Refrigerator):Please choose the correct combination of Category and Sub Category');
-	}
-	
-	if(op.options[op.selectedIndex].value == "Books"){
-		bootstrapValidate('#validationSubCategory','inArray:(study,novel):Please choose the correct combination of Category and Sub Category');
-	}*/
-		
-	
-}
-
 bootstrapValidate(
 		'#validationQuantity',
 		'max:2:You cannot have more than 99 items of the same type in stock at the same time.');
@@ -44,19 +27,20 @@ form.submit(function() {
 		url : form.attr('action'),
 		data : form.serialize(),
 		success : function (data) {
-			var result=data;
-			if(result=="NOT OK"){
+			
+			if(data=="NOT OKAY"){
 				console.log("Received FAILURE from Server");
 				$('#response').text("There was a problem with your request, please check your inputs and try again");
 				document.getElementById("response").style.visibility = 'visible';
 				
 			}
 			else{
-				console.log(result);
+				console.log(data);
 				console.log("Received SUCCESS from Server");
 				$('#response').text("Your product has been added successfully. You can continue to add more products now.");
 				document.getElementById("response").style.visibility = 'visible';
 				document.getElementById("productForm").reset();
+				document.getElementById("SetInputID").value = parseInt(data);
 				
 			}
 		}

@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="java.sql.*"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +8,7 @@
 
 <title>The Online Shop | Home</title>
 <link rel="stylesheet" href="css/index.css">
+<link href="template/css/sidebar.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
 </head>
@@ -25,6 +24,10 @@
 																			LEFT SIDE MENU
 							------------------------------------------------------------------------------------------------------------->
 
+
+
+
+	<!-- Sidebar -->
 	<div class="wrapper">
 		<nav id="sidebar" style="background-color: #FFD54F">
 			<div class="sidebar-header">
@@ -71,65 +74,42 @@
 			------------------------------------------------------------------------------------------------------------->
 	<div id="content" style="margin-top: 100px;">
 
-		<table id="cart-table">
-			<tr>
-				<th>Item Number</th>
-				<th>Item Name</th>
-				<th>Item Quantity</th>
-				<th>Item Cost</th>
-				<th>Seller Name</th>
-				<th>Photo</th>
-			</tr>
-		</table>
-		<div class="card mb-3 mx-auto" style="max-width: 80%;">
-			<div class="card-header">ITEM NUMBER : #</div>
-			<div class="row no-gutters">
-				<div class="col-md-4" style="height: 400px">
-					<img src="inventory/productimg/samsung-670-fridge.jpg"
-						class="card-img" alt="Product Image" height=100%;>
+		<div class="jumbotron">
+			<h1 class="display-4 mx-auto">Hello, world!</h1>
+			<p class="lead">I am sorry to see that you are facing problems on
+				this platform. But don't worry, I believe we can work it out
+				together.</p>
+			<hr class="my-4">
+			<p>Get in touch with me through any of the following mediums and
+				I would be glad to help</p>
+			<div class="row">
+				<div class="col">
+					<a class="btn btn-primary btn-lg"
+						href="https://github.com/shantnu-agarwal/Internship-Infy/issues"
+						role="button">Raise an issue on GitHub</a>
+
 				</div>
-				<div class="col-md-8">
-
-
-					<div class="card-body">
-						<ul class="list-group">
-							<li class="list-group-item">
-								<h5 class="card-title">PRODUCT NAME HERE</h5>
-								<p class="card-text">SELLER NAME HERE</p>
-								<p class="card-text">
-									<small class="text-muted">Added on: DATE AND TIME HERE</small>
-								</p>
-							</li>
-							<li class="list-group-item">
-								<p class="card-text">QUANTITY HERE</p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<button type="button" class="btn btn-secondary">-</button>
-									<a class="btn btn-secondary disabled">Choosen Quantity</a>
-									<button type="button" class="btn btn-secondary">+</button>
-								</div>
-							</li>
-							<hr class="my-4">
-							<li class="list-group-item mx-auto">
-								<p class="card-text" style="color: BLUE">Rs. 99999</p>
-							</li>
-						</ul>
-					</div>
+				<div class="col">
+					<a class="btn btn-primary btn-lg"
+						href="https://www.linkedin.com/in/shantnuagarwal/" role="button">Catch
+						me on LinkedIn</a>
+				</div>
+				<div class="col">
+					<a class="btn btn-primary btn-lg"
+						href="http://twitter.com/shantnuagarwal" role="button">Find me
+						on Twitter</a>
+				</div>
+				<div class="col">
+					<a class="btn btn-primary btn-lg"
+						href="mailto:shantnu.agarwal@outlook.com" role="button">Send
+						me an email!</a>
 				</div>
 			</div>
+
+
+
+
 		</div>
-		<form method="GET" action="ViewCart" id="viewcartform"
-			name="cart-form" hidden>
-			<input name="username"
-				value="${pageContext.request.userPrincipal.name}" type="text">
-		</form>
-		<div></div>
-		<div class="container text-center" style="margin-top: 2rem">
-			<a class="btn btn-primary text-white" href="#!"
-				style="background-color: green"><h4>Checkout</h4></a>
-		</div>
-
-
-
 	</div>
 
 
@@ -153,7 +133,9 @@
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/viewCart.js"></script>
+	<script src="js/bootstrap-validate.js"></script>
+	<script src="template/validate.js"></script>
+
 
 
 </body>

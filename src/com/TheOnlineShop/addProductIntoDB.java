@@ -40,17 +40,19 @@ public class addProductIntoDB extends HttpServlet{
 
 			int a = st.executeUpdate(
 					"insert into inventory(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username,sub_category) values('"
+					"insert into inventory(item_name,item_price,item_quantity,item_info,category,time_added,time_updated,seller_username) values('"
 							+ name + "','" + price + "','" + quantity + "','" + info + "','" + category + "','"
-							+ timestamp + "','" + timestamp + "','" + seller+ "','"+ subcat + "')");
+							+ timestamp + "','" + timestamp + "','" + seller+ "')");
 			ResultSet id = st.executeQuery("select item_ID from inventory where item_name='"+name+"';");
-
-			System.out.println("\nNew Product added by " + seller + ". Product Name: " + name);
-
-			String text = id.next()+"";
+			id.next();
+			int text = (Integer) id.getObject("item_id");
+			
+			System.out.println("\nNew Product added by " + seller + ". Product Name: " + name + " and ID alloted = " + text);
+			String send = text + "";
 
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
-			response.getWriter().write(text);
+			response.getWriter().write(send);
 			conn.close();
 		} catch (Exception e) {
 			String text = "NOT OKAY";

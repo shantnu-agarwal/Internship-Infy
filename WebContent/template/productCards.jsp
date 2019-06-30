@@ -17,10 +17,10 @@
 			ResultSet us;
 			if(type!=null){
 				System.out.println("not null");
-				 us = st.executeQuery("SELECT * FROM inventory WHERE category='" + type + "';");
+				 us = st.executeQuery("SELECT * FROM inventory,images WHERE category='" + type + "' and inventory.item_ID=images.item_ID;");
 			}
 			else{
-				us = st.executeQuery("SELECT * FROM inventory ORDER BY time_added DESC;");
+				us = st.executeQuery("SELECT * FROM inventory,images where inventory.item_ID=images.item_ID ORDER BY inventory.time_added DESC ;");
 			}	
 			while (us.next()) {
 				cnt++;
@@ -29,7 +29,7 @@
 		<div class="card">
 			<div class="card-body">
 				<img class="card-img-top"
-					src="/Internship-Infy/inventory/productimg/whirlpool-330-fridge.jpeg"
+					src="http://localhost:8080/Internship-Infy/productimages/<%=us.getString("image_name")%>"
 					style="width: 20rem; height: auto;" alt="Product Image">
 				<div class="card-body">
 					<h4 class="card-title" id="item_Name"><%=us.getString("item_name")%></h4>

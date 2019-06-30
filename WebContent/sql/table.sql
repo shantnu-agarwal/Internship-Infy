@@ -7,15 +7,19 @@ select * from inventory;
 
 select * from images;
 
+select * from cart;
 
+select * from inventory,images where inventory.item_ID = images.item_ID and inventory.category='furniture';
+
+insert into images(item_id, image_url) values(46,"LOL");
 
 -- insert into inventory(item_name,item_price,item_quantity,item_info,seller_username) values('Samsung Fridge',99889,5,'this is some info about the fridge','ss');
 
--- ALTER TABLE inventory DROP COLUMN short_info;
+-- ALTER TABLE inventory DROP COLUMN sub_category;
 
--- ALTER TABLE users ADD cart_items INT DEFAULT 0;
+ALTER TABLE users ADD cart_items INT DEFAULT 0;
 
--- ALTER TABLE images add time_added datetime;
+
 
 -- insert into user_roles(username,role) values('admin','ROLE_ADMIN');
 
@@ -60,10 +64,12 @@ CREATE TABLE user_roles (
 );
 
 CREATE TABLE images(
-	item_ID INT,
+	image_ID INT NOT null AUTO_INCREMENT,
+    item_ID INT,
     image_url VARCHAR(200),
     image_name VARCHAR(30),
     time_added DATETIME,
+    PRIMARY KEY (image_ID),
     FOREIGN KEY (item_ID) REFERENCES inventory(item_ID)
 );
 

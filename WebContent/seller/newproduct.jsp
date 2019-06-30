@@ -45,7 +45,7 @@
 			<c:if test="${not empty pageContext.request.userPrincipal.name }">
 				<form hidden action="../logOutServlet" method="POST"
 					id="logOutButton"></form>
-				
+
 				<button type="button" class="btn btn-primary"
 					onclick="javascript:document.getElementById('logOutButton').submit();">
 					Logout</button>
@@ -68,9 +68,8 @@
 			<ul class="list-unstyled components">
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px; width: 11rem;">
-					<a href="inventory"
-					style="color: white; font-family: sans-serif;">View My
-						Inventory</a>
+					<a href="inventory" style="color: white; font-family: sans-serif;">View
+						My Inventory</a>
 				</li>
 				<li class="btn"
 					style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 20px; margin-right: 40px; width: 11rem;">
@@ -96,8 +95,8 @@
 				style="margin-top: 3rem; margin-bottom: 2rem;">Add New Product</h1>
 
 			<h5 id="response"
-				style="color: red; margin-bottom: 2rem; visibility: hidden"></h5>
-			<form style="margin-bottom: 5rem;" id="productForm"
+				style="color: red; margin-bottom: 1rem; visibility: hidden"></h5>
+			<form style="margin-bottom: 3rem;" id="productForm"
 				action="addProductIntoDB" method="get" enctype="multipart/form-data">
 				<div class="form-group">
 					<label>Full Product Name</label> <input class="form-control"
@@ -114,24 +113,13 @@
 					</select>
 				</div>
 				<div class="form-group">
-					<label>Sub-Category</label> <select class="form-control"
-						name="InputSubCategory" required id="validationSubCategory" onchange="foo(this.value)">
-						<option value="" selected disabled hidden>Choose here</option>
-						<option value="ac">Air Conditioner</option>
-						<option value="tv">Television</option>
-						<option value="fridge">Refrigerator</option>
-						<option value="study">Study Books</option>
-						<option value="novel">Novels</option>
-					</select>
-				</div>
-				<div class="form-group">
 					<label>Price for one item</label>
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<div class="input-group-text">Rs.</div>
 						</div>
 						<input class="form-control" type="number" name="InputPrice"
-							placeholder="23999" id="validationPrice" required>
+							placeholder="23999" id="validationPrice" min="1" required>
 						<div class="input-group-append">
 							<span class="input-group-text">/item</span>
 						</div>
@@ -147,25 +135,27 @@
 				<div class="form-group">
 					<label>Total Quantity</label> <input class="form-control"
 						name="InputQuantity" type="number" placeholder="Eg. 500"
-						id="validationQuantity" required> <small
+						id="validationQuantity" min="1" required> <small
 						class="form-text text-muted">This is the total stock of
 						the product that you have.</small>
 				</div>
-				<div class="form-group">
-					<label>Product Image</label> <input type="file" name="InputImage"
-						class="form-control" accept="image/*"><small
-						class="form-text text-muted">Try to upload a clear image</small>
-				</div>
+
 				<input name="InputSeller" hidden
 					value="${pageContext.request.userPrincipal.name}">
 
 				<button name="submit" type="submit" class="btn btn-primary">Confirm
 					and add product listing.</button>
 			</form>
-			<form action="upload" method="post" enctype="multipart/form-data" style="margin-bottom:7rem">
-                <input type="file" name="file" />
-                <input type="submit" value="upload" />
-            </form>  
+			<form action="upload" method="post" enctype="multipart/form-data"
+				style="margin-bottom: 7rem" id="image-form">
+				<div class="form-group">
+					<label>Product Image</label> <input type="file" name="file"
+						class="form-control" accept="image/*"><small
+						class="form-text text-muted">Try to upload a clear image</small>
+				</div>
+				<input name="SetInputID" value="LOL" id="SetInputID" hidden> <input
+					type="submit" value="Upload Image" class="btn btn-primary" />
+			</form>
 
 
 		</div>

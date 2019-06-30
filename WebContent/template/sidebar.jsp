@@ -11,39 +11,30 @@
 			</h3>
 		</div>
 		<ul class="list-unstyled components text-white">
-			<li class="active"
+			<li
 				style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 0px; padding-bottom: 10px; margin-left: 40px; margin-right: 40px;">
-				<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-				class="dropdown-toggle"
+				<a href="/Internship-Infy/"
+				style="color: white; font-family: sans-serif;">All Products</a>
+			</li>
+			<li class="active"
+				style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 0px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px;">
+				<a href="?category=electronics"
 				style="color: white; font-family: sans-serif;">Home Appliances</a>
-				<ul class="collapse list-unstyled" id="homeSubmenu">
-					<li><a href="?category=electronics&sub_category=tv"
-						style="color: white; font-family: sans-serif; padding-left: 1rem">Televisions</a>
-					</li>
-					<li><a href="?category=electronics&sub_category=fridge"
-						style="color: white; font-family: sans-serif; padding-left: 1rem">Refrigerators</a></li>
-					<li><a href="?category=electronics&sub_category=ac"
-						style="color: white; font-family: sans-serif; padding-left: 1rem">Air
-							Conditioners</a></li>
-				</ul>
 			</li>
 			<li
 				style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px;">
-				<a style="color: white; font-family: sans-serif;">Furniture</a>
+				<a href="?category=furniture"
+				style="color: white; font-family: sans-serif;">Furniture</a>
 			</li>
 			<li
 				style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-right: 40px; color: white; font-family: sans-serif;">
-				<a href="?category=Books" style="color: white; font-family: sans-serif;">Books</a>
+				<a href="?category=Books"
+				style="color: white; font-family: sans-serif;">Books</a>
 
 			</li>
 			<li
 				style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px; color: white; font-family: sans-serif;">
-				<a href="#" style="color: white; font-family: sans-serif;">Support
-					Center</a>
-			</li>
-			<li
-				style="background-color: #3cb371; padding-left: 10px; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; margin-left: 40px; margin-top: 25px; margin-bottom: 20px; margin-right: 40px; color: white; font-family: sans-serif;">
-				<a href="#" style="color: white; font-family: sans-serif;">Contact</a>
+				<a href="contact.jsp" style="color: white; font-family: sans-serif;">Contact</a>
 			</li>
 		</ul>
 	</nav>
