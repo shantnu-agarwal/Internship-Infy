@@ -71,6 +71,7 @@
 			------------------------------------------------------------------------------------------------------------->
 	<div id="content" style="margin-top: 100px;">
 
+<h1 class="text-center"> My Cart</h1>
 		<table id="cart-table">
 			<tr>
 				<th>Item Number</th>
@@ -81,6 +82,10 @@
 				<th>Photo</th>
 			</tr>
 		</table>
+		
+		
+		
+		
 		<div class="card mb-3 mx-auto" style="max-width: 80%;">
 			<div class="card-header">ITEM NUMBER : #</div>
 			<div class="row no-gutters">
