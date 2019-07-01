@@ -29,8 +29,7 @@
 			------------------------------------------------------------------------------------------------------------->
 	<div id="content" style="margin-top: 100px; margin-left: 10rem;">
 		<div class="row" style="margin-bottom: 1rem;">
-			<button onclick="window.history.back();" class="btn btn-primary">Back
-				to products list</button>
+			<button onclick="window.history.back();" class="btn btn-primary">Go Back</button>
 		</div>
 		<div class="card md-10" style="width: auto;">
 			<%

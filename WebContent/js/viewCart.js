@@ -1,4 +1,5 @@
 var num = 1;
+var total=0;
 
 window.addEventListener('load', function() {
 	console.log("All assests loaded.");
@@ -20,38 +21,44 @@ window.addEventListener('load', function() {
 				var row = table.insertRow(row_num);
 				row.insertCell(0).innerHTML = parsed[i];
 				row.insertCell(1).innerHTML = parsed[i + 1];
-				
+				row.insertCell(2);
+				row.insertCell(3);
 
 				i += 2;
 				row_num++;
 			}
 			getData(table);
-
+//			setTotal();
 		}
 	});
 	return false;
 });
 
+var id;
 function getData(table) {
 	 for (i = 1; i < table.rows.length; i++) {
-		 var id  = table.rows[i].cells[0].innerHTML;
+		 id = table.rows[i].cells[0].innerHTML;
 		 console.log("READ FROM TABLE: " + id);
-	 
-		 $.ajax({
-				type : "GET",
-				url : "GetFromCartDB",
-				data : {"ID": id},		
-				success : function(data) {
-					table.rows[i].cells[0].innerHTML = "data";
-					table.rows[i].cells[1].innerHTML = "ITEM NAME";
-					table.rows[i].cells[2].innerHTML = "ITEM QUANTITY";
-					table.rows[i].cells[3].innerHTML = "ITEM COST";
-					table.rows[i].cells[4].innerHTML = "SELLER NAME";
-					table.rows[i].cells[5].innerHTML = "PHOTO";
-					
-				}
-			});
-			return false;
+		 ajax(id,i,table);
 	 }
 	
+}
+function ajax(ID,I,table){
+	$.ajax({
+		type : "GET",
+		url : "GetFromCartDB",
+		data : {"ID": ID},		
+		success : function(data) {
+			console.log("RAW DATA : " + data);
+			let parsed = JSON.parse(data);
+			table.rows[I].cells[0].innerHTML = parsed.item_name;
+			//quantity already set in table by initial ajax	
+			table.rows[I].cells[2].innerHTML = "<a href=\"http://localhost:8080/Internship-Infy/inventory/show-item.jsp?id="+ID+"\"><img style=\"height:50px\" src=\"http://localhost:8080/Internship-Infy/productimages/" + parsed.image_name + "\"> </a>";
+			table.rows[I].cells[3].innerHTML = parsed.item_price*table.rows[I].cells[1].innerHTML;
+			total+=	parseInt(table.rows[I].cells[3].innerHTML);
+			console.log("total increased to " + total);
+			document.getElementById("totalCost").innerHTML = "Your total is: " + total;
+		}
+	});
+	return false;
 }

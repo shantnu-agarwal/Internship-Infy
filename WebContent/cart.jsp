@@ -71,57 +71,25 @@
 			------------------------------------------------------------------------------------------------------------->
 	<div id="content" style="margin-top: 100px;">
 
-<h1 class="text-center"> My Cart</h1>
-		<table id="cart-table">
-			<tr>
-				<th>Item Number</th>
-				<th>Item Name</th>
-				<th>Item Quantity</th>
-				<th>Item Cost</th>
-				<th>Seller Name</th>
-				<th>Photo</th>
-			</tr>
+		<h1 class="text-center">My Cart</h1>
+		<hr class="my-5	">
+		<table class="table table-bordered table-hover" id="cart-table">
+			<thead class="thead-dark">
+				<tr>
+					<th>Item Name</th>
+					<th>Item Quantity</th>
+					<th>Photo</th>
+					<th>Item Cost</th>
+
+				</tr>
+			</thead>
+			
 		</table>
-		
-		
-		
-		
-		<div class="card mb-3 mx-auto" style="max-width: 80%;">
-			<div class="card-header">ITEM NUMBER : #</div>
-			<div class="row no-gutters">
-				<div class="col-md-4" style="height: 400px">
-					<img src="inventory/productimg/samsung-670-fridge.jpg"
-						class="card-img" alt="Product Image" height=100%;>
-				</div>
-				<div class="col-md-8">
 
 
-					<div class="card-body">
-						<ul class="list-group">
-							<li class="list-group-item">
-								<h5 class="card-title">PRODUCT NAME HERE</h5>
-								<p class="card-text">SELLER NAME HERE</p>
-								<p class="card-text">
-									<small class="text-muted">Added on: DATE AND TIME HERE</small>
-								</p>
-							</li>
-							<li class="list-group-item">
-								<p class="card-text">QUANTITY HERE</p>
-								<div class="btn-group" role="group" aria-label="Basic example">
-									<button type="button" class="btn btn-secondary">-</button>
-									<a class="btn btn-secondary disabled">Choosen Quantity</a>
-									<button type="button" class="btn btn-secondary">+</button>
-								</div>
-							</li>
-							<hr class="my-4">
-							<li class="list-group-item mx-auto">
-								<p class="card-text" style="color: BLUE">Rs. 99999</p>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+
+		<div id="totalCost"></div>
+
 		<form method="GET" action="ViewCart" id="viewcartform"
 			name="cart-form" hidden>
 			<input name="username"

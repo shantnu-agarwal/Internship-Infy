@@ -6,7 +6,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,44 +27,41 @@ public class GetFromCartDB extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String username = request.getParameter("");
+		String id = request.getParameter("ID");
 
-		System.out.println("Fetching cart details for " + username);
+		System.out.println("Fetching item details for ID: " + id);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
 			Statement st = conn.createStatement();
 
-			ResultSet rs = st.executeQuery("SELECT * FROM cart where username='" + username + "';");
-			
-			
+			ResultSet rs = st.executeQuery("SELECT * FROM inventory,images where inventory.item_ID='" + id + "' and images.item_ID='" + id + "';");
+
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
-			String json="";
-			int cnt=1;
-			List<Integer> list = new ArrayList<>();
-		    
-			while (rs.next()) {
-				
-				int ITEM_ID = (Integer) rs.getObject("item_id");
-				int ITEM_QUANTITY = (Integer) rs.getObject("quantity");
-				list.add(ITEM_ID);
-				list.add(ITEM_QUANTITY);
-				cnt++;
-				System.out.println(ITEM_ID);
-				System.out.println(ITEM_QUANTITY);
-				
-				json = new Gson().toJson(list);
-				
-			}
+			String json = "";
+			int cnt = 1;
+			Map<String, Object> info = new LinkedHashMap<>();
+
+			rs.next();
+
+			String ITEM_NAME = (String) rs.getObject("item_name");
+			int ITEM_PRICE = (Integer) rs.getObject("item_price");
+			String IMAGE_NAME = (String) rs.getObject("image_name");
+			info.put("item_name", ITEM_NAME);
+			info.put("item_price", ITEM_PRICE);
+			info.put("image_name", IMAGE_NAME);
+
+			cnt++;
+			System.out.println("Item Name : " + ITEM_NAME);
+
+			json = new Gson().toJson(info);
+
 			response.getWriter().write(json);
 		} catch (Exception e) {
 			System.out.print(e);
 			e.printStackTrace();
 		}
-
-		
-			
 
 	}
 }
