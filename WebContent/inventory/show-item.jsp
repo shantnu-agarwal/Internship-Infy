@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Product ABC | The Online Shop</title>
+<title>Product Showcase | The Online Shop</title>
 <link rel="stylesheet" href="../css/index.css">
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 

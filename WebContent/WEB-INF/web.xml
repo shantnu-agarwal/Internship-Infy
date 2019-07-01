@@ -113,6 +113,15 @@
 		<servlet-name>sellerinventory</servlet-name>
 		<url-pattern>/seller/inventory</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>confirm</servlet-name>
+		<jsp-file>/transaction/confirm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>confirm</servlet-name>
+		<url-pattern>/Transaction/ConfirmOrder</url-pattern>
+	</servlet-mapping>
 
 	<!-- CLASS SERVLETS -->
 
@@ -178,7 +187,7 @@
 		<servlet-name>addToCart</servlet-name>
 		<url-pattern>/inventory/AddToCart</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>getCartItemsNumber</servlet-name>
 		<servlet-class>com.TheOnlineShop.GetCart</servlet-class>
@@ -191,8 +200,8 @@
 		<servlet-name>getCartItemsNumber</servlet-name>
 		<url-pattern>/GetCart</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<servlet>
 		<servlet-name>viewcart</servlet-name>
 		<servlet-class>com.TheOnlineShop.ViewCart</servlet-class>
@@ -201,5 +210,14 @@
 		<servlet-name>viewcart</servlet-name>
 		<url-pattern>/ViewCart</url-pattern>
 	</servlet-mapping>
-	
+
+	<servlet>
+		<servlet-name>address</servlet-name>
+		<servlet-class>com.TheOnlineShop.SubmitAddress</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>address</servlet-name>
+		<url-pattern>/transaction/SubmitAddress</url-pattern>
+	</servlet-mapping>
+
 </web-app>

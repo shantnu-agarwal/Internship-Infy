@@ -11,13 +11,15 @@ select * from cart;
 
 select * from inventory,images where inventory.item_ID = images.item_ID and inventory.category='furniture';
 
-insert into images(item_id, image_url) values(46,"LOL");
+update users set address="NEW" where username='user1';
 
 -- insert into inventory(item_name,item_price,item_quantity,item_info,seller_username) values('Samsung Fridge',99889,5,'this is some info about the fridge','ss');
 
 -- ALTER TABLE inventory DROP COLUMN sub_category;
 
 ALTER TABLE users ADD cart_items INT DEFAULT 0;
+
+-- alter table users add address VARCHAR(200) default "NOT AVAILABLE";-- 
 
 
 
@@ -86,3 +88,13 @@ CREATE TABLE cart(
     PRIMARY KEY (transaction_ID),
     FOREIGN KEY (item_ID) REFERENCES inventory(item_ID)
 );
+
+
+-- CREATE TABLE transactions(
+-- 	t_ID int NOT NULL AUTO_INCREMENT,
+--     username varchar(25),
+--     t_time DATETIME,
+--     
+--     
+
+-- );

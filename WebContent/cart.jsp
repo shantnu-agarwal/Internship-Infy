@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Online Shop | Home</title>
+<title>The Online Shop | Cart</title>
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -97,7 +97,7 @@
 		</form>
 		<div></div>
 		<div class="container text-center" style="margin-top: 2rem">
-			<a class="btn btn-primary text-white" href="#!"
+			<a class="btn btn-primary text-white" href="transaction/checkout.jsp"
 				style="background-color: green"><h4>Checkout</h4></a>
 		</div>
 
