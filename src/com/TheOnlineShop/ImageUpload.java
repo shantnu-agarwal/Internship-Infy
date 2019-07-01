@@ -19,7 +19,7 @@ public class ImageUpload extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String UPLOAD_DIRECTORY = "C:/Users/Shantnu Agarwal/eclipse-workspace/Internship-Infy/WebContent/productimages";
+	private String UPLOAD_DIRECTORY = "D:\\intern-infy\\product-images\\";
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

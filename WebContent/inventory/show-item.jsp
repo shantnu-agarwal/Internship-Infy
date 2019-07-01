@@ -70,28 +70,47 @@
 						<!-----------------  ADD TO CART AND BUY OPTIONS 
 											--------------------------------->
 
-						<li class="list-group-item">
-							<form id="add-to-cart-form" method="POST" action="AddToCart">
-								<input name="id" value="<%=request.getParameter("id")%>" hidden>
-								<input name="LoggedIn"
-									value="${pageContext.request.userPrincipal.name}" hidden>
+						<c:if test="${not empty pageContext.request.userPrincipal.name }">
+							<li class="list-group-item">
+								<form id="add-to-cart-form" method="POST" action="AddToCart">
+									<input name="id" value="<%=request.getParameter("id")%>" hidden>
+									<input name="LoggedIn"
+										value="${pageContext.request.userPrincipal.name}" hidden>
 
-								<button class="btn" type="submit" id="add-to-cart-button">
+									<button class="btn" type="submit" id="add-to-cart-button">
+										<img alt="Add to Cart" src="img/carticon.png"
+											style="max-width: 2rem; margin-right: 1rem">Add to Cart
+									</button>
+									<input type="number" name="Quantity"
+										placeholder="Choose Quantity" min=1 required>
+								</form>
+							</li>
+							<li class="list-group-item">
+								<form method="get" action="BuyNow">
+									<button class="btn" type="submit" id="buy-now-button">
+										<img alt="Buy Now" src="img/buynow.png"
+											style="max-width: 2rem; margin-right: 1rem">Buy Now
+									</button>
+								</form>
+							</li>
+						</c:if>
+						<c:if test="${ empty pageContext.request.userPrincipal.name }">
+							<li class="list-group-item">
+								<button class="btn" data-toggle="popover"
+									data-content="Please login first!" title="Uh oh!">
 									<img alt="Add to Cart" src="img/carticon.png"
 										style="max-width: 2rem; margin-right: 1rem">Add to Cart
 								</button>
-								<input type="number" name="Quantity"
-									placeholder="Choose Quantity" min=1 required>
-							</form>
-						</li>
-						<li class="list-group-item">
-							<form method="get" action="BuyNow">
-								<button class="btn" type="submit" id="buy-now-button">
+							</li>
+							<li class="list-group-item">
+								<button class="btn" data-toggle="popover"
+									data-content="Please login first!" title="Uh oh!">
 									<img alt="Buy Now" src="img/buynow.png"
 										style="max-width: 2rem; margin-right: 1rem">Buy Now
 								</button>
-							</form>
-						</li>
+						</c:if>
+
+
 					</ul>
 				</div>
 
@@ -134,6 +153,7 @@
 						------------------------------------------------------------------------------------------------------------->
 
 	<script src="../js/jquery.min.js"></script>
+	<script src="../js/popper.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/bootstrap-validate.js"></script>
 	<script src="../template/validate.js"></script>

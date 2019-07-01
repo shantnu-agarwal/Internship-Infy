@@ -25,6 +25,12 @@ bootstrapValidate(
 		'#validationConfirmPassword',
 		'matches:#validationPassword:Please check that your password matches in both the fields');
 
+$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+
+
+
 var form = $('#register');
 form
 		.submit(function() {

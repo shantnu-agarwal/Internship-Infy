@@ -40,9 +40,9 @@ function getData(table) {
 		 $.ajax({
 				type : "GET",
 				url : "GetFromCartDB",
-				data : {"ID": id},
+				data : {"ID": id},		
 				success : function(data) {
-					table.rows[i].cells[0].innerHTML = "#";
+					table.rows[i].cells[0].innerHTML = "data";
 					table.rows[i].cells[1].innerHTML = "ITEM NAME";
 					table.rows[i].cells[2].innerHTML = "ITEM QUANTITY";
 					table.rows[i].cells[3].innerHTML = "ITEM COST";

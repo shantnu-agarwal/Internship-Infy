@@ -35,6 +35,8 @@ insert into user_roles(username,role) values("shantnu","ROLE_USER");
 
 alter table cart add cart_time DATETIME;
 
+alter table images modify image_name varchar(75);
+
 SELECT COUNT(user_role_id) from user_roles;
 
 SELECT cart_items from users where username='user1';
