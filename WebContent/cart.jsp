@@ -79,7 +79,7 @@
 					<th>Item Name</th>
 					<th>Item Quantity</th>
 					<th>Photo</th>
-					<th>Item Cost</th>
+					<th>Item Cost (Rs.)</th>
 
 				</tr>
 			</thead>
@@ -88,7 +88,7 @@
 
 
 
-		<div id="totalCost"></div>
+		<h3 id="totalCost"></h3>
 
 		<form method="GET" action="ViewCart" id="viewcartform"
 			name="cart-form" hidden>

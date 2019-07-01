@@ -21,7 +21,7 @@ ALTER TABLE users ADD cart_items INT DEFAULT 0;
 
 -- alter table users add address VARCHAR(200) default "NOT AVAILABLE";-- 
 
-
+-- alter table inventory modify item_name varchar(100);
 
 -- insert into user_roles(username,role) values('admin','ROLE_ADMIN');
 
@@ -85,6 +85,7 @@ CREATE TABLE cart(
     address varchar(75),
     cart_time datetime,
     transaction_time datetime,
+	transaction_status VARCHAR(25) default 'NOT DONE',
     PRIMARY KEY (transaction_ID),
     FOREIGN KEY (item_ID) REFERENCES inventory(item_ID)
 );

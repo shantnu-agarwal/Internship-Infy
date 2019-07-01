@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,14 +20,13 @@ public class ImageUpload extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String UPLOAD_DIRECTORY = "D:\\intern-infy\\product-images\\";
-
+	private String UPLOAD_DIRECTORY = "C:/Users/Shantnu Agarwal/eclipse-workspace/Internship-Infy/WebContent/productimages";
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		System.out.println("Image upload being attempted.");
-		
+		String timestamp = new Timestamp(System.currentTimeMillis()).toString();
 		try {
 			String name = "";
 			String item_ID="";
@@ -47,8 +47,8 @@ public class ImageUpload extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
 			Statement st = conn.createStatement();
-			st.executeUpdate("INSERT INTO images(item_ID,image_url,image_name) values(" + item_ID + ",'"
-					+ (UPLOAD_DIRECTORY + File.separator + name) + "','"+ name +"');");
+			st.executeUpdate("INSERT INTO images(item_ID,image_url,image_name,time_added) values(" + item_ID + ",'"
+					+ (UPLOAD_DIRECTORY + File.separator + name) + "','"+ name +"','" + timestamp + "');");
 			// File uploaded successfully
 			System.out.println("Image was uploaded successfully!");
 			response.sendRedirect("http://localhost:8080/Internship-Infy/seller/inventory");

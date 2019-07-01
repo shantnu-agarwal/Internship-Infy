@@ -27,7 +27,6 @@ public class addProductIntoDB extends HttpServlet{
 		String price= request.getParameter("InputPrice");
 		String info = request.getParameter("InputInfo");
 		String quantity = request.getParameter("InputQuantity");
-		String subcat = request.getParameter("InputSubCategory");
 		
 		String timestamp = new Timestamp(System.currentTimeMillis()).toString();
 		String seller = request.getParameter("InputSeller");

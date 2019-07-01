@@ -1,3 +1,4 @@
+//TO GET THE ITEMS FROM THE CART TABLE FOR THE CART PAGE
 package com.TheOnlineShop;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class ViewCart extends HttpServlet {
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "welcome");
 			Statement st = conn.createStatement();
 
-			ResultSet rs = st.executeQuery("SELECT * FROM cart where username='" + username + "';");
+			ResultSet rs = st.executeQuery("SELECT * FROM cart where username='" + username + "' and transaction_status='NOT DONE';");
 			
 			
 			response.setContentType("text/plain");

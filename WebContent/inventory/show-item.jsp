@@ -46,7 +46,7 @@
 				<div class="col-md-5">
 					<img
 						src="http://localhost:8080/Internship-Infy/productimages/<%=rs.getString("image_name")%>"
-						class="card-img" alt="Fridge Image Here">
+						class="card-img" alt="Fridge Image Here" style="height:auto;width:600px;">
 				</div>
 				<%
 					ResultSet us = st.executeQuery("SELECT * from inventory,users where item_ID="

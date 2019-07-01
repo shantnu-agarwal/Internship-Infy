@@ -1,7 +1,7 @@
 console.log("Running Validation Service");
 
 bootstrapValidate('#validationName',
-		'max:20:Name cannot be longer than 20 characters!');
+		'max:100:Name cannot be longer than 100 characters!');
 bootstrapValidate('#validationName',
 'regex:^[0-9,A-Z,a-z ,.\'-]+$:Your name must consist of letters only!');
 

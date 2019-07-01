@@ -1,3 +1,4 @@
+//TO READ THE TOTAL NUMBER OF ITEMS IN THE CART
 package com.TheOnlineShop;
 
 import java.io.IOException;

@@ -57,7 +57,7 @@ function ajax(ID,I,table){
 			table.rows[I].cells[3].innerHTML = parsed.item_price*table.rows[I].cells[1].innerHTML;
 			total+=	parseInt(table.rows[I].cells[3].innerHTML);
 			console.log("total increased to " + total);
-			document.getElementById("totalCost").innerHTML = "Your total is: " + total;
+			document.getElementById("totalCost").innerHTML = "Your total is: Rs." + total;
 		}
 	});
 	return false;
