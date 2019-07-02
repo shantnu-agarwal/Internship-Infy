@@ -40,7 +40,7 @@ public class GetFromCartDB extends HttpServlet {
 			response.setContentType("text/plain");
 			response.setCharacterEncoding("UTF-8");
 			String json = "";
-			int cnt = 1;
+			
 			Map<String, Object> info = new LinkedHashMap<>();
 
 			rs.next();
@@ -52,7 +52,7 @@ public class GetFromCartDB extends HttpServlet {
 			info.put("item_price", ITEM_PRICE);
 			info.put("image_name", IMAGE_NAME);
 
-			cnt++;
+			
 			System.out.println("Item Name : " + ITEM_NAME);
 
 			json = new Gson().toJson(info);

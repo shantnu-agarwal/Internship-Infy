@@ -72,6 +72,13 @@
 											--------------------------------->
 
 						<c:if test="${not empty pageContext.request.userPrincipal.name }">
+							<%
+								if (us.getString("item_quantity").equals("0")) {
+							%>
+							<h4>This item is out of stock.</h4>
+							<%
+								} else {
+							%>
 							<li class="list-group-item">
 								<form id="add-to-cart-form" method="POST" action="AddToCart">
 									<input name="id" value="<%=request.getParameter("id")%>" hidden>
@@ -83,21 +90,27 @@
 											style="max-width: 2rem; margin-right: 1rem">Add to Cart
 									</button>
 									<input type="number" name="Quantity"
-										placeholder="Choose Quantity" min=1 max=<%= us.getString("item_quantity")%> required>
+										placeholder="Choose Quantity" min=1
+										max=<%=us.getString("item_quantity")%> required>
 								</form>
 							</li>
 							<li class="list-group-item">
 								<form method="POST"
-									action="../transaction/BuyNow?id=<%= request.getParameter("id")%>">
+									action="../transaction/BuyNow?id=<%=request.getParameter("id")%>">
 									<button class="btn" type="submit" id="buy-now-button">
 										<img alt="Buy Now" src="img/buynow.png"
 											style="max-width: 2rem; margin-right: 1rem">Buy Now
 									</button>
 									<input type="number" name="Quantity"
-										placeholder="Choose Quantity" min=1 max=<%= us.getString("item_quantity")%> required>
+										placeholder="Choose Quantity" min=1
+										max=<%=us.getString("item_quantity")%> required>
 								</form>
 							</li>
+							<%
+							 	}
+							%>
 						</c:if>
+
 						<!---------------------=
 						 				WITHOUT LOGIN OPTIONS 
 						 				------------------------->

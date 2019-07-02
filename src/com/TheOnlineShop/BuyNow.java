@@ -23,7 +23,9 @@ public class BuyNow extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		String address = request.getParameter("InputFlat") + " " + request.getParameter("InputArea") + " "
+				+ request.getParameter("InputCity") + " " + request.getParameter("InputState") + " "
+				+ request.getParameter("InputPincode");
 		String id = request.getParameter("InputID");
 		String username = request.getParameter("InputUsername");
 		String quantity = request.getParameter("InputQuantity");
@@ -39,11 +41,12 @@ public class BuyNow extends HttpServlet {
 			System.out.print("Inventory Updated");
 			a = st.executeUpdate(
 					"INSERT INTO cart(item_ID,quantity,username,cart_time,transaction_time,transaction_status) values('"+id+"','" + quantity + "','" + username + "','"+ timestamp + "','" + timestamp + "','DONE');");
+			
+			a = st.executeUpdate(
+					"UPDATE users SET address='" + address + "', cart_items=cart_items-" + quantity + " where username='" + username + "';");
+			
 			System.out.println("Transaction Complete!");
 			
-			
-			response.setContentType("text/plain");
-			response.setCharacterEncoding("UTF-8");
 			response.sendRedirect("http://localhost:8080/Internship-Infy/Transaction/ConfirmOrder");
 
 			
