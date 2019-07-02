@@ -75,7 +75,7 @@
 	<div id="content" style="margin-top: 100px;">
 
 		<div class="jumbotron">
-			<h1 class="display-4 mx-auto">Hello, world!</h1>
+			<h1 class="display-4 mx-auto">Hello, friends!</h1>
 			<p class="lead">I am sorry to see that you are facing problems on
 				this platform. But don't worry, I believe we can work it out
 				together.</p>

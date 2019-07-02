@@ -64,7 +64,7 @@
 				<input name="InputUsername" hidden
 					value="${pageContext.request.userPrincipal.name}">
 
-				<button name="submit" type="submit" class="btn btn-primary">Place
+				<button name="submit" type="submit" class="btn-primary btn-lg btn-block">Place
 					Order</button>
 			</form>
 		</div>

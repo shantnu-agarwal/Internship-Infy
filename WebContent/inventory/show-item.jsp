@@ -29,7 +29,8 @@
 			------------------------------------------------------------------------------------------------------------->
 	<div id="content" style="margin-top: 100px; margin-left: 10rem;">
 		<div class="row" style="margin-bottom: 1rem;">
-			<button onclick="window.history.back();" class="btn btn-primary">Go Back</button>
+			<button onclick="window.history.back();" class="btn btn-primary">Go
+				Back</button>
 		</div>
 		<div class="card md-10" style="width: auto;">
 			<%
@@ -46,7 +47,8 @@
 				<div class="col-md-5">
 					<img
 						src="http://localhost:8080/Internship-Infy/productimages/<%=rs.getString("image_name")%>"
-						class="card-img" alt="Fridge Image Here" style="height:auto;width:600px;">
+						class="card-img" alt="Fridge Image Here"
+						style="height: auto; width: 600px;">
 				</div>
 				<%
 					ResultSet us = st.executeQuery("SELECT * from inventory,users where item_ID="
@@ -81,18 +83,24 @@
 											style="max-width: 2rem; margin-right: 1rem">Add to Cart
 									</button>
 									<input type="number" name="Quantity"
-										placeholder="Choose Quantity" min=1 required>
+										placeholder="Choose Quantity" min=1 max=<%= us.getString("item_quantity")%> required>
 								</form>
 							</li>
 							<li class="list-group-item">
-								<form method="get" action="BuyNow">
+								<form method="POST"
+									action="../transaction/BuyNow?id=<%= request.getParameter("id")%>">
 									<button class="btn" type="submit" id="buy-now-button">
 										<img alt="Buy Now" src="img/buynow.png"
 											style="max-width: 2rem; margin-right: 1rem">Buy Now
 									</button>
+									<input type="number" name="Quantity"
+										placeholder="Choose Quantity" min=1 max=<%= us.getString("item_quantity")%> required>
 								</form>
 							</li>
 						</c:if>
+						<!---------------------=
+						 				WITHOUT LOGIN OPTIONS 
+						 				------------------------->
 						<c:if test="${ empty pageContext.request.userPrincipal.name }">
 							<li class="list-group-item">
 								<button class="btn" data-toggle="popover"

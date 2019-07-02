@@ -137,7 +137,7 @@
 						<div class="form-group">
 							<label>Mobile Number</label> <input type='text'
 								name='InputMobileNumber' placeholder="9876543210"
-								class="form-control" id="validationMobileNumber" required />
+								class="form-control" id="validationMobileNumber" maxlength = '10' required />
 						</div>
 						<div class="form-group">
 							<label>Username</label> <input type='text' name='InputUsername'

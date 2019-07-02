@@ -113,7 +113,7 @@
 		<servlet-name>sellerinventory</servlet-name>
 		<url-pattern>/seller/inventory</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>confirm</servlet-name>
 		<jsp-file>/transaction/confirm.jsp</jsp-file>
@@ -121,6 +121,15 @@
 	<servlet-mapping>
 		<servlet-name>confirm</servlet-name>
 		<url-pattern>/Transaction/ConfirmOrder</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BuyNowPage</servlet-name>
+		<jsp-file>/transaction/BuyNow.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BuyNowPage</servlet-name>
+		<url-pattern>/transaction/BuyNow</url-pattern>
 	</servlet-mapping>
 
 	<!-- CLASS SERVLETS -->
@@ -218,6 +227,15 @@
 	<servlet-mapping>
 		<servlet-name>address</servlet-name>
 		<url-pattern>/transaction/SubmitAddress</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>buynow</servlet-name>
+		<servlet-class>com.TheOnlineShop.BuyNow</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>buynow</servlet-name>
+		<url-pattern>/transaction/BuyNowClass</url-pattern>
 	</servlet-mapping>
 
 </web-app>
