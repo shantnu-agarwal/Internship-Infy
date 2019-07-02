@@ -29,8 +29,6 @@ $(function () {
 	  $('[data-toggle="popover"]').popover()
 	})
 
-
-
 var form = $('#register');
 form
 		.submit(function() {
@@ -46,6 +44,7 @@ form
 										.text(
 												"You have been registered successfully. Please proceed to login!");
 								document.getElementById("postRegButton").style.visibility = 'visible';
+								document.getElementById("register").style.display = 'none';
 							} else {
 								$('#response')
 										.text(

@@ -12,23 +12,22 @@
 				href="/Internship-Infy/">The Online Shop</a></li>
 			<c:if test="${not empty pageContext.request.userPrincipal.name }">
 				<li class="nav-item"><a class="nav-link"
-					href="http://localhost:8080/Internship-Infy/cart.jsp" id="cart-link"></a>
+					href="http://localhost:8080/Internship-Infy/cart.jsp"
+					id="cart-link"></a>
 					<form hidden id="cart-form" method="GET" name="cart-form"
 						action="http://localhost:8080/Internship-Infy/GetCart">
 						<input name="username"
 							value="${pageContext.request.userPrincipal.name}">
-						
+
 					</form></li>
 			</c:if>
 
 
-	
 
-
-
-			<li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="http://localhost:8080/Internship-Infy/contact.jsp">Support</a></li>
 		</ul>
-		
+
 		<!---------------------------------- LOGIN HERE
 											----------------------------------------->
 
@@ -119,11 +118,12 @@
 			<div class="modal-body">
 				<div class="container" style="margin: auto">
 
+					<div>
+						<p id="response" style="color: red"></p>
+					</div>
 					<form name='f' action="InsertIntoDBFromSelf" method="get"
 						id="register">
-						<div>
-							<p id="response" style="color: red"></p>
-						</div>
+
 						<div class="form-group">
 							<label>Name:</label><input type="text" name="InputName"
 								placeholder="Jon Doe" class="form-control" id="validationName"
@@ -137,7 +137,8 @@
 						<div class="form-group">
 							<label>Mobile Number</label> <input type='text'
 								name='InputMobileNumber' placeholder="9876543210"
-								class="form-control" id="validationMobileNumber" maxlength = '10' required />
+								class="form-control" id="validationMobileNumber" maxlength='10'
+								required />
 						</div>
 						<div class="form-group">
 							<label>Username</label> <input type='text' name='InputUsername'

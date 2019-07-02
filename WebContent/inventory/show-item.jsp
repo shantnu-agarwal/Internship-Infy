@@ -75,7 +75,8 @@
 							<%
 								if (us.getString("item_quantity").equals("0")) {
 							%>
-							<h4>This item is out of stock.</h4>
+							<li class="list-group-item"><h4>Sorry, this item is out of
+									stock.</h4></li>
 							<%
 								} else {
 							%>
@@ -107,7 +108,7 @@
 								</form>
 							</li>
 							<%
-							 	}
+								}
 							%>
 						</c:if>
 
