@@ -1,13 +1,14 @@
 
 select * from user_roles;
 
+
 select * from users;
 
-select * from inventory;
-
+select * from inventory order by time_added desc;
+select sum(item_quantity) from inventory;
 select * from images;
 
-select * from cart;
+select * from cart order by transaction_time desc;
 
 select * from inventory,images where inventory.item_ID = images.item_ID and inventory.category='furniture';
 
