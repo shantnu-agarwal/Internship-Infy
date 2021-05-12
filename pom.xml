@@ -28,7 +28,7 @@
 
 
 	<properties>
-		<spring-security.version>4.2.3.RELEASE</spring-security.version>
+		<spring-security.version>5.2.10.RELEASE</spring-security.version>
 	</properties>
 
 	<dependencies>
